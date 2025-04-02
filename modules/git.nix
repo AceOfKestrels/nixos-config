@@ -9,16 +9,21 @@
                 name = "AceOfKestrels";
                 email = "aceofkestrels@gmail.com";
             };
+            core = {
+                editor = "nano";
+            };
             init = {
                 defaultBranch = "main";
             };
             credential = {
-                helper = "store";
+                helper = "manager";
+                credentialstore = "cache";
             };
         };
     };
 
     environment.systemPackages = with pkgs; [
         git
+        git-credential-manager
     ];
 }

@@ -2,16 +2,11 @@
 
 {
     imports = [
-        ./core.nix
-        ./modules/development/dotnet.nix
-        ./modules/development/python.nix
+        ./modules/core.nix
         ./modules/development/docker.nix
+        ./modules/development/dotnet.nix
+        #./modules/development/python.nix
     ];
 
-    environment.systemPackages = with pkgs; [
-        nix-search-cli # Search Nix packages via CLI
-
-        vesktop # Discord
-        signal-desktop # Signal messenger
-    ];
+    environment.systemPackages = with pkgs; [];
 }

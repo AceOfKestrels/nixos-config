@@ -21,6 +21,7 @@
         zsh-nix-shell
 
         fastfetch
+        hyfetch
 
         # Zsh plugins
         zsh-powerlevel10k

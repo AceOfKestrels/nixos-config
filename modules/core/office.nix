@@ -12,7 +12,7 @@
     fonts = {
         enableDefaultPackages = true;
         packages = with pkgs; [
-            nerdfonts
+            # nerdfonts
             winePackages.fonts
             noto-fonts
             noto-fonts-cjk-sans

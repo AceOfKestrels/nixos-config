@@ -12,7 +12,7 @@
 
     # Include core packages
     environment.systemPackages = with pkgs; [
-        firefox
+        firefox-devedition
 
         keepassxc
         nextcloud-client

@@ -17,7 +17,7 @@
             };
             credential = {
                 helper = "manager";
-                credentialstore = "cache";
+                credentialStore = "cache";
             };
         };
     };

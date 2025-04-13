@@ -12,5 +12,7 @@
         ./modules/development/dotnet.nix
     ];
 
-    environment.systemPackages = with pkgs; [];
+    environment.systemPackages = with pkgs; [
+        figma-linux
+    ];
 }

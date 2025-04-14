@@ -4,10 +4,12 @@ These are the configurations I use for my NixOS installations. Very much WIP.
 
 ## Installation
 Clone the repository. Recommended directories: 
-- /home/<user>/
+- /home/\<user>/
 - /etc/nixos/
 
 Import the modules you want to use in your `configuration.nix`. I have already created device configs for all the machines I run NixOS on.
+
+Run `setup.sh`. This will copy local configuration files from the `templates` to the `local`folder. Here some specific configurations are made without affecting the consistency of the repository.
 
 ## Contribution
 Feel free to contribute by forking the repository and creating a pull request. However, I will usually not accept them as-is and may implement some of your additions myself in a different way.

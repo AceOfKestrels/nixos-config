@@ -3,6 +3,8 @@
 {
     # Import core modules
     imports = [
+        ../local/core.local.nix
+
         ./core/git.nix # Git
         ./core/office.nix # OnlyOffice, Image Editors, Fonts
         ./core/vscode.nix # VS Code / VSCodium

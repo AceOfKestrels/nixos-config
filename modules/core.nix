@@ -21,6 +21,6 @@
         nix-search-cli # Search Nix packages via CLI
 
         vesktop # Discord
-        signal-desktop # Signal messenger
+        signal-desktop-bin # Signal messenger
     ];
 }

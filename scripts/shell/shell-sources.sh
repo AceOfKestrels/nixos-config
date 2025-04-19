@@ -6,7 +6,7 @@ __sourceAll() {
 
 update-shell-sources() {
     if [ ! -d "$SHELL_SOURCES_DIR" ]; then
-        if git clone "$SHELL_SOURCES_REMOTE" "$SHELL_SOURCES_DIR" > /dev/null ; then
+        if git clone "$SHELL_SOURCES_REMOTE" "$SHELL_SOURCES_DIR" ; then
             __sourceAll
             return 0
         else
@@ -22,8 +22,10 @@ update-shell-sources() {
         return 1
     fi
 
-    git fetch > /dev/null
-    git reset --hard "$SHELL_SOURCES_REMOTE_BRANCH" > /dev/null
+    git fetch
+    git reset --hard "$SHELL_SOURCES_REMOTE_BRANCH" --quiet
+
+    echo "Updating..."
 
     __sourceAll
     cd - > /dev/null
@@ -38,7 +40,8 @@ fi
 __sourceAll
 
 cd "$SHELL_SOURCES_DIR"
-if ! git fetch --quiet && git diff --quiet HEAD "$SHELL_SOURCES_REMOTE_BRANCH" ; then
+git fetch --quiet
+if ! git diff --quiet HEAD "$SHELL_SOURCES_REMOTE_BRANCH" ; then
     echo "shell-sources has been updated."
     echo "Run \"update-shell-sources\" to pull the changes."
 fi

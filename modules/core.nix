@@ -9,6 +9,7 @@
         ./core/office.nix # OnlyOffice, Image Editors, Fonts
         ./core/vscode.nix # VS Code / VSCodium
         ./core/zsh.nix # ZSH
+        ./core/shell-sources.nix # shell sources
     ];
 
     # Include core packages

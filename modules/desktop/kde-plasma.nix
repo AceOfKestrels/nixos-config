@@ -9,14 +9,10 @@
 
     hardware.bluetooth.enable = true;
 
-    # programs.ssh.askPassword = lib.mkDefault pkgs.plasma-workspace.ksshaskpass.packageContents.bin.ksshaskpass;
-
     environment.systemPackages = with pkgs; [
-        gnome-terminal
     ];
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         plasma-browser-integration
-        konsole
     ];
 }

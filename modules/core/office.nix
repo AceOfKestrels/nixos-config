@@ -4,7 +4,7 @@
     # Include core packages
     environment.systemPackages = with pkgs; [
         onlyoffice-desktopeditors
-        gimp
+        gimp3
         inkscape
     ];
 

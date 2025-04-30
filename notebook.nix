@@ -10,10 +10,9 @@
 
         ./modules/development/docker.nix
         ./modules/development/dotnet.nix
+        ./modules/development/webdev.nix
     ];
 
     environment.systemPackages = with pkgs; [
-        figma-linux
-        kitty
     ];
 }

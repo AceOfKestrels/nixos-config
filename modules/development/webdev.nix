@@ -6,6 +6,7 @@
 
         nodejs
 
-        figma-linux
+        # Browser version is quicker and more stable
+        # figma-linux
     ];
 }

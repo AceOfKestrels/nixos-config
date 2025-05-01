@@ -77,5 +77,6 @@
 
     environment.systemPackages = with pkgs; [
         discord # Install Official Discord app
+        google-chrome # install google chrom
     ];
 }

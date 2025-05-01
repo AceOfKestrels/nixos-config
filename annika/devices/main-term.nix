@@ -2,49 +2,76 @@
 
 {
     imports = [
+        # Import Nvidia Drivers
+        ../drivers/nvidia.nix
+
+        # Load Printer Drivers and Set Them up
+        ../drivers/printing.nix
+
+        # Load Audio Drivers and Set Them up
+        ../drivers/audio.nix
+
+        # Load Desktop Environment
         ../../modules/desktop/gnome.nix
 
+        # Load Core Configurations
         ../../modules/core.nix
+
+        # Setup Dev Envierments
+        ../../modules/development/docker.nix
+        ../../modules/development/dotnet.nix
+        ../../modules/development/python.nix
+        ../../modules/development/webdev.nix
+
+        # Setup Gaming Stuff
+        ../../modules/gaming/minecraft.nix
+        ../../modules/gaming/steam.nix
+
     ];
 
-    # Enable OpenGL
-    hardware.graphics = {
-        enable = true;
+    # Allow unfree packages
+    nixpkgs.config.allowUnfree = true;
+
+    # Setup Bootloader.
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+
+    # Define Hostname
+    networking.hostName = "main-term";
+
+    # Seting Time Zone
+    time.timeZone = "Europe/Berlin";
+
+    # Seting internationalisation properties.
+    i18n.defaultLocale = "de_DE.UTF-8";
+
+    i18n.extraLocaleSettings = {
+        LC_ADDRESS = "de_DE.UTF-8";
+        LC_IDENTIFICATION = "de_DE.UTF-8";
+        LC_MEASUREMENT = "de_DE.UTF-8";
+        LC_MONETARY = "de_DE.UTF-8";
+        LC_NAME = "de_DE.UTF-8";
+        LC_NUMERIC = "de_DE.UTF-8";
+        LC_PAPER = "de_DE.UTF-8";
+        LC_TELEPHONE = "de_DE.UTF-8";
+        LC_TIME = "de_DE.UTF-8";
     };
 
-    # Load nvidia driver for Xorg and Wayland
-    services.xserver.videoDrivers = ["nvidia"];
-
-    hardware.nvidia = {
-
-        # Modesetting is required.
-        modesetting.enable = true;
-
-        # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-        # Enable this if you have graphical corruption issues or application crashes after waking
-        # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-        # of just the bare essentials.
-        powerManagement.enable = false;
-
-        # Fine-grained power management. Turns off GPU when not in use.
-        # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-        powerManagement.finegrained = false;
-
-        # Use the NVidia open source kernel module (not to be confused with the
-        # independent third-party "nouveau" open source driver).
-        # Support is limited to the Turing and later architectures. Full list of 
-        # supported GPUs is at: 
-        # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-        # Only available from driver 515.43.04+
-        open = true;
-
-        # Enable the Nvidia settings menu,
-        # accessible via `nvidia-settings`.
-        nvidiaSettings = true;
-
-        # Optionally, you may need to select the appropriate driver version for your specific GPU.
-        package = config.boot.kernelPackages.nvidiaPackages.latest;
+    # Configure keymap in X11
+    services.xserver.xkb = {
+        layout = "de";
+        variant = "";
     };
+
+    # Configure console keymap
+    console.keyMap = "de";
+
+    # Setup Networking
+    networking.networkmanager.enable = true;
+
+
+
+
 
     environment.systemPackages = with pkgs; [
     ];

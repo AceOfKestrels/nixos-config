@@ -17,6 +17,12 @@
         # Load Core Configurations
         ../../modules/core.nix
 
+        # Setup Libvirt VM Manager
+        ../software/libvirt.nix
+
+        # Load Shell Aliases
+        ../shell/aliases.nix
+
         # Setup Dev Envierments
         ../../modules/development/docker.nix
         ../../modules/development/dotnet.nix
@@ -69,10 +75,7 @@
     # Setup Networking
     networking.networkmanager.enable = true;
 
-
-
-
-
     environment.systemPackages = with pkgs; [
+        discord # Install Official Discord app
     ];
 }

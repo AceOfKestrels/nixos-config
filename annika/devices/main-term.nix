@@ -79,6 +79,5 @@
         discord # Install Official Discord app
         google-chrome # Install google chrom
         plex # Install Plex
-        vulkan-tools # Install Vulkan Tools To trubleshoot Games not running
     ];
 }

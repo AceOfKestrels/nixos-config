@@ -1,43 +1,41 @@
-{ config, pkgs, ... }:
+{
+  config, pkgs, ... 
+}:
 
 {
-    # Enable OpenGL
-    hardware.graphics = {
-        enable = true;
-        enable32Bit = true;
-    };
+  # NVIDIA driver setup
+  services.xserver.videoDrivers = [ "nvidia" ];
 
-    # Load nvidia driver for Xorg and Wayland
-    services.xserver.videoDrivers = ["nvidia"];
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
 
-    hardware.nvidia = {
+    extraPackages = with pkgs; [
+      vulkan-loader
+    ];
 
-        # Modesetting is required.
-        modesetting.enable = true;
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      vulkan-loader
+    ];
+  };
 
-        # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-        # Enable this if you have graphical corruption issues or application crashes after waking
-        # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-        # of just the bare essentials.
-        powerManagement.enable = false;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
+  };
 
-        # Fine-grained power management. Turns off GPU when not in use.
-        # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-        powerManagement.finegrained = false;
+  # Ensure Vulkan and NVIDIA-specific OpenGL driver paths are available
+  environment.systemPackages = with pkgs; [
+    vulkan-tools
+    vulkan-loader
+    glxinfo
+  ];
 
-        # Use the NVidia open source kernel module (not to be confused with the
-        # independent third-party "nouveau" open source driver).
-        # Support is limited to the Turing and later architectures. Full list of 
-        # supported GPUs is at: 
-        # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-        # Only available from driver 515.43.04+
-        open = false;
+  environment.variables.VK_ICD_FILENAMES = "/run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd.i686.json:/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
 
-        # Enable the Nvidia settings menu,
-        # accessible via `nvidia-settings`.
-        nvidiaSettings = true;
 
-        # Optionally, you may need to select the appropriate driver version for your specific GPU.
-        package = config.boot.kernelPackages.nvidiaPackages.latest;
-    };
 }

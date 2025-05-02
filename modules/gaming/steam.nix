@@ -11,5 +11,6 @@
     environment.systemPackages = with pkgs; [
         steam
         protontricks
+        protonup-qt
     ];
 }

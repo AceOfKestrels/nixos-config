@@ -75,6 +75,13 @@
     # Setup Networking
     networking.networkmanager.enable = true;
 
+    fileSystems."/home/annika/disks/games" = {
+        device = "/dev/disk/by-uuid/36e9c578-6237-400e-9af8-dbf81d5f985f";
+        fsType = "ext4";
+        options = [ "nofail" ];
+    };
+
+
     environment.systemPackages = with pkgs; [
         discord # Install Official Discord app
         google-chrome # Install google chrom

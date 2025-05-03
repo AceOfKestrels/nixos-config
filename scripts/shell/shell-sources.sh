@@ -39,10 +39,10 @@ fi
 
 __sourceAll
 
-cd "$SHELL_SOURCES_DIR"
-git fetch --quiet
-if ! git diff --quiet HEAD "$SHELL_SOURCES_REMOTE_BRANCH" ; then
-    echo "shell-sources has been updated."
-    echo "Run \"update-shell-sources\" to pull the changes."
-fi
-cd - > /dev/null
+# cd "$SHELL_SOURCES_DIR"
+# git fetch --quiet
+# if ! git diff --quiet HEAD "$SHELL_SOURCES_REMOTE_BRANCH" ; then
+#     echo "shell-sources has been updated."
+#     echo "Run \"update-shell-sources\" to pull the changes."
+# fi
+# cd - > /dev/null

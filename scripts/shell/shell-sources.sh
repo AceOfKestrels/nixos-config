@@ -4,6 +4,23 @@ __sourceAll() {
     source "$SHELL_SOURCES_DIR/$SHELL_SOURCES_SOURCE_ALL_FILE"
 }
 
+__shellSourcesCheckForUpdates() {
+    # Disable job control output
+    set +m
+    {
+        cd "$SHELL_SOURCES_DIR"
+        git fetch --quiet
+        if ! git diff --quiet HEAD "$SHELL_SOURCES_REMOTE_BRANCH" ; then
+            echo "shell-sources has been updated."
+            echo "Run \"update-shell-sources\" to pull the changes."
+        fi
+        cd - > /dev/null
+    } &
+    disown
+
+    set -m
+}
+
 update-shell-sources() {
     if [ ! -d "$SHELL_SOURCES_DIR" ]; then
         if git clone "$SHELL_SOURCES_REMOTE" "$SHELL_SOURCES_DIR" ; then
@@ -39,10 +56,4 @@ fi
 
 __sourceAll
 
-# cd "$SHELL_SOURCES_DIR"
-# git fetch --quiet
-# if ! git diff --quiet HEAD "$SHELL_SOURCES_REMOTE_BRANCH" ; then
-#     echo "shell-sources has been updated."
-#     echo "Run \"update-shell-sources\" to pull the changes."
-# fi
-# cd - > /dev/null
+__shellSourcesCheckForUpdates

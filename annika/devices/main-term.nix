@@ -33,6 +33,8 @@
         ../../modules/gaming/minecraft.nix
         ../../modules/gaming/steam.nix
 
+        # Load my Standert Software
+        ../software/standert.nix
     ];
 
     # Allow unfree packages
@@ -83,8 +85,5 @@
 
 
     environment.systemPackages = with pkgs; [
-        discord # Install Official Discord app
-        google-chrome # Install google chrom
-        plex # Install Plex
     ];
 }

@@ -19,7 +19,9 @@
         # Gnome Extensions
         gnomeExtensions.dash-to-dock
         gnomeExtensions.transparent-window-moving
+        # Gnome Packetes
         gnome-keyring
+        gnome-tweaks
         # Gnome Dependencys
         ibus
         dbus

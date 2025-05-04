@@ -8,6 +8,8 @@
     # Enable GNOME
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
+    services.displayManager.defaultSession = "gnome-xorg";
+
 
     # Setup Gnome Keyring
     services.gnome.gnome-keyring.enable = true;
@@ -18,6 +20,9 @@
         gnomeExtensions.dash-to-dock
         gnomeExtensions.transparent-window-moving
         gnome-keyring
+        # Gnome Dependencys
+        ibus
+        dbus
     ];
 
     # set env to allo git to store credentials

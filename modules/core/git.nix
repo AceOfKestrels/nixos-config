@@ -9,16 +9,9 @@
         enable = true;
 
         config = {
-            core = {
-                editor = "nano";
-            };
-            init = {
-                defaultBranch = "main";
-            };
-            credential = {
-                helper = "manager";
-                credentialStore = "cache";
-            };
+            core.editor = "nano";
+            init.defaultBranch = "main";
+            credential.helper = "manager";
         };
     };
 

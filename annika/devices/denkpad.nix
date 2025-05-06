@@ -2,9 +2,6 @@
 
 {
     imports = [
-        # Import Nvidia Drivers
-        ../drivers/nvidia.nix
-
         # Load Printer Drivers and Set Them up
         ../drivers/printing.nix
 
@@ -29,9 +26,6 @@
         ../../modules/development/python.nix
         ../../modules/development/webdev.nix
 
-        # Setup Gaming Stuff
-        ../../modules/gaming/minecraft.nix
-        ../../modules/gaming/steam.nix
 
         # Load my Standert Software
         ../software/standert.nix
@@ -45,7 +39,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     # Define Hostname
-    networking.hostName = "main-term";
+    networking.hostName = "denkpad";
 
     # Seting Time Zone
     time.timeZone = "Europe/Berlin";
@@ -76,13 +70,6 @@
 
     # Setup Networking
     networking.networkmanager.enable = true;
-
-    fileSystems."/home/annika/disks/games" = {
-        device = "/dev/disk/by-uuid/36e9c578-6237-400e-9af8-dbf81d5f985f";
-        fsType = "ext4";
-        options = [ "nofail" ];
-    };
-
 
     environment.systemPackages = with pkgs; [
     ];

@@ -9,7 +9,10 @@
 
     hardware.bluetooth.enable = true;
 
+    programs.kwallet.enable = true;
+
     environment.systemPackages = with pkgs; [
+        kwallet
     ];
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [

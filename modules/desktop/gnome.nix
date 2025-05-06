@@ -27,7 +27,6 @@
         dbus
     ];
 
-    # set env to allo git to store credentials
     environment.variables = {
         GCM_CREDENTIAL_STORE = "secretservice";
     };

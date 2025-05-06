@@ -10,6 +10,7 @@
         ./core/vscode.nix # VS Code / VSCodium
         ./core/zsh.nix # ZSH
         ./core/shell-sources.nix # shell sources
+        ./core/garbage-collect.nix # Deleat old nix stuff
     ];
 
     # Include core packages

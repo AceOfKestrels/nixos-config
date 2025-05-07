@@ -12,6 +12,7 @@
             core.editor = "nano";
             init.defaultBranch = "main";
             credential.helper = "manager";
+            credential.credentialStore = "secretservice";
         };
     };
 

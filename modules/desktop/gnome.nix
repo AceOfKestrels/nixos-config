@@ -26,8 +26,4 @@
         ibus
         dbus
     ];
-
-    environment.variables = {
-        GCM_CREDENTIAL_STORE = "secretservice";
-    };
 }

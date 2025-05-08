@@ -11,7 +11,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-        steam
         vulkan-tools
         protontricks
         protonup-qt

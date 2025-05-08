@@ -12,6 +12,8 @@
 
         ../../modules/gaming/minecraft.nix
         ../../modules/gaming/steam.nix
+
+        ../modules/amdgpu.nix
     ];
 
     environment.systemPackages = with pkgs; [

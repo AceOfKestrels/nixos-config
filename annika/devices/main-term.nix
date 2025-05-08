@@ -35,6 +35,9 @@
 
         # Load my Standert Software
         ../software/standert.nix
+
+        # installl ica client
+        ../software/citrix-ica-client.nix
     ];
 
     # Allow unfree packages

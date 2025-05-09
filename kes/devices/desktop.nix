@@ -2,22 +2,16 @@
 
 {
     imports = [
-        ../../modules/desktop/kde-plasma.nix
-
-        ../../modules/core.nix
-
-        ../../modules/development/docker.nix
-        ../../modules/development/dotnet.nix
-        ../../modules/development/webdev.nix
+        ../modules/kes-core.nix
+        
+        ../modules/amdgpu.nix
 
         ../../modules/gaming/minecraft.nix
         ../../modules/gaming/steam.nix
-
-        ../modules/amdgpu.nix
     ];
 
     environment.systemPackages = with pkgs; [
         ytmdesktop
-        kitty
+        discord
     ];
 }

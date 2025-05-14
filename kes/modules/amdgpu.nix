@@ -24,6 +24,7 @@
     environment.systemPackages = with pkgs; [
         vulkan-tools
         glxinfo
+        linux-firmware
     ];
 
     environment.variables.VK_LOADER_DRIVERS_DISABLE = "*dzn*";

@@ -3,27 +3,24 @@
 # Check for AMDGPU errors and append them to a log file
 # Use "tail -n50 /var/log/amdgpu-error-watch.log" to check
 # https://chatgpt.com/c/68250a77-56a8-8003-bc24-942199f25a0d
-let
-    errorScript = pkgs.writeScriptBin "check-amdgpu-errors" ''
-        journalctl -k -b --no-pager \
-        | grep --color=never -E "amdgpu.*(Failed to initialize parser|ring gfx_.*timeout)" \
-        >> /var/log/amdgpu-error-watch.log
-    '';
-in {
-    systemd.services.check-amdgpu-errors = {
-        description = "Scan dmesg for amdgpu parser/timeout errors";
+{
+    systemd.services.amdgpuErrorLogger = {
+        description = "Log AMDGPU kernel errors to a dedicated file";
+        after = [ "systemd-journald.service" ];
+        wantedBy = [ "multi-user.target" ];
+
         serviceConfig = {
-            Type    = "oneshot";
-            ExecStart = "${errorScript}";
+            # follow only kernel-level errors, and grep for "amdgpu"
+            ExecStart = ''
+                /bin/sh -c "exec journalctl -k -b -p err -f \
+                | grep --color=never -E 'amdgpu.*(Failed to initialize parser|ring gfx_.*timeout)' \
+                >> /var/log/amdgpu-error-watch.log"
+            '';
+            Restart     = "always";     # if it ever dies, restart
+            RestartSec  = "5s";         # wait 5s before restart
+            StandardOutput = "null";    # don't double-log to journal
+            StandardError  = "null";
         };
     };
 
-    systemd.timers.check-amdgpu-errors = {
-        description = "Run AMDGPU error scan every hour";
-        wantedBy = [ "timers.target" ];
-        timerConfig = {
-            OnBootSec         = "10min";
-            OnUnitActiveSec   = "1h";
-        };
-    };
 }

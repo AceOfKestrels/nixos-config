@@ -10,6 +10,8 @@
         ../../modules/development/dotnet.nix
         ../../modules/development/webdev.nix
         ../../modules/development/wireguard.nix
+
+        ../overrides/git-nvim.nix
     ];
 
     environment.systemPackages = with pkgs; [

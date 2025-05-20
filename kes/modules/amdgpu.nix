@@ -1,11 +1,15 @@
 { config, pkgs, ... }:
 
 {
+    boot.kernelPackages = pkgs.linuxPackages_6_6;
+
     # Not strictly necessary, since it's installed implicitly by setting the video drivers
     boot.initrd.kernelModules = [ "amdgpu" ];
 
     services.xserver.enable = true;
     services.xserver.videoDrivers = [ "amdgpu" ];
+
+    services.displayManager.defaultSession = "plasmax11";
 
     hardware.graphics = {
         extraPackages = with pkgs; [

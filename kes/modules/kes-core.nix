@@ -16,4 +16,8 @@
 
     environment.systemPackages = with pkgs; [
     ];
+
+    environment.variables = {
+	GIT_BROWSER = "firefox-devedition";
+    };
 }

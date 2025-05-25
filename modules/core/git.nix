@@ -10,9 +10,9 @@
 
         config = {
             core.editor = "nano";
-	    aliases = { 
-	        pfusch = "push --force";
-	    };
+            alias = { 
+                pfusch = "push --force";
+            };
             init.defaultBranch = "main";
             credential.helper = "manager";
             credential.credentialStore = "secretservice";

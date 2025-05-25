@@ -18,6 +18,8 @@
     ];
 
     environment.variables = {
-	GIT_BROWSER = "firefox-devedition";
+	    GIT_BROWSER = "firefox-devedition";
+        SEARCH_BROWSER = "firefox-devedition";
+        SEARCH_BROWSER_ARGS = "--searchg";
     };
 }

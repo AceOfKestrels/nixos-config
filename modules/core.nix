@@ -24,5 +24,7 @@
 
         vesktop # Discord
         signal-desktop-bin # Signal messenger
+
+        dig # to have dns tools like nslookup
     ];
 }

@@ -38,6 +38,10 @@
 
         # installl ica client
         ../software/citrix-ica-client.nix
+
+        # Load NAS Mount
+        ../drivers/nasdrive.nix
+
     ];
 
     # Allow unfree packages

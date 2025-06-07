@@ -19,6 +19,7 @@
 
         keepassxc
         nextcloud-client
+        localsend
 
         nix-search-cli # Search Nix packages via CLI
 

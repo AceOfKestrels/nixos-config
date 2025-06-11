@@ -1,19 +1,39 @@
 { config, pkgs, ... }:
-
 {
-  # make sure the NFS kernel module is loaded
   boot.supportedFilesystems = [ "nfs" ];
-
-  # start rpcbind so mount.nfs can do its RPCs
   services.rpcbind.enable = true;
 
-  # your NFS share
-  fileSystems."/home/annika/disks/nas" = {
-    device  = "10.100.20.10:/mnt/bunker.nas.local.wa-ls.net/home-storage";
-    fsType  = "nfs";
-    options = [ "rw" "hard" "intr" "proto=tcp" ];
-  };
+  systemd.mounts = [
+    {
+      what        = "10.100.20.10:/mnt/bunker.nas.local.wa-ls.net/home-storage";
+      where       = "/home/annika/disks/nas-personal";
+      type        = "nfs";
+      mountConfig = {
+        Options = "rw,hard,intr,proto=tcp,_netdev";
+      };
+    }
+    {
+      what        = "10.100.20.10:/mnt/bunker.nas.local.wa-ls.net/games";
+      where       = "/home/annika/disks/nas-games";
+      type        = "nfs";
+      mountConfig = {
+        Options = "rw,hard,intr,proto=tcp,_netdev";
+      };
+    }
+  ];
 
-  # you can still have the CLI tool handy if you ever need it
+  systemd.automounts = [
+    {
+      where           = "/home/annika/disks/nas-personal";
+      wantedBy        = [ "multi-user.target" ];
+      automountConfig = { TimeoutIdleSec = "10min"; };
+    }
+    {
+      where           = "/home/annika/disks/nas-games";
+      wantedBy        = [ "multi-user.target" ];
+      automountConfig = { TimeoutIdleSec = "10min"; };
+    }
+  ];
+
   environment.systemPackages = with pkgs; [ nfs-utils ];
 }

@@ -2,6 +2,8 @@
 
 {
     boot.kernelPackages = pkgs.linuxPackages_zen;
+
+    security.sudo.wheelNeedsPassword = false;
     
     imports = [
         ../modules/kes-core.nix

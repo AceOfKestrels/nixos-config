@@ -9,7 +9,7 @@
 
         wantedBy = [ "default.target" ];
 
-        path = [ pkgs.git pkgs.bash pkgs.nixos-rebuild ];
+        path = [ pkgs.git pkgs.bash pkgs.nixos-rebuild pkgs.sudo ];
 
         script = builtins.readFile ../scripts/update-system.sh;
 

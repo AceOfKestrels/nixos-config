@@ -97,6 +97,7 @@
         isNormalUser = true;
         description = "Alexandra";
         extraGroups = [ "networkmanager" "wheel" ];
+        linger = true;
     };
 
     # Allow unfree packages

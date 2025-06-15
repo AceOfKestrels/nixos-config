@@ -3,13 +3,11 @@
 {
     programs.git.enable = true;
 
-    systemd.services.autoupdate-lexi = {
+    systemd.user.services.autoupdate-lexi = {
         description = "Pull config from remote and rebuild on system start";
         enable = true;
 
-        after = [ "network-online.target" ];
-        wants = [ "network-online.target" ];
-        wantedBy = [ "multi-user.target" ];
+        wantedBy = [ "default.target" ];
 
         path = [ pkgs.git pkgs.bash pkgs.nixos-rebuild ];
 
@@ -26,6 +24,17 @@
             RemainAfterExit = true;
             StandardOutput  = "journal";
             StandardError   = "journal";
+        };
+    };
+
+    systemd.user.timers.autoupdate-lexi = {
+        description = "Run autoupdate-lexi once at boot";
+        enable      = true;
+        wantedBy    = [ "timers.target" ];
+
+        timerConfig = {
+            OnBootSec = "2min";                      # delay a bit after each reboot
+            Unit      = "autoupdate-lexi.service";  # fires the above service
         };
     };
 }

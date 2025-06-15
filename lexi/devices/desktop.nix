@@ -3,6 +3,7 @@
 {
     imports = [
         ../modules/amdgpu.nix
+        ../modules/auto-update.nix
 
         ../../modules/desktop/kde-plasma.nix
 

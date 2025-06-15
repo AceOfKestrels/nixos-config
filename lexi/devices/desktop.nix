@@ -4,8 +4,7 @@
     imports = [
         ../modules/amdgpu.nix
         ../modules/auto-update.nix
-
-        ../../modules/desktop/kde-plasma.nix
+        ../modules/kde-plasma.nix
 
         ../../modules/core/office.nix
         ../../modules/core/garbage-collect.nix

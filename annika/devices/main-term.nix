@@ -84,6 +84,13 @@
     # Setup Networking
     networking.networkmanager.enable = true;
 
+    # Define a user account. Don't forget to set a password with ‘passwd’.
+    users.users.annika = {
+        isNormalUser = true;
+        description = "Annika Leonie Keggenhoff";
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
+    };
+
     environment.systemPackages = with pkgs; [
         teamspeak3
     ];

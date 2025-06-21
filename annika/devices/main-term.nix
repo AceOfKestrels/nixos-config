@@ -88,7 +88,7 @@
     users.users.annika = {
         isNormalUser = true;
         description = "Annika Leonie Keggenhoff";
-        extraGroups = [ "networkmanager" "wheel" "docker" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" "dialout" ];
     };
 
     environment.systemPackages = with pkgs; [

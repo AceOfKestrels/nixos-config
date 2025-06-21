@@ -37,7 +37,7 @@
         ../software/standert.nix
 
         # installl ica client
-        ../software/citrix-ica-client.nix
+        #../software/citrix-ica-client.nix
 
         # Load NAS Mount
         ../drivers/nasdrive.nix

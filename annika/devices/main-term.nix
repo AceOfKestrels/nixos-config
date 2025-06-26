@@ -93,5 +93,6 @@
 
     environment.systemPackages = with pkgs; [
         teamspeak3
+        remmina
     ];
 }

@@ -1,49 +1,73 @@
 { config, pkgs, ... }:
 
-{
-    nixpkgs.overlays = [
-        (self: super: {
-        freelens = super.stdenv.mkDerivation rec {
-            pname = "freelens";
-            version = "1.4.0";
+#
+## IMPORTANT Before Use You need to run freelens-install to Make this Working
+#
+let
+  appImagePath = "$HOME/.local/opt/Freelens/Freelens.AppImage";
 
-            src = super.fetchurl {
-                url = "https://github.com/freelensapp/freelens/releases/download/v1.4.0/Freelens-1.4.0-linux-amd64.deb";
-                sha256 = "1gg1cm34rzll5pdv5v6fqgg9k6lkh9vhfg9mikd7glmifzvsrrp3";
-            };
+  freelensAppImage = pkgs.fetchurl {
+    url = "https://github.com/freelensapp/freelens/releases/download/v1.4.0/Freelens-1.4.0-linux-amd64.AppImage";
+    sha256 = "178rdvzycs23avlhg27p579llc0rcmygmy2pg98hmdn6lp1gdx4n";
+  };
 
-            nativeBuildInputs = [ super.dpkg super.makeWrapper ];
+  freelensIcon = pkgs.fetchurl {
+    url = "https://avatars.githubusercontent.com/u/172038998?v=4";
+    sha256 = "00x31wps83h9gkca5rfyvvxnzz8vm8kzcfgxlj1g12652y42n8kb";
+  };
+in {
+  nixpkgs.overlays = [
+    (self: super: {
+      freelens = super.writeShellScriptBin "freelens" ''
+        exec ${pkgs.appimage-run}/bin/appimage-run ${appImagePath} "$@"
+      '';
 
-            unpackPhase = ''
-                dpkg-deb -x $src .
-            '';
+      freelens-install = super.writeShellScriptBin "freelens-install" ''
+        set -euo pipefail
 
-            installPhase = ''
-                mkdir -p $out/bin
-                install -Dm755 ./opt/Freelens/freelens $out/bin/freelens
+        INSTALL_DIR="$HOME/.local/opt/Freelens"
+        ICON_DIR="$HOME/.local/share/icons/hicolor/128x128/apps"
+        DESKTOP_DIR="$HOME/.local/share/applications"
+        WRAPPER_DIR="$HOME/.local/bin"
 
-                # Install .desktop file
-                mkdir -p $out/share/applications
-                install -Dm644 ./usr/share/applications/freelens.desktop $out/share/applications/freelens.desktop
+        EXEC_PATH="$INSTALL_DIR/Freelens.AppImage"
+        ICON_PATH="$ICON_DIR/freelens.png"
+        DESKTOP_PATH="$DESKTOP_DIR/freelens.desktop"
 
-                # Install icons
-                mkdir -p $out/share/icons
-                cp -r ./usr/share/icons/hicolor $out/share/icons/
+        echo "Installing Freelens..."
 
-                # Wrap binary if needed
-                wrapProgram $out/bin/freelens \
-                    --prefix PATH : ${super.lib.makeBinPath [ super.coreutils ]}
-            '';
-        };
-        })
-    ];
+        mkdir -p "$INSTALL_DIR" "$ICON_DIR" "$DESKTOP_DIR" "$WRAPPER_DIR"
 
-    environment.systemPackages = with pkgs; [
-        terraform
-        packer
-        kubectl
-        hcloud
-        coreutils
-        freelens
-    ];
+        cp ${freelensAppImage} "$EXEC_PATH"
+        chmod +x "$EXEC_PATH"
+
+        cp ${freelensIcon} "$ICON_PATH"
+
+        cat > "$DESKTOP_PATH" <<EOF
+[Desktop Entry]
+Name=Freelens
+Exec=freelens %U
+Icon=freelens
+Type=Application
+Categories=Graphics;Photography;
+Terminal=false
+EOF
+
+        gtk-update-icon-cache "$HOME/.local/share/icons/hicolor" || true
+
+        echo "Freelens installed."
+      '';
+    })
+  ];
+
+  environment.systemPackages = with pkgs; [
+    freelens
+    freelens-install
+    appimage-run
+    terraform
+    packer
+    kubectl
+    hcloud
+    coreutils
+  ];
 }

@@ -1,9 +1,7 @@
 #! /bin/sh
 
-sleep 60
-cd "$NIXOS_CONFIG_DIR"
-git config --global safe.directory "$NIXOS_CONFIG_DIR"
-git fetch --prune
-git reset --hard "origin/$NIXOS_CONFIG_REMOTE_BRANCH"
-sudo nix-channel --add "$NIXOS_CONFIG_CHANNEL" nixos 
-sudo nixos-rebuild switch --upgrade
+nix-channel --add "$NIXOS_CONFIG_CHANNEL" nixos 
+nix-channel --update
+nixos-rebuild "$NIXOS_REBUILD_ACTION" \
+    -I nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos \
+    -I "nixos-config=$NIXOS_SYSTEM_CONFIG"

@@ -1,22 +1,6 @@
 { config, pkgs, ... }:
 
 {
-    programs.bash.shellInit = ''
-        update() {
-            cd "$NIXOS_CONFIG_DIR"
-            git fetch --prune
-            git reset --hard "origin/$NIXOS_CONFIG_REMOTE_BRANCH"
-            sudo nix-channel --add "$NIXOS_CONFIG_CHANNEL" nixos 
-            sudo nixos-rebuild switch --upgrade
-            cd -
-        }
-    '';
-
-    environment.variables = {
-        NIXOS_CONFIG_DIR = "/etc/nixos/nixos-configs";
-        NIXOS_CONFIG_REMOTE_BRANCH = "lexi";
-        NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-25.05";
-    };
 
     imports = [
         ../modules/amdgpu.nix

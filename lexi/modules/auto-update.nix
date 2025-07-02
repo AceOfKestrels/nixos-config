@@ -1,43 +1,86 @@
-# { config, pkgs, ... }:
+{ config, pkgs, ... }:
 
-# # DOES NOT WORK RN
-# # Running sudo in a user service does not work correctly
-# # But also running git in a root service is also broken
-# {
-#     programs.git.enable = true;
+{
+    programs.git.enable = true;
 
-#     systemd.user.services.autoupdate-lexi = {
-#         description = "Pull config from remote and rebuild on system start";
-#         enable = true;
+    environment.variables = {
+        NIXOS_CONFIG_DIR = "/etc/nixos/nixos-configs";
+        NIXOS_CONFIG_REMOTE_BRANCH = "lexi";
+        NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-25.05";
+    };
 
-#         wantedBy = [ "default.target" ];
+    programs.bash.shellInit = ''
+        update() {
+            cd "$NIXOS_CONFIG_DIR"
+            git fetch --prune
+            git reset --hard "origin/$NIXOS_CONFIG_REMOTE_BRANCH"
+            sudo nix-channel --add "$NIXOS_CONFIG_CHANNEL" nixos 
+            sudo nixos-rebuild switch --upgrade
+            cd -
+        }
+    '';
 
-#         path = [ pkgs.git pkgs.bash pkgs.nixos-rebuild pkgs.sudo ];
+    systemd.user.services.lexi-pull-config = {
+        description = "Pull config from remote";
 
-#         script = builtins.readFile ../scripts/update-system.sh;
+        path = [ pkgs.git pkgs.bash ];
 
-#         environment = {
-#             NIXOS_CONFIG_DIR = "/etc/nixos/nixos-configs";
-#             NIXOS_CONFIG_REMOTE_BRANCH = "lexi";
-#             NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-25.05";
-#         };
+        script = builtins.readFile ../scripts/pull-config.sh;
 
-#         serviceConfig = {
-#             Type = "oneshot";
-#             RemainAfterExit = true;
-#             StandardOutput  = "journal";
-#             StandardError   = "journal";
-#         };
-#     };
+        environment = {
+            NIXOS_CONFIG_DIR = "/etc/nixos/nixos-configs";
+            NIXOS_CONFIG_REMOTE_BRANCH = "lexi";
+        };
 
-#     systemd.user.timers.autoupdate-lexi = {
-#         description = "Run autoupdate-lexi once at boot";
-#         enable      = true;
-#         wantedBy    = [ "timers.target" ];
+        serviceConfig = {
+            Type = "oneshot";
+            RemainAfterExit = true;
+            StandardOutput  = "journal";
+            StandardError   = "journal";
+        };
+    };
 
-#         timerConfig = {
-#             OnBootSec = "2min";                      # delay a bit after each reboot
-#             Unit      = "autoupdate-lexi.service";  # fires the above service
-#         };
-#     };
-# }
+    systemd.user.timers.lexi-pull-config = {
+        description = "Pull configs on boot";
+        enable      = false;
+        wantedBy    = [ "timers.target" ];
+
+        timerConfig = {
+            OnBootSec = "2min";                      # delay a bit after each reboot
+            Unit      = "lexi-pull-config.service";  # fires the above service
+        };
+    };
+
+    systemd.services.lexi-rebuild = {
+        description = "Rebuild system";
+
+        path = [ pkgs.bash pkgs.git pkgs.nixos-rebuild pkgs.nix ];
+
+        script = builtins.readFile ../scripts/update-system.sh;
+
+        environment = {
+            NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-25.05";
+            # NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-unstable";
+            NIXOS_SYSTEM_CONFIG = "/etc/nixos/configuration.nix";
+            NIXOS_REBUILD_ACTION = "switch"; # or boot
+        };
+
+        serviceConfig = {
+            Type = "oneshot";
+            RemainAfterExit = false;
+            StandardOutput  = "journal";
+            StandardError   = "journal";
+        };
+    };
+
+    systemd.timers.lexi-rebuild = {
+        description = "Rebuild on boot";
+        enable      = true;
+        wantedBy    = [ "timers.target" ];
+
+        timerConfig = {
+            OnBootSec = "3min";                  # delay a bit after each reboot
+            Unit      = "lexi-rebuild.service";  # fires the above service
+        };
+    };
+}

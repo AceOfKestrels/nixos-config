@@ -1,14 +1,14 @@
 { config, pkgs, ... }:
 
 {
-    imports = [
-        ../../local/git.local.nix
-    ];
-
     programs.git = {
         enable = true;
 
         config = {
+            user = {
+                name = "CHANGE_ME";
+                email = "changeme@example.com";
+            };
             core.editor = "nano";
             alias = { 
                 pfusch = "push --force";

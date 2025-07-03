@@ -22,8 +22,6 @@
         ../../modules/development/webdev.nix
         ../../modules/development/wireguard.nix
 
-        ../overrides/git-nvim.nix
-
         ./core/locale.nix
         ./core/pipewire.nix
     ];
@@ -33,5 +31,13 @@
 
     environment.variables = {
 	    GIT_BROWSER = "firefox-devedition";
+    };
+    
+    programs.git.config = {
+        user = {
+            name = lib.mkForce "AceOfKestrels";
+            email = lib.mkForce "aceofkestrels@gmail.com";
+        };
+        core.editor = lib.mkForce "nvim";
     };
 }

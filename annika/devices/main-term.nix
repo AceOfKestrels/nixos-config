@@ -28,7 +28,7 @@
         ../../modules/development/dotnet.nix
         ../../modules/development/python.nix
         ../../modules/development/webdev.nix
-        ../../modules/development/terraform.nix
+        ../../modules/development/kubernetes.nix
 
         # Setup Gaming Stuff
         ../../modules/gaming/minecraft.nix

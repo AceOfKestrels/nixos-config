@@ -12,6 +12,8 @@
 
         ../../modules/gaming/minecraft.nix
         ../../modules/gaming/steam.nix
+
+        ../../modules/development/kubernetes.nix
     ];
 
     environment.systemPackages = with pkgs; [

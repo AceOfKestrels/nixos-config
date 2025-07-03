@@ -1,6 +1,17 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
+    nixpkgs.config.allowUnfree = true;
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+    networking.networkmanager.enable = true;
+    services.printing.enable = true;
+
+    services.xserver.enable = true;
+
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+
     imports = [
         ../../modules/desktop/kde-plasma.nix
 
@@ -22,17 +33,5 @@
 
     environment.variables = {
 	    GIT_BROWSER = "firefox-devedition";
-        SEARCH_BROWSER = "firefox-devedition";
-        SEARCH_BROWSER_ARGS = "--searchg";
     };
-
-    nixpkgs.config.allowUnfree = true;
-    networking.networkmanager.enable = true;
-
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-
-    services.xserver.enable = true;
-
-    services.printing.enable = true;
 }

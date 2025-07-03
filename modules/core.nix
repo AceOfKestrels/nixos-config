@@ -28,4 +28,10 @@
 
         dig # to have dns tools like nslookup
     ];
+
+    environment.variables.NIXOS_CONFIG_PATH = "/etc/nixos/nixos-config";
+
+    environment.shellAliases = {
+        edit-config = "code $NIXOS_CONFIG_PATH";
+    };
 }

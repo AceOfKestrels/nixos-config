@@ -4,14 +4,13 @@
     programs.git.enable = true;
 
     environment.variables = {
-        NIXOS_CONFIG_DIR = "/etc/nixos/nixos-configs";
         NIXOS_CONFIG_REMOTE_BRANCH = "lexi";
         NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-25.05";
     };
 
     programs.bash.shellInit = ''
         update() {
-            cd "$NIXOS_CONFIG_DIR"
+            cd "$NIXOS_CONFIG_PATH"
             git fetch --prune
             git reset --hard "origin/$NIXOS_CONFIG_REMOTE_BRANCH"
             sudo nix-channel --add "$NIXOS_CONFIG_CHANNEL" nixos 

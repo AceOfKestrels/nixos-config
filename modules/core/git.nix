@@ -16,6 +16,7 @@
             init.defaultBranch = "main";
             credential.helper = "manager";
             credential.credentialStore = "secretservice";
+            safe.directory = "/etc/nixos/nixos-config";
         };
     };
 

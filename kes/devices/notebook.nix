@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
     boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -17,4 +17,6 @@
 
     environment.systemPackages = with pkgs; [
     ];
+    
+    environment.variables.NIXOS_CONFIG_PATH = lib.mkForce "$HOME/nixos-config";
 }

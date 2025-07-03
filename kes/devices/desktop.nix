@@ -3,6 +3,14 @@
 {
     boot.kernelPackages = pkgs.linuxPackages_zen;
 
+    networking.hostName = "nixos";
+
+    users.users.kes = {
+        isNormalUser = true;
+        description = "Kessandra";
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
+    };
+
     security.sudo.wheelNeedsPassword = false;
     
     imports = [

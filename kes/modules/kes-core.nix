@@ -12,6 +12,9 @@
         ../../modules/development/wireguard.nix
 
         ../overrides/git-nvim.nix
+
+        ./core/locale.nix
+        ./core/pipewire.nix
     ];
 
     environment.systemPackages = with pkgs; [
@@ -22,4 +25,14 @@
         SEARCH_BROWSER = "firefox-devedition";
         SEARCH_BROWSER_ARGS = "--searchg";
     };
+
+    nixpkgs.config.allowUnfree = true;
+    networking.networkmanager.enable = true;
+
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+
+    services.xserver.enable = true;
+
+    services.printing.enable = true;
 }

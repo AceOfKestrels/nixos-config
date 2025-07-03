@@ -2,6 +2,14 @@
 
 {
     boot.kernelPackages = pkgs.linuxPackages_zen;
+
+    networking.hostName = "nixos";
+
+    users.users.kes = {
+        isNormalUser = true;
+        description = "Kessandra";
+        extraGroups = [ "networkmanager" "wheel" ];
+    };
     
     imports = [
         ../modules/kes-core.nix

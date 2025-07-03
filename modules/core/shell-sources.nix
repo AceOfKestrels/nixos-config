@@ -1,20 +1,31 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 let
+    # Base variables
+    rawPath = "$HOME/shell-sources";
+    remoteUrl = "https://github.com/AceOfKestrels/shell-sources.git";
+
+    # Variables for autoupdate
+    unitPath = lib.replaceStrings [ "$HOME" ] [ "%h" ] rawPath; # systemd services do not expand $HOME, but can use $% instead
+    autoupdate-script = pkgs.writeScript "autoupdate-shell-sources.sh" (builtins.readFile ../../scripts/shell/autoupdate-shell-sources.sh);
+
+    # Util script
     shell-sources-script = {
         text = builtins.readFile ../../scripts/shell/shell-sources.sh;
         mode = "0755";
     };
 in
 {
+    programs.git.enable = true;
+
+    # Source shell scripts and update utils in shell init
     environment = {
         etc."profile.d/shell-sources.sh" = shell-sources-script;
 
         variables = {
-            SHELL_SOURCES_DIR = "$HOME/shell-sources";
+            SHELL_SOURCES_DIR = rawPath;
+            SHELL_SOURCES_REMOTE = remoteUrl;
             SHELL_SOURCES_SOURCE_ALL_FILE = "source-all.sh";
-            SHELL_SOURCES_REMOTE = "https://github.com/AceOfKestrels/shell-sources.git";
-            SHELL_SOURCES_REMOTE_BRANCH = "origin/main";
         };
 
         shellInit = ''
@@ -22,5 +33,35 @@ in
         '';
     };
 
-    programs.git.enable = true;
+    # Autoupdate service
+    systemd.user.services.shell-sources-autoupdate = {
+        description = "Update shell sources on boot";
+
+        path = [ pkgs.git pkgs.bash ];
+
+        serviceConfig = {
+            Type = "oneshot";
+            RemainAfterExit = false;
+            Environment = [ 
+                "SHELL_SOURCES_DIR=${unitPath}"
+                "SHELL_SOURCES_REMOTE=${remoteUrl}"
+            ];
+            ExecStart = autoupdate-script;
+
+            StandardOutput  = "journal";
+            StandardError   = "journal";
+        };
+    };
+
+    # Timer for autoupdate service to run after every boot
+    systemd.user.timers.shell-sources-autoupdate = {
+        description = "Update shell sources on boot";
+        enable      = true;
+        wantedBy    = [ "timers.target" ];
+
+        timerConfig = {
+            OnBootSec = "1min"; # wait for network
+            Unit      = "shell-sources-autoupdate.service";
+        };
+    };
 }

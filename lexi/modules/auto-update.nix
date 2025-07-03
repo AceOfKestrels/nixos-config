@@ -34,7 +34,7 @@
 
         serviceConfig = {
             Type = "oneshot";
-            RemainAfterExit = true;
+            RemainAfterExit = false;
             StandardOutput  = "journal";
             StandardError   = "journal";
         };
@@ -42,7 +42,7 @@
 
     systemd.user.timers.lexi-pull-config = {
         description = "Pull configs on boot";
-        enable      = false;
+        enable      = true;
         wantedBy    = [ "timers.target" ];
 
         timerConfig = {

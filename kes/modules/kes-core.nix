@@ -30,7 +30,6 @@
     ];
 
     environment.variables = {
-	    GIT_BROWSER = "firefox-devedition";
     };
     
     programs.git.config = {

@@ -7,10 +7,6 @@ let
     };
 in
 {
-    imports = [
-        ../../local/wireguard.local.nix
-    ];
-
     environment.systemPackages = [ pkgs.wireguard-tools ];
 
     environment = {
@@ -19,5 +15,7 @@ in
         shellInit = ''
             . /etc/profile.d/wireguard-shortcuts.sh
         '';
+
+        variables.WIREGUARD_CONFS_DIR = "$HOME/Nextcloud/Secrets/Wireguard";
     };
 }

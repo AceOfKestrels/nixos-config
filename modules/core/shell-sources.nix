@@ -26,6 +26,8 @@ in
             SHELL_SOURCES_DIR = rawPath;
             SHELL_SOURCES_REMOTE = remoteUrl;
             SHELL_SOURCES_SOURCE_ALL_FILE = "source-all.sh";
+
+	        GIT_BROWSER = "firefox-devedition"; # Used in one of the commands
         };
 
         shellInit = ''

@@ -3,9 +3,8 @@
 {
     # Import core modules
     imports = [
-        ../local/core.local.nix
-
         ./core/git.nix # Git
+        ./core/nvim.nix # Neovim
         ./core/office.nix # OnlyOffice, Image Editors, Fonts
         ./core/vscode.nix # VS Code / VSCodium
         ./core/zsh.nix # ZSH

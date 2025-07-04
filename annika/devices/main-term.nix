@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     imports = [
@@ -92,6 +92,11 @@
         isNormalUser = true;
         description = "Annika Leonie Keggenhoff";
         extraGroups = [ "networkmanager" "wheel" "docker" "dialout" ];
+    };
+
+    environment.variables = {
+        # Change to the actual location where you cloned the repository
+        KES_NIX_CONFIGS_DIR = lib.mkForce "/etc/nixos/nixos-config";
     };
 
     environment.systemPackages = with pkgs; [

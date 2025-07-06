@@ -103,5 +103,6 @@
         teamspeak3
         remmina
         teamviewer
+        drawio
     ];
 }

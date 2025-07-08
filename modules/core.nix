@@ -21,6 +21,7 @@
         localsend
 
         nix-search-cli # Search Nix packages via CLI
+        nixfmt-rfc-style # Formatter for nix files
 
         vesktop # Discord
         signal-desktop-bin # Signal messenger

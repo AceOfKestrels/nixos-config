@@ -22,7 +22,10 @@
     systemd.user.services.lexi-pull-config = {
         description = "Pull config from remote";
 
-        path = [ pkgs.git pkgs.bash ];
+        path = [
+            pkgs.git
+            pkgs.bash
+        ];
 
         script = builtins.readFile ../scripts/pull-config.sh;
 
@@ -34,26 +37,31 @@
         serviceConfig = {
             Type = "oneshot";
             RemainAfterExit = false;
-            StandardOutput  = "journal";
-            StandardError   = "journal";
+            StandardOutput = "journal";
+            StandardError = "journal";
         };
     };
 
     systemd.user.timers.lexi-pull-config = {
         description = "Pull configs on boot";
-        enable      = true;
-        wantedBy    = [ "timers.target" ];
+        enable = true;
+        wantedBy = [ "timers.target" ];
 
         timerConfig = {
-            OnBootSec = "2min";                      # delay a bit after each reboot
-            Unit      = "lexi-pull-config.service";  # fires the above service
+            OnBootSec = "2min"; # delay a bit after each reboot
+            Unit = "lexi-pull-config.service"; # fires the above service
         };
     };
 
     systemd.services.lexi-rebuild = {
         description = "Rebuild system";
 
-        path = [ pkgs.bash pkgs.git pkgs.nixos-rebuild pkgs.nix ];
+        path = [
+            pkgs.bash
+            pkgs.git
+            pkgs.nixos-rebuild
+            pkgs.nix
+        ];
 
         script = builtins.readFile ../scripts/update-system.sh;
 
@@ -67,19 +75,19 @@
         serviceConfig = {
             Type = "oneshot";
             RemainAfterExit = false;
-            StandardOutput  = "journal";
-            StandardError   = "journal";
+            StandardOutput = "journal";
+            StandardError = "journal";
         };
     };
 
     systemd.timers.lexi-rebuild = {
         description = "Rebuild on boot";
-        enable      = true;
-        wantedBy    = [ "timers.target" ];
+        enable = true;
+        wantedBy = [ "timers.target" ];
 
         timerConfig = {
-            OnBootSec = "3min";                  # delay a bit after each reboot
-            Unit      = "lexi-rebuild.service";  # fires the above service
+            OnBootSec = "3min"; # delay a bit after each reboot
+            Unit = "lexi-rebuild.service"; # fires the above service
         };
     };
 }

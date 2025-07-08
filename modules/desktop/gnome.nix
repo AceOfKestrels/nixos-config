@@ -4,27 +4,28 @@
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 
-
     # Enable GNOME
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
     services.displayManager.defaultSession = "gnome-xorg";
 
-
     # Setup Gnome Keyring
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.gdm.enableGnomeKeyring = true;
 
-    environment.gnome.excludePackages = (with pkgs; [
-        atomix # puzzle game
-        cheese # webcam tool
-        epiphany # web browser
-        geary # email reader
-        gnome-tour
-        hitori # sudoku game
-        iagno # go game
-        tali # poker game
-    ]);
+    environment.gnome.excludePackages = (
+        with pkgs;
+        [
+            atomix # puzzle game
+            cheese # webcam tool
+            epiphany # web browser
+            geary # email reader
+            gnome-tour
+            hitori # sudoku game
+            iagno # go game
+            tali # poker game
+        ]
+    );
 
     environment.systemPackages = with pkgs; [
         # Gnome Extensions

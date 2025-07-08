@@ -96,7 +96,10 @@
     users.users.alexandra = {
         isNormalUser = true;
         description = "Alexandra";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [
+            "networkmanager"
+            "wheel"
+        ];
     };
 
     # Allow unfree packages

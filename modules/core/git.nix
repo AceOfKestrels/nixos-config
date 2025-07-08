@@ -10,7 +10,7 @@
                 email = "changeme@example.com";
             };
             core.editor = "nano";
-            alias = { 
+            alias = {
                 pfusch = "push --force";
             };
             init.defaultBranch = "main";

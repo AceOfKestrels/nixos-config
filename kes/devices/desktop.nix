@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+    lib,
+    config,
+    pkgs,
+    ...
+}:
 
 {
     boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -8,14 +13,18 @@
     users.users.kes = {
         isNormalUser = true;
         description = "Kessandra";
-        extraGroups = [ "networkmanager" "wheel" "docker" ];
+        extraGroups = [
+            "networkmanager"
+            "wheel"
+            "docker"
+        ];
     };
 
     security.sudo.wheelNeedsPassword = false;
-    
+
     imports = [
         ../modules/kes-core.nix
-        
+
         ../modules/amdgpu.nix
 
         ../../modules/gaming/minecraft.nix

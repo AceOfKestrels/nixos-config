@@ -16,6 +16,7 @@
         extraGroups = [
             "networkmanager"
             "wheel"
+            "bluetooth"
         ];
     };
 
@@ -23,8 +24,5 @@
         ../modules/kes-core.nix
     ];
 
-    environment.systemPackages = with pkgs; [
-    ];
-
-    environment.variables.NIXOS_CONFIG_PATH = lib.mkForce "$HOME/nixos-config";
+    environment.systemPackages = with pkgs; [ ];
 }

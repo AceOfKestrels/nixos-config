@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+    lib,
+    config,
+    pkgs,
+    ...
+}:
 
 let
     # Base variables
@@ -7,7 +12,9 @@ let
 
     # Variables for autoupdate
     unitPath = lib.replaceStrings [ "$HOME" ] [ "%h" ] rawPath; # systemd services do not expand $HOME, but can use $% instead
-    autoupdate-script = pkgs.writeScript "autoupdate-shell-sources.sh" (builtins.readFile ../../scripts/shell/autoupdate-shell-sources.sh);
+    autoupdate-script = pkgs.writeScript "autoupdate-shell-sources.sh" (
+        builtins.readFile ../../scripts/shell/autoupdate-shell-sources.sh
+    );
 
     # Util script
     shell-sources-script = {
@@ -27,7 +34,7 @@ in
             SHELL_SOURCES_REMOTE = remoteUrl;
             SHELL_SOURCES_SOURCE_ALL_FILE = "source-all.sh";
 
-	        GIT_BROWSER = "firefox-devedition"; # Used in one of the commands
+            GIT_BROWSER = "firefox-devedition"; # Used in one of the commands
         };
 
         shellInit = ''
@@ -39,31 +46,34 @@ in
     systemd.user.services.shell-sources-autoupdate = {
         description = "Update shell sources on boot";
 
-        path = [ pkgs.git pkgs.bash ];
+        path = [
+            pkgs.git
+            pkgs.bash
+        ];
 
         serviceConfig = {
             Type = "oneshot";
             RemainAfterExit = false;
-            Environment = [ 
+            Environment = [
                 "SHELL_SOURCES_DIR=${unitPath}"
                 "SHELL_SOURCES_REMOTE=${remoteUrl}"
             ];
             ExecStart = autoupdate-script;
 
-            StandardOutput  = "journal";
-            StandardError   = "journal";
+            StandardOutput = "journal";
+            StandardError = "journal";
         };
     };
 
     # Timer for autoupdate service to run after every boot
     systemd.user.timers.shell-sources-autoupdate = {
         description = "Update shell sources on boot";
-        enable      = true;
-        wantedBy    = [ "timers.target" ];
+        enable = true;
+        wantedBy = [ "timers.target" ];
 
         timerConfig = {
             OnBootSec = "1min"; # wait for network
-            Unit      = "shell-sources-autoupdate.service";
+            Unit = "shell-sources-autoupdate.service";
         };
     };
 }

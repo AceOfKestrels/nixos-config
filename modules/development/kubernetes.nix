@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-    imports = [ 
-        ../../overlays/freelens.overlay.nix 
+    imports = [
+        ../../overlays/freelens.overlay.nix
         ./terraform.nix
     ];
 

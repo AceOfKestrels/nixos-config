@@ -1,0 +1,12 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "nix.formatterPath": [
+        "nixfmt",
+        "--indent=4"
+    ],
+    "[nix]": {
+        "editor.tabSize": 4
+    }
+}

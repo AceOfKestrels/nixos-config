@@ -33,3 +33,5 @@ Follow the existing repository structure. If you create a new module that could 
 Every module must be independent, self-contained. Every module must be able to be imported and just work. Dependencies on other modules need to be added to the imports.
 
 Config files that aren't user specific (e.g. under `kes/`, `annika/`, etc.) should not use `lib.mkForce` if possible.
+
+Nix files are linted using `nixfmt` with indentation set to 4 spaces.

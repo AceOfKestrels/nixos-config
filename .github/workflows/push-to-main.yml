@@ -1,36 +1,39 @@
-# .github/workflows/push.yml
+# .github/workflows/push-to-main.yml
 name: "Validate Nix Files"
 
 on:
   push:
-    branches-ignore:
+    branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  lint:
-    name: Lint (optional)
+  format:
+    name: Format
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          ref: main
+          fetch-depth: 0        # needed to detect changes against history
+          persist-credentials: true
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
-      - name: Run nixfmt --check
+      - name: Run nixfmt
         run: |
           set -euo pipefail
 
           failures=0
 
           for cfg in $(git ls-files '*.nix'); do
-            if nix run nixpkgs#nixfmt-rfc-style -- --check --indent=4 $cfg >/dev/null 2>/dev/null; then
+            if nix run nixpkgs#nixfmt-rfc-style -- --indent=4 $cfg >/dev/null 2>/dev/null; then
               echo "  ✓ $cfg"
             else
               echo "  ✗ $cfg"
@@ -39,14 +42,31 @@ jobs:
           done
 
           if [ "$failures" -ne 0 ]; then
-            echo -e "\n❌ $failures files failed linting."
+            echo -e "\n❌ Formatting failed for $failures files."
             exit 1
           else
-            echo -e "\n✅ All files passed linting!"
+            echo -e "\n✅ All files formatted successfully!"
           fi
+
+      - name: Commit formatting changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "✅ No formatting changes"
+            exit 0
+          fi
+          git commit -m "chore: apply formatting"
+
+      - name: Push formatting commit (safe!)
+        run: |
+          git push --force-with-lease origin main \
+            || { echo "⚠️ Detected new commits on main – aborting push."; exit 0; }
 
   parse:
     name: Parse
+    needs: [ format ]
     runs-on: ubuntu-latest
 
     steps:

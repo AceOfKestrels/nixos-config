@@ -1,4 +1,4 @@
-# .github/workflows/lint.yml
+# .github/workflows/push.yml
 name: "Validate Nix Files"
 
 on:
@@ -75,10 +75,9 @@ jobs:
             echo -e "\n✅ All files parsed successfully!"
           fi
 
-
   build:
     name: Build
-    needs: [ lint, parse ]
+    needs: [ parse ]
     runs-on: ubuntu-latest
 
     steps:

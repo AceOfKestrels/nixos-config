@@ -2,8 +2,7 @@
 
 {
     # Import core modules
-    imports = [
-        ./core/git.nix # Git
+    imports = [./core/git.nix # Git
         ./core/nvim.nix # Neovim
         ./core/office.nix # OnlyOffice, Image Editors, Fonts
         ./core/vscode.nix # VS Code / VSCodium

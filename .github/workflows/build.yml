@@ -1,5 +1,5 @@
-# .github/workflows/push.yml
-name: "Validate Nix Files"
+# .github/workflows/build.yml
+name: "Parse and Build Nix Files"
 
 on:
   push:

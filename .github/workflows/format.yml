@@ -1,5 +1,5 @@
-# .github/workflows/push-to-main.yml
-name: "Validate Nix Files"
+# .github/workflows/format.yml
+name: "Format Nix Files"
 
 on:
   push:
@@ -12,6 +12,7 @@ permissions:
 jobs:
   format:
     name: Format
+    if: ${{ github.event.head_commit.author.email != 'github-actions@github.com' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          persist-credentials: true
+          token: ${{ secrets.WORKFLOW_PAT }}
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31
@@ -59,8 +60,7 @@ jobs:
           fi
           git commit -m "chore: apply formatting"
 
-      - name: Push formatting commit (safe!)
+      - name: Push formatting commit
         run: |
           git push --force-with-lease origin main \
             || { echo "⚠️ Detected new commits on main – aborting push."; exit 0; }
-            

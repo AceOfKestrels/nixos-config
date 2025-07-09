@@ -3,6 +3,9 @@ name: "Lint Nix Files"
 
 on:
   push:
+    paths:
+      - '**/*.nix'
+      - '.github/workflows/**'
 
 jobs:
   lint:

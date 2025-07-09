@@ -1,0 +1,40 @@
+# .github/workflows/lint-sh.yml
+name: Lint Shell Scripts
+
+on:
+  push:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Install ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y shellcheck
+
+      - name: Find and lint all shell scripts
+        run: |
+          set -euo pipefail
+
+          failures=0
+
+          for script in $(git ls-files '*.sh'); do
+            if shellcheck "$script"; then
+              echo "  ✓ $script"
+            else
+              echo "  ✗ $script"
+              failures=$((failures+1))
+            fi
+          done
+
+          if [ "$failures" -ne 0 ]; then
+            echo -e "\n❌ $failures files failed linting."
+            exit 1
+          else
+            echo -e "\n✅ All files passed linting!"
+          fi

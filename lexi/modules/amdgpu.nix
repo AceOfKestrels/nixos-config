@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     # Not strictly necessary, since it's installed implicitly by setting the video drivers

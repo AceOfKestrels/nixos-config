@@ -1,7 +1,5 @@
 {
     lib,
-    config,
-    pkgs,
     ...
 }:
 
@@ -33,12 +31,6 @@
         ./core/locale.nix
         ./core/pipewire.nix
     ];
-
-    environment.systemPackages = with pkgs; [
-    ];
-
-    environment.variables = {
-    };
 
     programs.git.config = {
         user = {

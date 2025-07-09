@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
     freelensAppImage = pkgs.fetchurl {
@@ -15,7 +15,7 @@ in
     nixpkgs.overlays = [
         (self: super: {
 
-            freelens = super.stdenv.mkDerivation rec {
+            freelens = super.stdenv.mkDerivation {
                 pname = "freelens";
                 version = "1.4.0";
 

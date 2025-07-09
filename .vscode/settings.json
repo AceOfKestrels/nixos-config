@@ -2,11 +2,22 @@
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
     "editor.detectIndentation": false,
-    "nix.formatterPath": [
-        "nixfmt",
-        "--indent=4"
-    ],
     "[nix]": {
         "editor.tabSize": 4
-    }
+    },
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
+    "nix.serverSettings": {
+        "nixd": {
+            "formatting": {
+                "command": [
+                    "nixfmt",
+                    "--indent=4"
+                ]
+            }
+        }
+    },
+    "nix.hiddenLanguageServerErrors": [
+        "textDocument/documentSymbol",
+    ]
 }

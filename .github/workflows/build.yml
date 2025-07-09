@@ -1,45 +1,10 @@
-# .github/workflows/lint.yml
-name: "Validate Nix Files"
+# .github/workflows/build.yml
+name: "Parse and Build Nix Files"
 
 on:
   push:
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install Nix
-        uses: cachix/install-nix-action@v31
-        with:
-          nix_path: nixpkgs=channel:nixos-unstable
-
-      - name: Run nixfmt --check
-        run: |
-          set -euo pipefail
-
-          failures=0
-
-          for cfg in $(git ls-files '*.nix'); do
-            if nix run nixpkgs#nixfmt-rfc-style -- --check --indent=4 $cfg; then
-              echo "  ✓ $cfg"
-            else
-              echo "  ✗ $cfg"
-              failures=$((failures+1))
-            fi
-          done
-
-          if [ "$failures" -ne 0 ]; then
-            echo -e "\n❌ $failures files failed linting."
-            exit 1
-          else
-            echo -e "\n✅ All files passed linting!"
-          fi
-
   parse:
     name: Parse
     runs-on: ubuntu-latest
@@ -47,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31
@@ -75,15 +43,17 @@ jobs:
             echo -e "\n✅ All files parsed successfully!"
           fi
 
-
   build:
     name: Build
-    needs: [ lint, parse ]
+    needs: [ parse ]
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31

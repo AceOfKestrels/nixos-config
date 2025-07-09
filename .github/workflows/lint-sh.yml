@@ -5,8 +5,8 @@ on:
   push:
 
 jobs:
-  lint:
-    name: Lint
+  lint-bash:
+    name: Lint-Bash
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -37,4 +37,39 @@ jobs:
             exit 1
           else
             echo -e "\n✅ All files passed linting!"
+          fi
+
+  lint-zsh:
+    name: Lint-Zsh
+    runs-on: ubuntu-latest
+    needs: lint-bash
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Ensure Zsh is available
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y zsh
+
+      - name: Find and syntax‐check all shell scripts with zsh
+        run: |
+          set -euo pipefail
+
+          failures=0
+
+          for script in $(git ls-files '*.sh'); do
+            if zsh -n "$script"; then
+              echo "  ✓ $script"
+            else
+              echo "  ✗ $script"
+              failures=$((failures+1))
+            fi
+          done
+
+          if [ "$failures" -ne 0 ]; then
+            echo -e "\n❌ $failures files failed zsh syntax check."
+            exit 1
+          else
+            echo -e "\n✅ All files passed zsh syntax check!"
           fi

@@ -1,11 +1,11 @@
-#! /bin/sh
+#! /bin/bash
 
 __hasNoLocalChanges() {
     if [[ -n $(git status --porcelain) ]]; then
         return 1
     fi
 
-    read behind ahead < <(git rev-list --left-right --count origin/HEAD...HEAD)
+    read -r behind ahead < <(git rev-list --left-right --count origin/HEAD...HEAD)
 
     if [ "$ahead" -gt 0 ]; then
         return 1
@@ -15,6 +15,7 @@ __hasNoLocalChanges() {
 }
 
 __sourceAll() {
+    # shellcheck disable=SC1090
     source "$SHELL_SOURCES_DIR/$SHELL_SOURCES_SOURCE_ALL_FILE"
 }
 
@@ -22,16 +23,16 @@ __shellSourcesCheckForUpdates() {
     # Disable job control output
     set +m
     {
-        cd "$SHELL_SOURCES_DIR"
+        cd "$SHELL_SOURCES_DIR" || return
         if ! git fetch --quiet; then
             return
         fi
-        read behind ahead < <(git rev-list --left-right --count origin/HEAD...HEAD)
+        read -r behind ahead < <(git rev-list --left-right --count origin/HEAD...HEAD)
         if [ "$behind" -gt 0 ]; then
             echo "shell-sources has been updated."
             echo "run \"update-shell-sources\" to pull the changes."
         fi
-        cd - > /dev/null
+        cd - > /dev/null || return
     } &
     disown
 
@@ -50,7 +51,7 @@ update-shell-sources() {
         fi
     fi
 
-    cd "$SHELL_SOURCES_DIR"
+    cd "$SHELL_SOURCES_DIR" || return 1
 
     if ! git fetch --quiet; then
         echo "failed to fetch changes from remote..."
@@ -74,7 +75,7 @@ update-shell-sources() {
     echo "updated successfully!"
 
     __sourceAll
-    cd - > /dev/null
+    cd - > /dev/null || return 1
 }
 
 if [ ! -d "$SHELL_SOURCES_DIR" ]; then

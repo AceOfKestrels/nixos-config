@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 set -e
 
@@ -16,7 +16,7 @@ if [ ! -d "$SHELL_SOURCES_DIR" ]; then
     fi
 fi
 
-cd $SHELL_SOURCES_DIR
+cd "$SHELL_SOURCES_DIR" || exit 0
 
 echo "shell sources directory found"
 # Any uncommitted changes
@@ -29,7 +29,7 @@ echo "fetching changes from remote..."
 git fetch --prune
 
 # Check commits behind/ahead
-read behind ahead < <(git rev-list --left-right --count origin/HEAD...HEAD)
+read -r behind ahead < <(git rev-list --left-right --count origin/HEAD...HEAD)
 
 echo "local repository is $ahead commits ahead, $behind commits behind"
 

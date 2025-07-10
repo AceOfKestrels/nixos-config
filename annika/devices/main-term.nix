@@ -1,5 +1,4 @@
 {
-    config,
     pkgs,
     lib,
     ...
@@ -102,6 +101,9 @@
             "docker"
             "dialout"
         ];
+    };
+    home-manager.users.annika = {
+        home.stateVersion = "25.05"; # DO NOT CHANGE
     };
 
     environment.variables = {

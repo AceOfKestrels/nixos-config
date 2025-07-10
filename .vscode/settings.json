@@ -18,6 +18,7 @@
         }
     },
     "nix.hiddenLanguageServerErrors": [
-        "textDocument/documentSymbol",
+        "textDocument/definition", // bug in nixd I think?
+        "textDocument/formatting", // nixd throws an error when trying to format invalid files
     ]
 }

@@ -30,6 +30,8 @@
 
         ./core/locale.nix
         ./core/pipewire.nix
+
+        ./kes-home.nix
     ];
 
     programs.git.config = {

@@ -21,6 +21,10 @@
         home.stateVersion = "25.05"; # DO NOT CHANGE
     };
 
+    environment.systemPackages = with pkgs; [
+        android-studio
+    ];
+
     imports = [
         ../modules/kes-core.nix
     ];

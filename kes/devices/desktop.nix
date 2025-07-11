@@ -37,5 +37,6 @@
     environment.systemPackages = with pkgs; [
         ytmdesktop
         discord
+        anydesk
     ];
 }

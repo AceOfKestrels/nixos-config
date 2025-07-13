@@ -1,4 +1,4 @@
-# .github/workflows/format.yml
+# .github/workflows/format-nix.yml
 name: "Format Nix Files"
 
 on:
@@ -22,8 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          token: ${{ secrets.WORKFLOW_PAT }}
+          token: ${{ secrets.WORKFLOW_PAT }} # Needed to push back
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31

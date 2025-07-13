@@ -20,7 +20,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y shellcheck
 
-      - name: Find and lint all shell scripts
+      - name: Run ShellCheck
         run: |
           set -euo pipefail
 
@@ -50,12 +50,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Ensure Zsh is available
+      - name: Install Zsh
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y zsh
 
-      - name: Find and syntax‐check all shell scripts with zsh
+      - name: Syntax check files with Zsh
         run: |
           set -euo pipefail
 

@@ -1,8 +1,10 @@
-# .github/workflows/lint.yml
+# .github/workflows/lint-nix.yml
 name: "Lint Nix Files"
 
 on:
   push:
+    branches-ignore: 
+      - main
     paths:
       - '**/*.nix'
       - '.github/workflows/**'
@@ -10,18 +12,11 @@ on:
 jobs:
   lint:
     name: Lint (optional)
-    # don't run on main unless it's the formatting commit
-    if: |
-      github.ref != 'refs/heads/main' ||
-      github.event.head_commit.author.email == 'github-actions@github.com'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: main
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31

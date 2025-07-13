@@ -4,8 +4,14 @@ let
     tabSize = 4;
 in
 {
-    programs.vscode.enable = true;
+    programs.vscode = {
+        enable = true;
+        mutableExtensionsDir = false;
+    };
+
     programs.vscode.profiles.default = {
+        enableUpdateCheck = false;
+        enableExtensionUpdateCheck = false;
         userSettings = {
             "editor.mouseWheelZoom" = true;
 
@@ -64,9 +70,9 @@ in
                 when = "editorHasCodeActionsProvider && textInputFocus && !editorReadonly";
             }
             {
-                "key" = "ctrl+r";
-                "command" = "editor.action.rename";
-                "when" = "editorHasRenameProvider && editorTextFocus && !editorReadonly";
+                key = "ctrl+r";
+                command = "editor.action.rename";
+                when = "editorHasRenameProvider && editorTextFocus && !editorReadonly";
             }
         ];
 

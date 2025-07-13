@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
     tabSize = 4;
@@ -68,6 +68,10 @@ in
                 "command" = "editor.action.rename";
                 "when" = "editorHasRenameProvider && editorTextFocus && !editorReadonly";
             }
+        ];
+
+        extensions = with pkgs.vscode-extensions; [
+            hediet.vscode-drawio
         ];
     };
 }

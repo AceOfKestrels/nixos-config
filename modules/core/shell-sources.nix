@@ -9,11 +9,8 @@ let
     rawPath = "$HOME/shell-sources";
     remoteUrl = "https://github.com/AceOfKestrels/shell-sources.git";
 
-    # Variables for autoupdate
-    unitPath = lib.replaceStrings [ "$HOME" ] [ "%h" ] rawPath; # systemd services do not expand $HOME, but can use $% instead
-    autoupdate-script = pkgs.writeScript "autoupdate-shell-sources.sh" (
-        builtins.readFile ../../scripts/shell/autoupdate-shell-sources.sh
-    );
+    # Variable for autoupdate
+    unitPath = lib.replaceStrings [ "$HOME" ] [ "%h" ] rawPath; # systemd services do not expand $HOME, but can use %h instead
 
     # Util script
     shell-sources-script = {
@@ -50,6 +47,8 @@ in
             pkgs.bash
         ];
 
+        script = builtins.readFile ../../scripts/shell/autoupdate-shell-sources.sh;
+
         serviceConfig = {
             Type = "oneshot";
             RemainAfterExit = false;
@@ -57,7 +56,6 @@ in
                 "SHELL_SOURCES_DIR=${unitPath}"
                 "SHELL_SOURCES_REMOTE=${remoteUrl}"
             ];
-            ExecStart = autoupdate-script;
 
             StandardOutput = "journal";
             StandardError = "journal";

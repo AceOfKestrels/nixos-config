@@ -14,11 +14,6 @@ __hasNoLocalChanges() {
     return 0
 }
 
-__sourceAll() {
-    # shellcheck disable=SC1090
-    source "$SHELL_SOURCES_DIR/$SHELL_SOURCES_SOURCE_ALL_FILE"
-}
-
 __shellSourcesCheckForUpdates() {
     # Disable job control output
     set +m
@@ -43,7 +38,7 @@ update-shell-sources() {
     if [ ! -d "$SHELL_SOURCES_DIR" ]; then
         echo "shell sources directory not found, attempting to clone..."
         if git clone "$SHELL_SOURCES_REMOTE" "$SHELL_SOURCES_DIR" ; then
-            __sourceAll
+            exec "$SHELL"
             return 0
         else
             echo "failed to clone repository at $SHELL_SOURCES_REMOTE to $SHELL_SOURCES_DIR"
@@ -74,8 +69,8 @@ update-shell-sources() {
 
     echo "updated successfully!"
 
-    __sourceAll
     cd - > /dev/null || return 1
+    exec "$SHELL"
 }
 
 if [ ! -d "$SHELL_SOURCES_DIR" ]; then
@@ -84,6 +79,7 @@ if [ ! -d "$SHELL_SOURCES_DIR" ]; then
     return 0
 fi
 
-__sourceAll
+# shellcheck disable=SC1090
+source "$SHELL_SOURCES_DIR/$SHELL_SOURCES_SOURCE_ALL_FILE"
 
 __shellSourcesCheckForUpdates

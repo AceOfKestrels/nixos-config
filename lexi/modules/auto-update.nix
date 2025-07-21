@@ -1,25 +1,28 @@
 { pkgs, ... }:
 
+let
+    pull-service = "lexi-pull-config";
+    rebuild-service = "lexi-rebuild";
+
+    config-channel = "https://nixos.org/channels/nixos-25.05";
+    remote-branch = "lexi";
+    config-directory = "/etc/nixos/nixos-configs";
+    system-config = "/etc/nixos/configuration.nix";
+    rebuild-action = "switch";
+    startup-delay = "1min";
+in
 {
     programs.git.enable = true;
 
-    environment.variables = {
-        NIXOS_CONFIG_REMOTE_BRANCH = "lexi";
-        NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-25.05";
+    environment.shellAliases = {
+        update = "systemctl --user start --no-block ${pull-service}; sudo systemctl start --no-block ${rebuild-service}";
+        update-cancel = "systemctl --user stop ${pull-service}; sudo systemctl stop ${rebuild-service}";
+        update-status = "systemctl --user status ${pull-service}; echo; sudo systemctl status ${rebuild-service}";
+        update-log = "journalctl -b --user-unit ${pull-service} --unit ${rebuild-service}";
+        update-follow = "journalctl -b -f --no-tail --user-unit ${pull-service} --unit ${rebuild-service}";
     };
 
-    programs.bash.shellInit = ''
-        update() {
-            cd "$NIXOS_CONFIG_PATH"
-            git fetch --prune
-            git reset --hard "origin/$NIXOS_CONFIG_REMOTE_BRANCH"
-            sudo nix-channel --add "$NIXOS_CONFIG_CHANNEL" nixos 
-            sudo nixos-rebuild switch --upgrade
-            cd -
-        }
-    '';
-
-    systemd.user.services.lexi-pull-config = {
+    systemd.user.services.${pull-service} = {
         description = "Pull config from remote";
 
         path = [
@@ -30,8 +33,8 @@
         script = builtins.readFile ../scripts/pull-config.sh;
 
         environment = {
-            NIXOS_CONFIG_DIR = "/etc/nixos/nixos-configs";
-            NIXOS_CONFIG_REMOTE_BRANCH = "lexi";
+            NIXOS_CONFIG_DIR = config-directory;
+            NIXOS_CONFIG_REMOTE_BRANCH = remote-branch;
         };
 
         serviceConfig = {
@@ -42,18 +45,18 @@
         };
     };
 
-    systemd.user.timers.lexi-pull-config = {
+    systemd.user.timers.${pull-service} = {
         description = "Pull configs on boot";
         enable = true;
         wantedBy = [ "timers.target" ];
 
         timerConfig = {
-            OnBootSec = "2min"; # delay a bit after each reboot
-            Unit = "lexi-pull-config.service"; # fires the above service
+            OnBootSec = startup-delay;
+            Unit = "${pull-service}.service";
         };
     };
 
-    systemd.services.lexi-rebuild = {
+    systemd.services.${rebuild-service} = {
         description = "Rebuild system";
 
         path = [
@@ -66,10 +69,9 @@
         script = builtins.readFile ../scripts/update-system.sh;
 
         environment = {
-            NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-25.05";
-            # NIXOS_CONFIG_CHANNEL = "https://nixos.org/channels/nixos-unstable";
-            NIXOS_SYSTEM_CONFIG = "/etc/nixos/configuration.nix";
-            NIXOS_REBUILD_ACTION = "switch"; # or boot
+            NIXOS_CONFIG_CHANNEL = config-channel;
+            NIXOS_SYSTEM_CONFIG = system-config;
+            NIXOS_REBUILD_ACTION = rebuild-action;
         };
 
         serviceConfig = {
@@ -80,14 +82,14 @@
         };
     };
 
-    systemd.timers.lexi-rebuild = {
+    systemd.timers.${rebuild-service} = {
         description = "Rebuild on boot";
         enable = true;
         wantedBy = [ "timers.target" ];
 
         timerConfig = {
-            OnBootSec = "3min"; # delay a bit after each reboot
-            Unit = "lexi-rebuild.service"; # fires the above service
+            OnBootSec = startup-delay;
+            Unit = "${rebuild-service}.service";
         };
     };
 }

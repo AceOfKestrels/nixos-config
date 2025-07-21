@@ -74,6 +74,11 @@ in
                 command = "editor.action.rename";
                 when = "editorHasRenameProvider && editorTextFocus && !editorReadonly";
             }
+            {
+
+                key = "ctrl+r";
+                command = "-workbench.action.openRecent";
+            }
         ];
 
         extensions = with pkgs.vscode-extensions; [

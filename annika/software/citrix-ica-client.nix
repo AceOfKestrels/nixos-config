@@ -7,6 +7,10 @@
     # Enable smartcard daemon
     services.pcscd.enable = true;
 
+    nixpkgs.config.permittedInsecurePackages = [
+        "libxml2-2.13.8"
+    ];
+
     # System packages
     environment.systemPackages = with pkgs; [
         citrix_workspace # Official ICA client

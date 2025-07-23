@@ -28,10 +28,10 @@
         ../shell/aliases.nix
 
         # Setup Dev Envierments
-        ../../modules/development/docker.nix
-        ../../modules/development/dotnet.nix
-        ../../modules/development/python.nix
-        ../../modules/development/webdev.nix
+        #../../modules/development/docker.nix
+        #../../modules/development/dotnet.nix
+        #../../modules/development/python.nix
+        #../../modules/development/webdev.nix
         ../../modules/development/kubernetes.nix
 
         # Setup Gaming Stuff

@@ -28,10 +28,10 @@
         ../shell/aliases.nix
 
         # Setup Dev Envierments
-        #../../modules/development/docker.nix
-        #../../modules/development/dotnet.nix
-        #../../modules/development/python.nix
-        #../../modules/development/webdev.nix
+        ../../modules/development/docker.nix
+        ../../modules/development/dotnet.nix
+        ../../modules/development/python.nix
+        ../../modules/development/webdev.nix
         ../../modules/development/kubernetes.nix
 
         # Setup Gaming Stuff
@@ -41,7 +41,7 @@
         # Load my Standert Software
         ../software/standert.nix
 
-        # installl ica client
+        # installl ica clie
         ../software/citrix-ica-client.nix
 
         # Load NAS Mount

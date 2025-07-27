@@ -22,8 +22,7 @@ in
     nixpkgs.overlays = [
         (self: super: {
             # Add packages to override like
-            jetbrains.webstorm = pinnedPkgs.jetbrains.webstorm;
-            jetbrains.rider = pinnedPkgs.jetbrains.rider;
+            foobar = pinnedPkgs.foobar;
         })
     ];
 

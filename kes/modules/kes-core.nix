@@ -18,6 +18,8 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    security.sudo.enable = true;
+
     imports = [
         ../../modules/desktop/kde-plasma.nix
 
@@ -41,4 +43,10 @@
         };
         core.editor = lib.mkForce "nvim";
     };
+
+    environment.shellAliases = {
+        edit-shell-sources = ''code "$SHELL_SOURCES_DIR"'';
+    };
+
+    programs.nh.enable = true;
 }

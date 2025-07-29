@@ -9,29 +9,28 @@
 
     nixpkgs.config.permittedInsecurePackages = [
         "libxml2-2.13.8"
+        "libsoup-2.74.3"
     ];
 
     # System packages
     environment.systemPackages = with pkgs; [
-        citrix_workspace # Official ICA client
-        opensc # Smartcard tools and libraries
-        ccid # USB smartcard reader driver
+        # Citrix + smartcard
+        citrix_workspace
+        opensc
+        ccid
 
-        # Audio/video packages for HDX
+        # Multimedia
         pulseaudio
         alsa-utils
         libvdpau
         vdpauinfo
-
-        # GStreamer stack for HDX multimedia optimization
         gst_all_1.gstreamer
         gst_all_1.gst-plugins-base
         gst_all_1.gst-plugins-good
         gst_all_1.gst-plugins-bad
         gst_all_1.gst-plugins-ugly
         gst_all_1.gst-libav
-
-        # MIME helper (for manual .ica association)
         xdg-utils
+        (pkgs.stdenv.cc.cc.lib)
     ];
 }

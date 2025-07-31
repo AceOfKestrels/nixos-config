@@ -116,5 +116,6 @@
         remmina
         teamviewer
         drawio
+        scarab
     ];
 }

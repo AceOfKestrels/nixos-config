@@ -1,12 +1,13 @@
 { ... }:
 
 let
-    home-manager-src = builtins.fetchTarball {
-        url = "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-    };
+    # no flake.lock -> no way to roll back home manager
+    # this is not great
+    hmFlake = builtins.getFlake "github:nix-community/home-manager/master";
+    hmModule = hmFlake.nixosModules.home-manager;
 in
 {
-    imports = [ (import "${home-manager-src}/nixos") ];
+    imports = [ hmModule ];
 
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;

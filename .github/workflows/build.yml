@@ -69,6 +69,10 @@ jobs:
           for cfg in $(git ls-files '*/devices/*.nix'); do
             echo -e "\n→ Building $cfg"
 
+            if [ "$cfg" = "flake.nix" ]; then
+              continue
+            fi
+
             if nix-instantiate --eval \
                 -E "(
                   import <nixpkgs/nixos> {

@@ -3,12 +3,19 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        plasma-manager = {
+            url = "github:nix-community/plasma-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.home-manager.follows = "home-manager";
+        };
     };
     outputs =
         inputs@{
             self,
             nixpkgs,
             home-manager,
+            plasma-manager,
+            ...
         }:
         let
             hostname = "nixos";
@@ -17,10 +24,12 @@
             nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 specialArgs = {
-                    inherit inputs hostname;
+                    inherit
+                        hostname
+                        inputs
+                        ;
                 };
                 modules = [
-                    home-manager.nixosModules.home-manager
                     ./desktop.nix
                     {
                         environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/kes/devices/desktop";

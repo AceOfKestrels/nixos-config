@@ -3,7 +3,7 @@
 }:
 
 let
-    # must be a separate module, as trying to access flakeInputs directly throws an error
+    # must be a separate module, as trying to access inputs directly throws an error
     hmFromFlake =
         { inputs, ... }:
         {

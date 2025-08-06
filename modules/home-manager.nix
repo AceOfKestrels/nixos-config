@@ -1,15 +1,20 @@
 {
-    lib,
-    flakeInputs ? { },
     ...
 }:
 
 let
+    # must be a separate module, as trying to access flakeInputs directly throws an error
+    hmFromFlake =
+        { inputs, ... }:
+        {
+            imports = [ inputs.home-manager.nixosModules.home-manager ];
+        };
+
     hmModule =
-        if lib.hasAttr "home-manager" flakeInputs then
-            flakeInputs.home-manager.nixosModules.home-manager
+        if (builtins.tryEval <home-manager/nixos>).success then
+            import <home-manager/nixos>
         else
-            import <home-manager/nixos>;
+            hmFromFlake;
 in
 {
     imports = [ hmModule ];

@@ -17,8 +17,7 @@
             nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 specialArgs = {
-                    flakeInputs = inputs;
-                    inherit hostname;
+                    inherit inputs hostname;
                 };
                 modules = [
                     home-manager.nixosModules.home-manager

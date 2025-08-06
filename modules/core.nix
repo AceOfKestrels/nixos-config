@@ -35,5 +35,6 @@
 
     environment.shellAliases = {
         edit-config = "code $NIXOS_CONFIG_PATH";
+        flake-rebuild = "sudo nixos-rebuild $@ --flake $FLAKE_PATH";
     };
 }

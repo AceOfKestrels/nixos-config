@@ -1,5 +1,5 @@
 {
-    description = "flake for annika-main-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/annika/devices/main-term#main-term' to apply.";
+    description = "flake for annika-main-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/nixos-config//annika/devices/main-term#main-term' to apply.";
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

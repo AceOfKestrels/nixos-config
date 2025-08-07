@@ -1,16 +1,17 @@
 { ... }:
 
 {
-    # collect garbage automatically, every week
-    nix.gc.automatic = true;
-    nix.gc.dates = "weekly";
-
     # deduplicate store files
     nix.settings.auto-optimise-store = true;
 
-    # keep store blobs for old generations up to 30 days
-    nix.gc.options = "--delete-older-than 30d";
-
     # only keep the last five generations (otherwise boot partition can fill up too much)
     boot.loader.systemd-boot.configurationLimit = 5;
+
+    # use nh clean for garbage collect
+    programs.nh.enable = true;
+    programs.nh.clean = {
+        enable = true;
+        extraArgs = "--keep 5 --keep-since 30d";
+        dates = "weekly";
+    };
 }

@@ -5,48 +5,51 @@
 }:
 
 {
+
     imports = [
+        # Import Hardware
+        ./hardware.nix
+
         # Import Nvidia Drivers
-        ../drivers/nvidia.nix
+        ../../drivers/nvidia.nix
 
         # Load Printer Drivers and Set Them up
-        ../drivers/printing.nix
+        ../../drivers/printing.nix
 
         # Load Audio Drivers and Set Them up
-        ../drivers/audio.nix
+        ../../drivers/audio.nix
 
         # Load Desktop Environment
-        ../../modules/desktop/gnome.nix
+        ../../../modules/desktop/gnome.nix
 
         # Load Core Configurations
-        ../../modules/core.nix
+        ../../../modules/core.nix
 
         # Setup Libvirt VM Manager
-        ../software/libvirt.nix
+        ../../software/libvirt.nix
 
         # Load Shell Aliases
-        ../shell/aliases.nix
+        ../../shell/aliases.nix
 
         # Setup Dev Envierments
-        ../../modules/development/docker.nix
-        ../../modules/development/dotnet.nix
-        ../../modules/development/python.nix
-        ../../modules/development/webdev.nix
-        ../../modules/development/kubernetes.nix
+        ../../../modules/development/docker.nix
+        ../../../modules/development/dotnet.nix
+        ../../../modules/development/python.nix
+        ../../../modules/development/webdev.nix
+        ../../../modules/development/kubernetes.nix
 
         # Setup Gaming Stuff
-        ../../modules/gaming/minecraft.nix
-        ../../modules/gaming/steam.nix
+        ../../../modules/gaming/minecraft.nix
+        ../../../modules/gaming/steam.nix
 
         # Load my Standert Software
-        ../software/standert.nix
+        ../../software/standert.nix
 
         # installl ica clie
-        ../software/citrix-ica-client.nix
+        ../../software/citrix-ica-client.nix
 
         # Load NAS Mount
-        ../drivers/nasdrive.nix
-
+        ../../drivers/nasdrive.nix
     ];
 
     # Allow unfree packages
@@ -111,11 +114,20 @@
         KES_NIX_CONFIGS_DIR = lib.mkForce "/etc/nixos/nixos-config";
     };
 
+    # This value determines the NixOS release from which the default
+    # settings for stateful data, like file locations and database versions
+    # on your system were taken. It‘s perfectly fine and recommended to leave
+    # this value at the release version of the first install of this system.
+    # Before changing this value read the documentation for this option
+    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+    system.stateVersion = "24.11"; # Did you read the comment?
+
     environment.systemPackages = with pkgs; [
         teamspeak3
         remmina
         teamviewer
         drawio
         scarab
+        nano
     ];
 }

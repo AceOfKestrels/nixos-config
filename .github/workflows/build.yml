@@ -70,9 +70,10 @@ jobs:
           for cfg in $(git ls-files '*/devices/*.nix'); do
             echo -e "\n→ Building $cfg"
 
-            if [ "$cfg" = "flake.nix" ]; then
-              continue
-            fi
+            case "$cfg" in
+              */flake.nix) continue;;
+              *hardware*) continue;;
+            esac
 
             if nix-instantiate --eval \
                 -E "(
@@ -120,7 +121,7 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      - name: Run nix-instantiate
+      - name: Run nix flake check
         env:
           NIX_CONFIG: "experimental-features = nix-command flakes"
         run: |
@@ -128,20 +129,17 @@ jobs:
 
           failures=0
 
-          for cfg in $(git ls-files '*/flake.nix'); do
+          for cfg in $(git ls-files '*devices/*/flake.nix'); do
             echo -e "\n→ Building $cfg"
 
             flakeDir=$(dirname "$cfg")
-            confNames=$(nix flake show --json ./$flakeDir | jq -r '.nixosConfigurations | keys[]')
 
-            for conf in "$confNames"; do
-              if nix flake check "./$flakeDir"; then
-                echo "  ✓ $cfg ($conf)"
-              else
-                echo "  ✗ $cfg ($conf)"
-                failures=$((failures+1))
-              fi
-            done
+            if nix flake check "./$flakeDir" >/dev/null; then
+              echo "  ✓ $cfg"
+            else
+              echo "  ✗ $cfg"
+              failures=$((failures+1))
+            fi
           done
 
           if [ "$failures" -ne 0 ]; then

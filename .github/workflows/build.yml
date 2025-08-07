@@ -137,7 +137,7 @@ jobs:
 
             flakeDir=$(dirname "$cfg")
 
-            if nix flake check "./$flakeDir" >/dev/null; then
+            if nix flake check "./$flakeDir" --quiet >/dev/null; then
               echo "  ✓ $cfg"
             else
               echo "  ✗ $cfg"

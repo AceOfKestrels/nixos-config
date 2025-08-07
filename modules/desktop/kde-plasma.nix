@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+    pkgs,
+    ...
+}:
 
 {
     # Enable GDM
@@ -11,5 +14,9 @@
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         plasma-browser-integration
+    ];
+
+    imports = [
+        ./plasma-manager.nix
     ];
 }

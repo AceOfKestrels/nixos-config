@@ -1,4 +1,5 @@
 {
+    lib,
     pkgs,
     ...
 }:
@@ -17,21 +18,21 @@
             "docker"
         ];
     };
-    home-manager.users.kes = {
-        home.stateVersion = "25.05"; # DO NOT CHANGE
-    };
+
+    home-manager.users.kes.home.stateVersion = lib.mkDefault "25.05";
+    system.stateVersion = lib.mkDefault "24.11";
 
     security.sudo.wheelNeedsPassword = false;
 
     imports = [
-        ../modules/kes-core.nix
+        ../../modules/kes-core.nix
 
-        ../modules/amdgpu.nix
+        ../../modules/amdgpu.nix
 
-        ../../modules/gaming/minecraft.nix
-        ../../modules/gaming/steam.nix
+        ../../../modules/gaming/minecraft.nix
+        ../../../modules/gaming/steam.nix
 
-        ../../modules/development/kubernetes.nix
+        ../../../modules/development/kubernetes.nix
     ];
 
     environment.systemPackages = with pkgs; [

@@ -24,6 +24,6 @@
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
-        "*.nix": "${basename}.home.nix"
+        "*.nix": "${basename}.*.nix"
     }
 }

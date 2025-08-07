@@ -77,15 +77,18 @@ jobs:
 
             if nix-instantiate --eval \
                 -E "(
+                  let
+                        wrapper = { lib, ... }: { 
+                            imports = [ ./${cfg} ]; 
+                            system.stateVersion = lib.mkForce \"23.05\";
+                            fileSystems.\"/\" = {
+                                device = lib.mkForce \"/\";
+                                fsType = lib.mkForce \"tmpfs\";
+                            };
+                        };
+                  in
                   import <nixpkgs/nixos> {
-                    configuration = {
-                      imports            = [ ./${cfg} ];
-                      system.stateVersion = \"23.05\";
-                      fileSystems.\"/\" = {
-                        device = \"/\";
-                        fsType = \"tmpfs\";
-                      };
-                    };
+                    configuration = { imports = [ wrapper ]; };
                   }
                 ).system" \
                 >/dev/null

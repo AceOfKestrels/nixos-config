@@ -55,6 +55,9 @@
 
         # Add Tor Broser
         ../../software/tor/tor.nix
+
+        # add Scarab
+        ../../software/scarab.nix
     ];
 
     # Allow unfree packages
@@ -122,7 +125,6 @@
         remmina
         teamviewer
         drawio
-        scarab
         nano
     ];
 }

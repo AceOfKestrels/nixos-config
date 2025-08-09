@@ -32,6 +32,7 @@
 
         ./core/locale.nix
         ./core/pipewire.nix
+        ./core/zsh.nix
 
         ./kes-home.nix
     ];

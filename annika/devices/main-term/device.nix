@@ -104,6 +104,7 @@
             "wheel"
             "docker"
             "dialout"
+            "libvirtd"
         ];
     };
 

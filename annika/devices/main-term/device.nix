@@ -1,12 +1,14 @@
 {
     pkgs,
     lib,
+    inputs,
     ...
 }:
 
 {
-
     imports = [
+        inputs.home-manager.nixosModules.home-manager
+
         # Import Hardware
         ./hardware.nix
 
@@ -50,26 +52,22 @@
 
         # Load NAS Mount
         ../../drivers/nasdrive.nix
+
+        # Add Tor Broser
+        ../../software/tor/tor.nix
     ];
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    # Setup Bootloader.
+    # Bootloader
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    # Define Hostname
+    # Hostname / locale / time
     networking.hostName = "main-term";
-
-    # Seting Time Zone
     time.timeZone = "Europe/Berlin";
-
-    # Seting internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
-
-    programs.nix-ld.enable = true;
-
     i18n.extraLocaleSettings = {
         LC_ADDRESS = "de_DE.UTF-8";
         LC_IDENTIFICATION = "de_DE.UTF-8";
@@ -82,19 +80,19 @@
         LC_TIME = "de_DE.UTF-8";
     };
 
-    # Configure keymap in X11
+    programs.nix-ld.enable = true;
+
+    # Keyboard
     services.xserver.xkb = {
         layout = "de";
         variant = "";
     };
-
-    # Configure console keymap
     console.keyMap = "de";
 
-    # Setup Networking
+    # Networking
     networking.networkmanager.enable = true;
 
-    # Define a user account. Don't forget to set a password with ‘passwd’.
+    # User
     users.users.annika = {
         isNormalUser = true;
         description = "Annika Leonie Keggenhoff";
@@ -105,21 +103,18 @@
             "dialout"
         ];
     };
+
     home-manager.users.annika = {
         home.stateVersion = "25.05"; # DO NOT CHANGE
+
+        # Add Tor Broser
+        imports = [ ../../software/tor/tor.home.nix ];
     };
 
     environment.variables = {
-        # Change to the actual location where you cloned the repository
         KES_NIX_CONFIGS_DIR = lib.mkForce "/etc/nixos/nixos-config";
     };
 
-    # This value determines the NixOS release from which the default
-    # settings for stateful data, like file locations and database versions
-    # on your system were taken. It‘s perfectly fine and recommended to leave
-    # this value at the release version of the first install of this system.
-    # Before changing this value read the documentation for this option
-    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "24.11"; # Did you read the comment?
 
     environment.systemPackages = with pkgs; [

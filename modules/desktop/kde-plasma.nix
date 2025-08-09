@@ -17,6 +17,6 @@
     ];
 
     imports = [
-        ./plasma-manager.nix
+        ../home/plasma.nix
     ];
 }

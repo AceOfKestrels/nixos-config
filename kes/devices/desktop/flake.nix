@@ -12,6 +12,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.home-manager.follows = "home-manager";
         };
+        catppuccin.url = "github:catppuccin/nix";
     };
     outputs =
         inputs@{
@@ -19,6 +20,7 @@
             nixpkgs,
             home-manager,
             plasma-manager,
+            catppuccin,
             ...
         }:
         let

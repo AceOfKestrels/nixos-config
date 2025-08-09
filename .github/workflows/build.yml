@@ -59,6 +59,7 @@ jobs:
           nix-channel --add https://nixos.org/channels/nixos-unstable nixos
           nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
           nix-channel --add https://github.com/nix-community/plasma-manager/archive/plasma-5.tar.gz plasma-manager
+          nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
           nix-channel --update
 
       - name: Run nix-instantiate

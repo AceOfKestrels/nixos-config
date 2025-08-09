@@ -1,14 +1,11 @@
 {
     pkgs,
     lib,
-    inputs,
     ...
 }:
 
 {
     imports = [
-        inputs.home-manager.nixosModules.home-manager
-
         # Import Hardware
         ./hardware.nix
 

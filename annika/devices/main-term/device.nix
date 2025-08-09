@@ -29,7 +29,7 @@
         ../../software/libvirt.nix
 
         # Load Shell Aliases
-        ../../shell/aliases.nix
+        ../../shell/shell.nix
 
         # Setup Dev Envierments
         ../../../modules/development/docker.nix

@@ -107,9 +107,6 @@
 
     home-manager.users.annika = {
         home.stateVersion = "25.05"; # DO NOT CHANGE
-
-        # Add Tor Broser
-        imports = [ ../../software/tor/tor.home.nix ];
     };
 
     environment.variables = {

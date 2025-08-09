@@ -8,6 +8,10 @@
         };
     };
 
+    home-manager.sharedModules = [
+        ./tor.home.nix
+    ];
+
     environment.systemPackages = [
         pkgs.tor-browser-bundle-bin
     ];

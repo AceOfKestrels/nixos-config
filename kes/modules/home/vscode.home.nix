@@ -51,7 +51,6 @@ in
                 "textDocument/definition" # bug in nixd I think?
                 "textDocument/formatting" # nixd throws an error when trying to format invalid files
             ];
-            "terminal.integrated.fontFamily" = "MesloLGS Nerd Font";
         };
 
         keybindings = [
@@ -86,9 +85,4 @@ in
             hediet.vscode-drawio
         ];
     };
-
-    fonts.fontconfig.enable = true;
-    home.packages = with pkgs.nerd-fonts; [
-        meslo-lg
-    ];
 }

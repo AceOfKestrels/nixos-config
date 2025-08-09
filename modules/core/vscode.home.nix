@@ -16,5 +16,14 @@
             ms-azuretools.vscode-docker
             ms-vsliveshare.vsliveshare
         ];
+
+        profiles.default.userSettings = {
+            "terminal.integrated.fontFamily" = "MesloLGS Nerd Font";
+        };
     };
+
+    fonts.fontconfig.enable = true;
+    home.packages = with pkgs.nerd-fonts; [
+        meslo-lg
+    ];
 }

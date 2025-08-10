@@ -20,14 +20,18 @@
     environment.gnome.excludePackages = (
         with pkgs;
         [
-            atomix # puzzle game
-            cheese # webcam tool
-            epiphany # web browser
-            geary # email reader
+            atomix
+            cheese
+            epiphany
+            geary
             gnome-tour
-            hitori # sudoku game
-            iagno # go game
-            tali # poker game
+            hitori
+            iagno
+            tali
+            gnome-calendar
+            gnome-maps
+            gnome-weather
+            gnome-contacts
         ]
     );
 }

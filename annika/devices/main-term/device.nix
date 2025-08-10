@@ -19,7 +19,7 @@
         ../../drivers/audio.nix
 
         # Load Desktop Environment
-        ../../../modules/desktop/gnome.nix
+        ../../desktop/gnome/gnome.nix
 
         # Load Core Configurations
         ../../../modules/core.nix

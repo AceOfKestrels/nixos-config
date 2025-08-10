@@ -3,6 +3,7 @@
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+        catppuccin.url = "github:catppuccin/nix";
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +14,7 @@
             self,
             nixpkgs,
             home-manager,
+            catppuccin,
             ...
         }:
         let

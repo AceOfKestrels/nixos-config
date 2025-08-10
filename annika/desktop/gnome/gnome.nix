@@ -5,13 +5,13 @@
         ../../../modules/desktop/gnome.nix
 
         # import Gnome extensions
-        ./extensions/extensions.gnome.nix
+        ./extensions.gnome.nix
 
         # import Gnome Themes
-        ./theme/theme.gnome.nix
+        ./theme.gnome.nix
 
         # Import Apps
-        ./apps/apps.gnome.nix
+        ./apps.gnome.nix
     ];
 
     home-manager.sharedModules = [

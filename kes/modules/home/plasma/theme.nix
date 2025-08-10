@@ -11,7 +11,7 @@ in
         workspace = {
             colorScheme = "Catppuccin.Mocha";
             lookAndFeel = null;
-            wallpaper = ./assets/wallpaper.png;
+            wallpaper = ./assets/wallpaper.avif;
         };
 
         configFile = {
@@ -24,7 +24,7 @@ in
         kscreenlocker.appearance = {
             alwaysShowClock = true;
             showMediaControls = false;
-            wallpaper = ./assets/wallpaper.png;
+            wallpaper = ./assets/wallpaper.avif;
         };
     };
 

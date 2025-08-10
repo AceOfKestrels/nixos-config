@@ -55,6 +55,9 @@
 
         # add Scarab
         ../../software/scarab.nix
+
+        # add catpichin
+        ../../../modules/home/catppuccin.nix
     ];
 
     # Allow unfree packages
@@ -105,8 +108,14 @@
         ];
     };
 
+    # Set catpuchin flavor globaly
+    catppuccin.flavor = lib.mkForce "macchiato";
+
     home-manager.users.annika = {
         home.stateVersion = "25.05"; # DO NOT CHANGE
+
+        # Set Catpuchin flavor for user
+        catppuccin.flavor = lib.mkForce "macchiato";
     };
 
     environment.variables = {

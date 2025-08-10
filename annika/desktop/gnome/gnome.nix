@@ -9,6 +9,9 @@
 
         # import Gnome Themes
         ./theme/theme.gnome.nix
+
+        # Import Apps
+        ./apps/apps.gnome.nix
     ];
 
     home-manager.sharedModules = [

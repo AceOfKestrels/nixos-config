@@ -3,6 +3,7 @@
 {
     dconf.settings = {
         "org/gnome/shell" = {
+
             favorite-apps = [
                 "google-chrome.desktop"
                 "org.keepassxc.KeePassXC.desktop"
@@ -16,6 +17,7 @@
                 "teamspeak.desktop"
                 "plex-desktop.desktop"
             ];
+
         };
     };
 }

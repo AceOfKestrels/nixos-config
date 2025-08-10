@@ -36,6 +36,10 @@ in
         shellInit = ''
             . /etc/profile.d/shell-sources.sh
         '';
+
+        systemPackages = with pkgs; [
+            jq
+        ];
     };
 
     # Autoupdate service

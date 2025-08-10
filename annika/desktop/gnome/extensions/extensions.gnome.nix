@@ -5,10 +5,10 @@
     ];
 
     # Gnome Extensions
-    environment.systemPackages = with pkgs; [
-        gnomeExtensions.dash-to-dock
-        gnomeExtensions.transparent-window-moving
-        gnomeExtensions.tray-icons-reloaded
-        gnomeExtensions.system-monitor
+    environment.systemPackages = with pkgs.gnomeExtensions; [
+        dash-to-dock
+        transparent-window-moving
+        tray-icons-reloaded
+        system-monitor
     ];
 }

@@ -6,6 +6,9 @@
 
         # import Gnome extensions
         ./extensions/extensions.gnome.nix
+
+        # import Gnome Themes
+        ./theme/theme.gnome.nix
     ];
 
     home-manager.sharedModules = [

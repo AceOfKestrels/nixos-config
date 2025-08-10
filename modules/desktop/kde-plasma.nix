@@ -4,8 +4,8 @@
 }:
 
 {
-    # Enable GDM
-    services.displayManager.gdm.enable = true;
+    # Enable SDDM
+    services.displayManager.sddm.enable = true;
 
     # Enable KDE Plasma 6
     services.desktopManager.plasma6.enable = true;

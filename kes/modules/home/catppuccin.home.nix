@@ -9,8 +9,10 @@
             workbenchMode = "default";
             extraBordersEnabled = true;
             colorOverrides = {
-                base = "#11111b";
-                crust = "#1e1e2e";
+                mocha = {
+                    base = "#11111b";
+                    crust = "#1e1e2e";
+                };
             };
         };
     };

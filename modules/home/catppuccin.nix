@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
     cnEnable =
@@ -11,19 +11,15 @@ let
     cnFromFlake =
         { inputs, ... }:
         {
-            home-manager.sharedModules = [
-                inputs.catppuccin.homeModules.catppuccin
-                cnEnable
-            ];
+            imports = [ inputs.catppuccin.nixosModules.catppuccin ];
+            home-manager.sharedModules = [ inputs.catppuccin.homeModules.catppuccin ];
         };
 
     cnFromChannel =
         { ... }:
         {
-            home-manager.sharedModules = [
-                <catppuccin/modules/home-manager>
-                cnEnable
-            ];
+            imports = [ <catppuccin/modules/nixos> ];
+            home-manager.sharedModules = [ <catppuccin/modules/home-manager> ];
         };
 
     cnModule =
@@ -32,6 +28,14 @@ in
 {
     imports = [
         cnModule
+        cnEnable
         ../home-manager.nix
+    ];
+
+    home-manager.sharedModules = [ cnEnable ];
+
+    environment.systemPackages = with pkgs; [
+        catppuccin-kde
+        catppuccin-gtk
     ];
 }

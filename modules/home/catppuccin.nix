@@ -20,6 +20,7 @@ let
         {
             imports = [ <catppuccin/modules/nixos> ];
             home-manager.sharedModules = [ <catppuccin/modules/home-manager> ];
+            catppuccin.tty.enable = false;
         };
 
     cnModule =

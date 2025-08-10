@@ -30,18 +30,37 @@ in
 
     programs.konsole = {
         enable = true;
-        defaultProfile = "${konsoleProfile}.profile";
+        defaultProfile = "${konsoleProfile}";
 
         customColorSchemes = {
-            "Catpuccin Frappe" = ./assets/catppuccin-frappe.colorscheme;
-            "Catpuccin Latte" = ./assets/catppuccin-latte.colorscheme;
-            "Catpuccin Macciato" = ./assets/catppuccin-macchiato.colorscheme;
-            "Catpuccin Mocha" = ./assets/catppuccin-mocha.colorscheme;
+            "Catppuccin Frappe" = ./assets/catppuccin-frappe.colorscheme;
+            "Catppuccin Latte" = ./assets/catppuccin-latte.colorscheme;
+            "Catppuccin Macciato" = ./assets/catppuccin-macchiato.colorscheme;
+            "Catppuccin Mocha" = ./assets/catppuccin-mocha.colorscheme;
         };
 
-        profiles.${konsoleProfile} = {
-            colorScheme = "Catpuccin Mocha";
-            font.name = "MesloLGS Nerd Font";
+        profiles.${konsoleProfile}.extraConfig = {
+            Appearance = {
+                ColorScheme = "Catppuccin Mocha";
+                Font = "MesloLGS Nerd Font,10";
+                BoldIntense = false;
+                UseFontLineCharacters = true;
+            };
+            "Cursor Options" = {
+                CursorShape = 1;
+            };
+            General = {
+                SemanticInputClick = true;
+            };
+            "Interaction Options" = {
+                MiddleClickPasteMode = 1;
+                OpenLinksByDirectClickEnabled = true;
+                UnderlineFilesEnabled = true;
+            };
+            Scrolling = {
+                HistoryMode = 1;
+                HistorySize = 10000;
+            };
         };
     };
 

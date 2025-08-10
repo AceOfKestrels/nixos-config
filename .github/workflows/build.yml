@@ -58,7 +58,8 @@ jobs:
         run: |
           nix-channel --add https://nixos.org/channels/nixos-unstable nixos
           nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-          nix-channel --add https://github.com/nix-community/plasma-manager/archive/plasma-5.tar.gz plasma-manager
+          nix-channel --add https://github.com/nix-community/plasma-manager/archive/trunk.tar.gz plasma-manager
+          nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
           nix-channel --update
 
       - name: Run nix-instantiate
@@ -68,12 +69,13 @@ jobs:
           failures=0
 
           for cfg in $(git ls-files '*/devices/*.nix'); do
-            echo -e "\n→ Building $cfg"
 
             case "$cfg" in
               */flake.nix) continue;;
               *hardware*) continue;;
             esac
+
+            echo -e "\n→ Building $cfg"
 
             if nix-instantiate --eval \
                 -E "(

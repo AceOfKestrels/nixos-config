@@ -16,7 +16,6 @@ in
             "editor.mouseWheelZoom" = true;
 
             "editor.wordWrap" = "on";
-            "workbench.colorTheme" = "Default Dark Modern";
             "editor.bracketPairColorization.enabled" = true;
             "editor.minimap.enabled" = true;
             "editor.minimap.renderCharacters" = true;

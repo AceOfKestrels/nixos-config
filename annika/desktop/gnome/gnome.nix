@@ -15,6 +15,8 @@
         ./gnome.home.nix
     ];
 
+    programs.dconf.enable = true;
+
     environment.gnome.excludePackages = (
         with pkgs;
         [

@@ -30,5 +30,8 @@ in
             #icon-theme  = "Papirus";
 
         };
+        "org/gnome/desktop/wm/preferences" = {
+            button-layout = "appmenu:minimize,maximize,close";
+        };
     };
 }

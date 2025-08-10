@@ -33,5 +33,9 @@ in
         "org/gnome/desktop/wm/preferences" = {
             button-layout = "appmenu:minimize,maximize,close";
         };
+        "org/gnome/mutter" = {
+            dynamic-workspaces = true;
+            workspaces-only-on-primary = true;
+        };
     };
 }

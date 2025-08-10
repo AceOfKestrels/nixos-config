@@ -1,7 +1,11 @@
 { pkgs, ... }:
 {
     imports = [
+        # Import Calculator
         ./calculator.apps.gnome.nix
+
+        # Import System Monitor
+        ./system-monitor.apps.gnome.nix
     ];
 
     home-manager.sharedModules = [

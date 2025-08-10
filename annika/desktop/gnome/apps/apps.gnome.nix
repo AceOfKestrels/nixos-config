@@ -6,6 +6,9 @@
 
         # Import System Monitor
         ./system-monitor.apps.gnome.nix
+
+        # Import Nautilus
+        ./nautilus.apps.gnome.nix
     ];
 
     home-manager.sharedModules = [

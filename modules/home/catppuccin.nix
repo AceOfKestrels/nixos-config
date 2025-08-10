@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 let
     cnEnable =
@@ -20,7 +20,7 @@ let
         {
             imports = [ <catppuccin/modules/nixos> ];
             home-manager.sharedModules = [ <catppuccin/modules/home-manager> ];
-            catppuccin.tty.enable = false;
+            catppuccin.tty.enable = false; # broken in channel build atm
         };
 
     cnModule =
@@ -34,9 +34,4 @@ in
     ];
 
     home-manager.sharedModules = [ cnEnable ];
-
-    environment.systemPackages = with pkgs; [
-        catppuccin-kde
-        catppuccin-gtk
-    ];
 }

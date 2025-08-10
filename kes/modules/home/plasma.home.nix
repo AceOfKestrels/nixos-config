@@ -1,4 +1,6 @@
 { ... }:
 {
-    imports = [ ./plasma/konsole.nix ];
+    imports = [
+        ./plasma/theme.nix
+    ];
 }

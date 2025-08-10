@@ -5,7 +5,6 @@
     ];
 
     environment.systemPackages = with pkgs; [
-        catppuccin
         catppuccin-cursors
     ];
 }

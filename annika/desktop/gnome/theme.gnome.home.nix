@@ -27,7 +27,7 @@ in
             enable-hot-corners = false;
             toolkit-accessibility = false;
 
-            #icon-theme  = "Papirus";
+            icon-theme = "Adwaita";
 
         };
         "org/gnome/desktop/wm/preferences" = {

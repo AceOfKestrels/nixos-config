@@ -7,6 +7,5 @@
     environment.systemPackages = with pkgs; [
         catppuccin
         catppuccin-cursors
-        magnetic-catppuccin-gtk
     ];
 }

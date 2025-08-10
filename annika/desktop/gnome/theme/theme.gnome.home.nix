@@ -1,29 +1,34 @@
 { pkgs, ... }:
-
 let
-    catppuccinGTK = pkgs.magnetic-catppuccin-gtk.override {
-        accent = [ "purple" ]; # list, even for one value
-        shade = "dark"; # "light" or "dark"
-        size = "compact"; # "standard" or "compact"
-        tweaks = [ "black" ]; # optional tweaks: black, macos, etc.
-    };
+    # pick your flavor + accent
+    cursorPkg = pkgs.catppuccin-cursors.macchiatoDark;
 in
 {
-    home.packages = [ catppuccinGTK ];
+    home.packages = [ cursorPkg ];
+
+    home.pointerCursor = {
+        package = pkgs.catppuccin-cursors.macchiatoDark;
+        name = "catppuccin-macchiato-dark-cursors";
+        size = 24;
+        gtk.enable = true;
+        x11.enable = true;
+    };
 
     # Look up the exact folder name after building and adjust here if needed
     dconf.settings = {
         "org/gnome/desktop/interface" = {
-            #gtk-theme = "Catppuccin-GTK-Dark"; # match actual folder name
+            gtk-theme = "Adwaita";
             accent-color = "purple";
             color-scheme = "prefer-dark";
+
+            cursor-theme = "catppuccin-macchiato-dark-cursors";
 
             enable-animations = true;
             enable-hot-corners = false;
             toolkit-accessibility = false;
 
             #icon-theme  = "Papirus";
-            #cursor-theme = "Adwaita";
+
         };
     };
 }

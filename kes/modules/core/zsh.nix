@@ -5,8 +5,8 @@ let
 in
 {
     programs.zsh.promptInit = ''
-        chpwd() {
-            emulate -L zsh
+        cd() {
+            builtin cd "$@" || return
             ls -A --group-directories-first
         }
 

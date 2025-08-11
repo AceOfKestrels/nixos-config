@@ -108,6 +108,7 @@
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # cpu_arch              # CPU architecture
+    tmux_session
     time                    # current time
     # =========================[ Line #2 ]=========================
     newline
@@ -1770,6 +1771,15 @@
   # typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_TIME_PREFIX='at '
+
+  function prompt_tmux_session() {
+    if [ -n "$TMUX" ]; then
+        p10k segment -t "tmux"
+    fi
+  }
+
+  typeset -g POWERLEVEL9K_TMUX_SESSION_FOREGROUND=6
+  typeset -g POWERLEVEL9K_TMUX_SESSION_BACKGROUND=0
 
   # Example of a user-defined prompt segment. Function prompt_example will be called on every
   # prompt if `example` prompt segment is added to POWERLEVEL9K_LEFT_PROMPT_ELEMENTS or

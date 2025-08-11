@@ -6,7 +6,7 @@
 {
     boot.kernelPackages = pkgs.linuxPackages_zen;
 
-    networking.hostName = "nixos";
+    networking.hostName = "kes-notebook";
 
     users.users.kes = {
         isNormalUser = true;

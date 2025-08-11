@@ -1,5 +1,5 @@
 {
-    description = "flake for kes-desktop. use 'sudo nixos-rebuild switch --flake /etc/nixos/kes/devices/desktop#nixos' to apply.";
+    description = "flake for kes-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/nixos-config/kes/devices/kes-term#kes-term' to apply.";
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -27,7 +27,7 @@
             ...
         }:
         let
-            hostname = "nixos";
+            hostname = "kes-term";
         in
         {
             nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -38,10 +38,10 @@
                         ;
                 };
                 modules = [
-                    ./desktop.nix
+                    ./device.nix
                     ./hardware-configuration.nix
                     {
-                        environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/kes/devices/desktop";
+                        environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/kes/devices/kes-term";
                         networking.hostName = nixpkgs.lib.mkForce hostname;
                         nix.settings.experimental-features = [
                             "nix-command"

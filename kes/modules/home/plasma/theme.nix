@@ -33,15 +33,12 @@ in
         defaultProfile = "${konsoleProfile}";
 
         customColorSchemes = {
-            "Catppuccin Frappe" = ./assets/catppuccin-frappe.colorscheme;
-            "Catppuccin Latte" = ./assets/catppuccin-latte.colorscheme;
-            "Catppuccin Macciato" = ./assets/catppuccin-macchiato.colorscheme;
-            "Catppuccin Mocha" = ./assets/catppuccin-mocha.colorscheme;
+            "Catppuccin" = ./assets/catppuccin-customized.colorscheme;
         };
 
         profiles.${konsoleProfile}.extraConfig = {
             Appearance = {
-                ColorScheme = "Catppuccin Mocha";
+                ColorScheme = "Catppuccin";
                 Font = "MesloLGS Nerd Font,10";
                 BoldIntense = false;
                 UseFontLineCharacters = true;

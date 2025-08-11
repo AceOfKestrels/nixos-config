@@ -35,13 +35,13 @@ Color=166,227,161
 Color=166,227,161
 
 [Color3]
-Color=249,226,175
+Color=250,179,135
 
 [Color3Faint]
-Color=249,226,175
+Color=250,179,135
 
 [Color3Intense]
-Color=249,226,175
+Color=250,179,135
 
 [Color4]
 Color=137,180,250
@@ -91,6 +91,6 @@ Color=205,214,244
 [General]
 Blur=false
 ColorRandomization=false
-Description=Catppuccin Mocha
+Description=Catppuccin (Customized)
 Opacity=1
 Wallpaper=

@@ -25,6 +25,8 @@ in
             "explorer.fileNesting.patterns" = {
                 "*.nix" = "$\{basename\}.home.nix";
             };
+            "terminal.integrated.cursorStyle" = "line";
+            "terminal.integrated.cursorStyleInactive" = "none";
 
             "editor.tabSize" = tabSize;
             "[nix]" = {

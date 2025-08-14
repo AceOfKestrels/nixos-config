@@ -9,9 +9,8 @@
     services.desktopManager.gnome.enable = true;
     services.displayManager.defaultSession = "gnome-xorg";
 
-    # Setup Gnome Keyring
     services.gnome.gnome-keyring.enable = true;
-    security.pam.services.gdm.enableGnomeKeyring = true;
+    security.pam.services.login.enableGnomeKeyring = true;
 
     environment.systemPackages = with pkgs; [
         # Gnome Packetes

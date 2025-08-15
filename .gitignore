@@ -3,3 +3,6 @@ local/
 
 .vscode/*
 !.vscode/settings.json
+
+*.iso
+result/

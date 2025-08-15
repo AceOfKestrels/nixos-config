@@ -131,4 +131,7 @@
         drawio
         nano
     ];
+
+    services.teamviewer.enable = true;
+
 }

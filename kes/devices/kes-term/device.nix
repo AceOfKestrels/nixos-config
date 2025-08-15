@@ -17,6 +17,7 @@
             "wheel"
             "docker"
         ];
+        initialPassword = "nixos";
     };
 
     home-manager.users.kes.home.stateVersion = lib.mkDefault "25.05";
@@ -28,6 +29,7 @@
         ../../modules/kes-core.nix
 
         ../../modules/amdgpu.nix
+        ../../modules/software/libvirt.nix
 
         ../../../modules/gaming/minecraft.nix
         ../../../modules/gaming/steam.nix

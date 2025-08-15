@@ -16,9 +16,22 @@
         "type": "github"
       }
     },
+    "repoRoot": {
+      "flake": false,
+      "locked": {
+        "path": "../../..",
+        "type": "path"
+      },
+      "original": {
+        "path": "../../..",
+        "type": "path"
+      },
+      "parent": []
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "repoRoot": "repoRoot"
       }
     }
   },

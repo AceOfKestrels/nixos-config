@@ -42,24 +42,31 @@
                     }
                 ];
             };
+            withFlake =
+                flakePath:
+                nixpkgs.lib.nixosSystem (
+                    baseConfig
+                    // {
+                        modules = baseConfig.modules ++ [
+                            {
+                                services.calamares.settings = {
+                                    modules = [
+                                        {
+                                            id = "nixosInstall";
+                                            type = "shellprocess";
+                                            command = "nixos-install --flake ${flakePath}";
+                                        }
+                                    ];
+                                };
+                            }
+                        ];
+                    }
+                );
         in
         {
-            nixosConfigurations.live-boot = nixpkgs.lib.nixosSystem baseConfig;
-
-            nixosConfigurations.kes-term = nixpkgs.lib.nixosSystem baseConfig // {
-                modules = [
-                    {
-                        services.calamares.settings = {
-                            modules = [
-                                {
-                                    id = "nixosInstall";
-                                    type = "shellprocess";
-                                    command = "nixos-install --flake ${repoRoot}/kes/devices/kes-term#kes-term";
-                                }
-                            ];
-                        };
-                    }
-                ];
+            nixosConfigurations = {
+                live-boot = nixpkgs.lib.nixosSystem baseConfig;
+                kes-term = withFlake "${repoRoot}/kes/devices/kes-term#kes-term";
             };
         };
 }

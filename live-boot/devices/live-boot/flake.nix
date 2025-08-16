@@ -33,7 +33,7 @@
 
                         # GUI installer with Gnome DE
                         imports = [
-                            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-gnome.nix"
+                            (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-gnome.nix")
                         ];
 
                         # QoL
@@ -49,15 +49,16 @@
                     // {
                         modules = baseConfig.modules ++ [
                             {
-                                services.calamares.settings = {
-                                    modules = [
-                                        {
-                                            id = "nixosInstall";
-                                            type = "shellprocess";
-                                            command = "nixos-install --flake ${flakePath}";
-                                        }
-                                    ];
-                                };
+                                imports = [
+                                    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-gnome.nix"
+                                ];
+                                programs.calamares.settings.modules = nixpkgs.lib.mkAfter [
+                                    {
+                                        id = "nixosInstall";
+                                        type = "shellprocess";
+                                        command = "nixos-install --flake ${flakePath}";
+                                    }
+                                ];
                             }
                         ];
                     }

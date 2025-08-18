@@ -6,8 +6,8 @@
 
 {
     imports = [
-        # Import Grub
-        ./grub.nix
+        # Import systemdboot
+        ../../drivers/systemdboot.nix
 
         # Import Secure Boot
         ../../drivers/secureboot.nix

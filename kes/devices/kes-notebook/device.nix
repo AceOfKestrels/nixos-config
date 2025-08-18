@@ -1,4 +1,5 @@
 {
+    lib,
     pkgs,
     ...
 }:
@@ -17,15 +18,15 @@
             "bluetooth"
         ];
     };
-    home-manager.users.kes = {
-        home.stateVersion = "25.05"; # DO NOT CHANGE
-    };
+
+    home-manager.users.kes.home.stateVersion = lib.mkDefault "25.05";
+    system.stateVersion = lib.mkDefault "24.11";
 
     environment.systemPackages = with pkgs; [
         android-studio
     ];
 
     imports = [
-        ../modules/kes-core.nix
+        ../../modules/kes-core.nix
     ];
 }

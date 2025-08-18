@@ -6,11 +6,8 @@
 
 {
     imports = [
-        # Import Grub
-        ./grub.nix
-
-        # Import Secure Boot
-        ../../drivers/secureboot.nix
+        # Import lanzaboote
+        ../../drivers/lanzaboote.nix
 
         # Import Hardware
         ./hardware.nix

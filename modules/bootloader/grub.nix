@@ -2,7 +2,7 @@
 {
     boot.loader.systemd-boot.enable = lib.mkForce false;
     boot.loader.grub = {
-        enable = true;
+        enable = lib.mkForce true;
         efiSupport = true;
         device = "nodev";
     };

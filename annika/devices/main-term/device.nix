@@ -25,7 +25,7 @@
         ../../../modules/core.nix
 
         # Setup Libvirt VM Manager
-        ../../software/libvirt.nix
+        ../../../modules/development/libvirt.nix
 
         # Load Shell Aliases
         ../../shell/shell.nix
@@ -45,16 +45,16 @@
         ../../software/standert.nix
 
         # installl ica clie
-        ../../software/citrix-ica-client.nix
+        ../../../modules/utility/citrix-ica-client.nix
 
         # Load NAS Mount
         ../../drivers/nasdrive.nix
 
         # Add Tor Broser
-        ../../software/tor/tor.nix
+        ../../../modules/security/tor/tor.nix
 
         # add Scarab
-        ../../software/scarab.nix
+        ../../../modules/gaming/scarab.nix
 
         # add catpichin
         ../../../modules/home/catppuccin.nix

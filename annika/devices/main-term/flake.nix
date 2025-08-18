@@ -8,6 +8,7 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        lanzaboote.url = "github:nix-community/lanzaboote";
     };
     outputs =
         inputs@{
@@ -15,6 +16,7 @@
             nixpkgs,
             home-manager,
             catppuccin,
+            lanzaboote,
             ...
         }:
         let
@@ -29,6 +31,8 @@
                         ;
                 };
                 modules = [
+                    lanzaboote.nixosModules.lanzaboote
+
                     ./device.nix
                     {
                         environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/annika/devices/main-term";

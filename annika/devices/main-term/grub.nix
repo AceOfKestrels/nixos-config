@@ -1,11 +1,9 @@
-{ lib, ... }:
+{ ... }:
 {
-    boot.loader.systemd-boot.enable = lib.mkForce false;
+    imports = [
+        ../../../modules/bootloader/grub.nix
+    ];
     boot.loader.grub = {
-        enable = true;
-        efiSupport = true;
-        device = "nodev";
-
         extraEntriesBeforeNixOS = false;
 
         # Custom GRUB entries go here

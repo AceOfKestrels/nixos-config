@@ -6,6 +6,9 @@
 
 {
     imports = [
+        # Import Grub
+        ../../../modules/bootloader/grub.nix
+
         # Import Hardware
         ./hardware.nix
 

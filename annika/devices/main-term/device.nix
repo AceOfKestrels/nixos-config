@@ -9,6 +9,9 @@
         # Import Grub
         ./grub.nix
 
+        # Import Secure Boot
+        ../../drivers/secureboot.nix
+
         # Import Hardware
         ./hardware.nix
 

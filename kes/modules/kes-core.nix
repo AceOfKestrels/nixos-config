@@ -30,6 +30,8 @@
         ../../modules/development/webdev.nix
         ../../modules/development/wireguard.nix
 
+        ../../modules/bootloader/grub.nix
+
         ./core/locale.nix
         ./core/pipewire.nix
         ./core/zsh.nix

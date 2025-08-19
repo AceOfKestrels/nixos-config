@@ -6,6 +6,7 @@ in
 {
     programs.vscode = {
         enable = true;
+        package = pkgs.vscodium;
         mutableExtensionsDir = false;
     };
 
@@ -15,6 +16,7 @@ in
         userSettings = {
             "editor.mouseWheelZoom" = true;
 
+            "window.newWindowDimensions" = "maximized";
             "editor.wordWrap" = "on";
             "editor.bracketPairColorization.enabled" = true;
             "editor.minimap.enabled" = true;
@@ -52,6 +54,31 @@ in
                 "textDocument/definition" # bug in nixd I think?
                 "textDocument/formatting" # nixd throws an error when trying to format invalid files
             ];
+
+            "terminal.integrated.commandsToSkipShell" = [ "workbench.action.createTerminalEditor" ];
+
+            "workbench.colorCustomizations" = {
+                "terminal.background" = "#11111b";
+                "terminal.foreground" = "#cdd6f4";
+                "terminalCursor.background" = "#1e1e2e";
+                "terminalCursor.foreground" = "#cdd6f4";
+                "terminal.ansiBlack" = "#313244";
+                "terminal.ansiRed" = "#f38ba8";
+                "terminal.ansiGreen" = "#a6e3a1";
+                "terminal.ansiYellow" = "#f9e2af";
+                "terminal.ansiBlue" = "#89b4fa";
+                "terminal.ansiMagenta" = "#cba6f7";
+                "terminal.ansiCyan" = "#89dceb";
+                "terminal.ansiWhite" = "#cdd6f4";
+                "terminal.ansiBrightBlack" = "#6c7086";
+                "terminal.ansiBrightRed" = "#f38ba8";
+                "terminal.ansiBrightGreen" = "#a6e3a1";
+                "terminal.ansiBrightYellow" = "#f9e2af";
+                "terminal.ansiBrightBlue" = "#89b4fa";
+                "terminal.ansiBrightMagenta" = "#cba6f7";
+                "terminal.ansiBrightCyan" = "#89dceb";
+                "terminal.ansiBrightWhite" = "#cdd6f4";
+            };
         };
 
         keybindings = [
@@ -76,9 +103,30 @@ in
                 when = "editorHasRenameProvider && editorTextFocus && !editorReadonly";
             }
             {
-
                 key = "ctrl+r";
                 command = "-workbench.action.openRecent";
+            }
+            {
+                key = "ctrl+t";
+                command = "workbench.action.createTerminalEditor";
+                when = "true";
+            }
+            {
+                key = "ctrl+w";
+                command = "workbench.action.closeWindow";
+                when = "!editorIsOpen";
+            }
+            {
+                key = "ctrl+t";
+                command = "-workbench.action.showAllSymbols";
+            }
+            {
+                key = "ctrl+tab";
+                command = "workbench.action.nextEditor";
+            }
+            {
+                key = "ctrl+shift+tab";
+                command = "workbench.action.previousEditor";
             }
         ];
 

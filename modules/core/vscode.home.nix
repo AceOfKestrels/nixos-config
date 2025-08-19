@@ -3,7 +3,6 @@
 {
     programs.vscode = {
         enable = true;
-        package = pkgs.vscode;
 
         # HM only adds new extensions to allow manual installation
         # If you remove any here they need to be uninstalled manually

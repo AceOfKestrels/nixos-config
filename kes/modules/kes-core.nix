@@ -51,5 +51,6 @@
 
     environment.shellAliases = {
         edit-shell-sources = ''code "$SHELL_SOURCES_DIR"'';
+        code = "codium";
     };
 }

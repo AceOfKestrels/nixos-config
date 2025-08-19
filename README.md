@@ -4,12 +4,7 @@ Configurations I use for my NixOS installations.
 
 ## Installation
 
-Decide where you want your configuration to live. Often used:
-
-- `/etc/nixos/`
-- your home directory
-
-Then clone the repository in the desired place.
+Decide where you want your configuration to live. This is usually `/etc/nixos/`
 
 ### Installation under `/etc/nixos/`
 
@@ -25,7 +20,6 @@ Change permissions recursively:
 
 ```sh
 sudo chmod 777 /etc/nixos/nixos-config -R
-
 ```
 
 Then clone the repository directly into there:
@@ -34,29 +28,13 @@ Then clone the repository directly into there:
 git clone https://github.com/AceOfKestrels/nixos-config.git /etc/nixos/nixos-config
 ```
 
-### Channels
-
-Set a [Nix channel](https://nixos.wiki/wiki/Nix_channels) via:
-
-```sh
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-```
-
-Also add a [Home Manager channel](https://nix-community.github.io/home-manager/index.xhtml#sec-install-nixos-module):
-
-```sh
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-```
-
-Then update the channels:
-
-```sh
-sudo nix-channel --update
-```
-
 ### Import
 
-Import the modules you want to use in your `configuration.nix`. I have already created device configs for all the machines I run NixOS on.
+This config only supports flake-based systems. Simply choose a device flake and use it for rebuilding:
+
+```sh
+sudo nixos-rebuild --flake <path_to_flake>
+```
 
 ## Style Guide
 

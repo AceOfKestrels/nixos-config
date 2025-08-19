@@ -6,8 +6,7 @@
 }:
 
 let
-    defaultProfile = "kes-tmux";
-    altProfile = "kes-zsh";
+    profileName = "kes-zsh";
 
     hasInstalled = pkg: lib.any (p: p.drvPath == pkg.drvPath) osConfig.environment.systemPackages;
 in
@@ -21,13 +20,13 @@ in
 
     programs.konsole = {
         enable = true;
-        defaultProfile = "${defaultProfile}";
+        defaultProfile = "${profileName}";
 
         customColorSchemes = {
             "Catppuccin" = ./assets/catppuccin-customized.colorscheme;
         };
 
-        profiles.${altProfile}.extraConfig = {
+        profiles.${profileName}.extraConfig = {
             Appearance = {
                 ColorScheme = "Catppuccin";
                 Font = "MesloLGS Nerd Font,10";

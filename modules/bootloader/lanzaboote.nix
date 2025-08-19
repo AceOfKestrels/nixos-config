@@ -13,7 +13,7 @@
 
     boot.lanzaboote.enable = true;
     # Point to where sbctl created your keys:
-    boot.lanzaboote.pkiBundle = "/etc/secureboot";
+    boot.lanzaboote.pkiBundle = "/var/lib/sbctl";
 
     # (Optional but common if you want TPM2 unlock later)
     boot.initrd.systemd.enable = true;

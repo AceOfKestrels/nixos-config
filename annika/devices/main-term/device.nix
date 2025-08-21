@@ -61,6 +61,9 @@
 
         # add catpichin
         ../../../modules/home/catppuccin.nix
+
+        # Import 3d Printing
+        ../../../modules/utility/3d-printing.nix
     ];
 
     # Allow unfree packages

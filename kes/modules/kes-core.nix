@@ -1,5 +1,6 @@
 {
     lib,
+    pkgs,
     ...
 }:
 
@@ -53,4 +54,8 @@
         edit-shell-sources = ''code "$SHELL_SOURCES_DIR"'';
         code = "codium";
     };
+
+    environment.systemPackages = with pkgs; [
+        krita
+    ];
 }

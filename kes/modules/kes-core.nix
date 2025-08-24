@@ -37,7 +37,7 @@
         ./core/pipewire.nix
         ./core/zsh.nix
 
-        ./software/wezterm.nix
+        ./software/tmux.nix
 
         ./kes-home.nix
     ];

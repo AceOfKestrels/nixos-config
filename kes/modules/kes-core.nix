@@ -31,6 +31,8 @@
         ../../modules/development/webdev.nix
         ../../modules/development/wireguard.nix
 
+        ../../modules/security/udev.nix
+
         ../../modules/bootloader/grub.nix
 
         ./core/locale.nix

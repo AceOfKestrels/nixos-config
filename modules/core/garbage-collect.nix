@@ -11,7 +11,8 @@
     programs.nh.enable = true;
     programs.nh.clean = {
         enable = true;
+        # keep store paths that are younger than 30 days or included in the last 5 generations
         extraArgs = "--keep 5 --keep-since 30d";
-        dates = "weekly";
+        dates = "daily";
     };
 }

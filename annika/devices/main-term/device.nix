@@ -57,7 +57,7 @@
         ../../../modules/security/tor/tor.nix
 
         # add Scarab
-        ../../../modules/gaming/scarab.nix
+        #../../../modules/gaming/scarab.nix
 
         # add catpichin
         ../../../modules/home/catppuccin.nix
@@ -131,7 +131,7 @@
     system.stateVersion = "24.11"; # Did you read the comment?
 
     environment.systemPackages = with pkgs; [
-        teamspeak3
+        teamspeak6-client
         remmina
         teamviewer
         drawio

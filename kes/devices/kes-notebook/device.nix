@@ -28,5 +28,6 @@
 
     imports = [
         ../../modules/kes-core.nix
+        ../../modules/misc/power-management.nix
     ];
 }

@@ -1,13 +1,15 @@
 #! /bin/bash
 
 # start a normal zsh/bash if tmux cannot start
-if ! tmux start-server &>/dev/null; then
-    if where zsh &>/dev/null; then
-        bash -i -c 'echo "failed to start tmux server"; exec zsh'
-    else
-        bash -i -c 'echo "failed to start tmux server"; exec bash'
+if ! tmux has-session 2>/dev/null; then
+    if ! tmux new-session -d -s autostart; then
+        if where zsh &>/dev/null; then
+            bash -i -c 'echo "failed to start tmux server"; exec zsh'
+        else
+            bash -i -c 'echo "failed to start tmux server"; exec bash'
+        fi
+        return
     fi
-    return
 fi
 
 # parse arguments

@@ -40,10 +40,6 @@ in
 {
     assertions = [
         {
-            assertion = hasInstalled pkgs.tmux;
-            message = "Expected tmux to be installed system-wide";
-        }
-        {
             assertion = hasInstalled pkgs.zsh;
             message = "Expected zsh to be installed system-wide";
         }

@@ -56,6 +56,29 @@ in
             ];
 
             "terminal.integrated.commandsToSkipShell" = [ "workbench.action.createTerminalEditor" ];
+            "terminal.integrated.profiles.linux" = {
+                "bash" = {
+                    "path" = "bash";
+                    "icon" = "terminal-bash";
+                    "overrideName" = true;
+                };
+                "zsh" = {
+                    "path" = "zsh";
+                    "overrideName" = true;
+                };
+                "tmux" = {
+                    "path" = "tmux-attach-to-latest";
+                    "args" = [
+                        "vscode-session"
+                        "--include-directory"
+                    ];
+                    "icon" = "terminal-tmux";
+                    "overrideName" = true;
+                };
+            };
+            "terminal.integrated.defaultProfile.linux" = "tmux";
+            "terminal.integrated.enablePersistentSessions" = false;
+            "terminal.integrated.persistentSessionReviveProcess" = "never";
 
             "workbench.colorCustomizations" = {
                 "terminal.background" = "#11111b";

@@ -1773,7 +1773,7 @@
   # typeset -g POWERLEVEL9K_TIME_PREFIX='at '
 
   function prompt_tmux_session() {
-    if [ -n "$TMUX" ]; then
+    if [[ $TERM = *"screen"* ]] || [[ $TERM = *"tmux"* ]]; then
         p10k segment -t "tmux"
     fi
   }

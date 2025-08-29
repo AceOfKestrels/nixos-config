@@ -1,11 +1,17 @@
-{ ... }:
+{ pkgs, ... }:
+
+let
+    script = builtins.readFile ../../scripts/tmux-attach-to-latest.sh;
+    terminal = "screen-256color";
+in
 {
     programs.tmux = {
         enable = true;
         historyLimit = 10000;
-        terminal = "screen-256color";
+        terminal = terminal;
         extraConfig = ''
             set -g mouse on
+            set -g exit-empty off
 
             bind -n C-Left select-pane -L
             bind -n C-Right select-pane -R
@@ -18,9 +24,13 @@
         '';
     };
 
+    environment.systemPackages = [
+        (pkgs.writeShellScriptBin "tmux-attach-to-latest" script)
+    ];
+
     environment.interactiveShellInit = ''
-        if [ -n "$TMUX" ]; then
-            alias exit="tmux detach"
+        if [[ $TERM = ${terminal} ]]; then
+            alias exit="tmux detach || builtin exit"
         fi
     '';
 }

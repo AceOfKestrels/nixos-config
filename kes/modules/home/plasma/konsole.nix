@@ -58,14 +58,10 @@ in
         };
 
         profiles.${defaultProfile}.extraConfig = profilesBase // {
-            General = {
-                Command = "/run/current-system/sw/bin/bash -c 'SESSION=\"konsole_tab_$KONSOLE_DBUS_SESSION\"; tmux new-session -A -s \"$SESSION\"'";
-            };
+            General.Command = "/run/current-system/sw/bin/tmux-attach-to-latest konsole-session";
         };
         profiles.${altProfile}.extraConfig = profilesBase // {
-            General = {
-                Command = "/run/current-system/sw/bin/zsh";
-            };
+            General.Command = "/run/current-system/sw/bin/zsh";
         };
     };
 

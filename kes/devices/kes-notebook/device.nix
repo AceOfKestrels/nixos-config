@@ -28,6 +28,6 @@
 
     imports = [
         ../../modules/kes-core.nix
-        ../../modules/desktop/plasma/plasma.nix
+        ../../modules/desktop/gnome/gnome.nix
     ];
 }

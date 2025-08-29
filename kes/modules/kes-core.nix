@@ -22,8 +22,6 @@
     security.sudo.enable = true;
 
     imports = [
-        ../../modules/desktop/kde-plasma.nix
-
         ../../modules/core.nix
 
         ../../modules/development/docker.nix

@@ -27,5 +27,7 @@
 
     home.packages = with pkgs; [
         catppuccin-kde
+        kdePackages.kimageformats
+        libavif
     ];
 }

@@ -14,10 +14,10 @@
     services.tlp = {
         enable = true;
         settings = {
-            CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-            CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
-            PLATFORM_PROFILE_ON_BAT = "low-power"; # if supported
-            PLATFORM_PROFILE_ON_AC = "balanced";
+            CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+            CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+            PLATFORM_PROFILE_ON_BAT = "balanced";
+            PLATFORM_PROFILE_ON_AC = "performance";
 
             # SATA/NVMe/USB autosuspend
             RUNTIME_PM_ON_BAT = "auto";
@@ -46,5 +46,10 @@
         memoryPercent = 50; # ~8 GB compressed
         algorithm = "zstd"; # or "lz4" if you prefer lower CPU use
         priority = 100; # ensure it’s used before disk swap
+    };
+
+    environment.shellAliases = {
+        fullcharge = "sudo tlp setcharge 95 100";
+        setcharge = "sudo tlp setcharge";
     };
 }

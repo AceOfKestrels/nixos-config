@@ -113,6 +113,17 @@
             "libvirtd"
         ];
     };
+    users.users.kes = {
+        isNormalUser = true;
+        description = "Kessandra";
+        extraGroups = [
+            "networkmanager"
+            "wheel"
+            "docker"
+            "dialout"
+            "libvirtd"
+        ];
+    };
 
     # Set catpuchin flavor globaly
     catppuccin.flavor = lib.mkForce "macchiato";

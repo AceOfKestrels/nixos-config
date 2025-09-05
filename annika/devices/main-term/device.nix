@@ -135,6 +135,13 @@
         catppuccin.flavor = lib.mkForce "macchiato";
     };
 
+    home-manager.users.kes = {
+        home.stateVersion = "25.05"; # DO NOT CHANGE
+
+        # Set Catpuchin flavor for user
+        catppuccin.flavor = lib.mkForce "mocha";
+    };
+
     environment.variables = {
         KES_NIX_CONFIGS_DIR = lib.mkForce "/etc/nixos/nixos-config";
     };

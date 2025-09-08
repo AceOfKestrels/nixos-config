@@ -60,4 +60,12 @@
     environment.systemPackages = with pkgs; [
         krita
     ];
+
+    programs.firefox = {
+        enable = true;
+        package = pkgs.firefox-devedition;
+        preferences = {
+            "media.cubeb.backend" = "alsa";
+        };
+    };
 }

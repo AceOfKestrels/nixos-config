@@ -29,6 +29,8 @@
         signal-desktop-bin # Signal messenger
 
         dig # to have dns tools like nslookup
+
+        veracrypt # To Encrypt External Media for Cros Platform use
     ];
 
     environment.variables = {

@@ -17,6 +17,10 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+        kestrel = {
+            url = "path:../../../lib";
+            flake = false;
+        };
     };
     outputs =
         inputs@{
@@ -28,14 +32,12 @@
             ...
         }:
         let
-            system = "x86_64-linux";
-            importPkgs =
-                p:
-                import p {
-                    system = system;
-                    config.allowUnfree = true;
-                };
             hostname = "kes-term";
+            system = "x86_64-linux";
+            kestrel = import inputs.kestrel {
+                inherit system;
+                inherit nixpkgs;
+            };
         in
         {
             nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -43,8 +45,9 @@
                 specialArgs = {
                     inherit
                         inputs
+                        kestrel
                         ;
-                    pkgsStable = importPkgs inputs.nixpkgs-stable;
+                    pkgsStable = kestrel.importPkgs inputs.nixpkgs-stable;
                 };
                 modules = [
                     ./device.nix

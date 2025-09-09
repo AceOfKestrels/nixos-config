@@ -40,6 +40,18 @@
         "type": "github"
       }
     },
+    "kestrel": {
+      "flake": false,
+      "locked": {
+        "path": "../../../lib",
+        "type": "path"
+      },
+      "original": {
+        "path": "../../../lib",
+        "type": "path"
+      },
+      "parent": []
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1757361843,
@@ -99,6 +111,7 @@
       "inputs": {
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
+        "kestrel": "kestrel",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "plasma-manager": "plasma-manager"

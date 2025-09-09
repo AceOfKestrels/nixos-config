@@ -7,7 +7,7 @@ let
     };
     lib = pkgs.lib;
 in
-{
+rec {
     inherit pkgs;
     inherit lib;
     inherit system;
@@ -19,12 +19,14 @@ in
             config.allowUnfree = true;
         };
 
+    mkHostName = flakePath: builtins.baseNameOf flakePath;
+
     mkDefaultModule =
-        hostname: flakePath:
+        flakePath:
         { lib, ... }:
         {
             environment.variables.FLAKE_PATH = flakePath;
-            networking.hostName = nixpkgs.lib.mkForce hostname;
+            networking.hostName = nixpkgs.lib.mkForce (mkHostName flakePath);
             nix.settings.experimental-features = [
                 "nix-command"
                 "flakes"

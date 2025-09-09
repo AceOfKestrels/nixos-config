@@ -32,7 +32,7 @@
             ...
         }:
         let
-            hostname = "kes-term";
+            flakePath = "/etc/nixos/nixos-config/kes/devices/kes-term";
             system = "x86_64-linux";
             kestrel = import inputs.kestrel {
                 inherit system;
@@ -40,7 +40,7 @@
             };
         in
         {
-            nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+            nixosConfigurations.${kestrel.mkHostName flakePath} = nixpkgs.lib.nixosSystem {
                 inherit system;
                 specialArgs = {
                     inherit
@@ -52,7 +52,7 @@
                 modules = [
                     ./device.nix
                     ./hardware-configuration.nix
-                    (kestrel.mkDefaultModule hostname "/etc/nixos/nixos-config/kes/devices/kes-term")
+                    (kestrel.mkDefaultModule flakePath)
                 ];
             };
         };

@@ -15,6 +15,12 @@ let
             config.allowUnfree = true;
         };
 
+    importModule =
+        m:
+        lib.callPackageWith {
+            inherit inputs pkgs lib;
+            importModule = importModule;
+        } m { };
 in
 rec {
     inherit
@@ -23,14 +29,7 @@ rec {
         system
         ;
 
-    assertion = {
-        providesInput = name: {
-            assertion = inputs ? ${name};
-            message = ''
-                Must provide module named "${name}" in inputs.
-            '';
-        };
-    };
+    assertions = importModule ./assertions.nix;
 
     mkConfig =
         {

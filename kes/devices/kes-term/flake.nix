@@ -23,37 +23,19 @@
         };
     };
     outputs =
-        inputs@{
-            self,
-            nixpkgs,
-            home-manager,
-            plasma-manager,
-            catppuccin,
-            ...
-        }:
+        inputs@{ ... }:
         let
             flakePath = "/etc/nixos/nixos-config/kes/devices/kes-term";
             system = "x86_64-linux";
-            kestrel = import inputs.kestrel {
-                inherit system;
-                inherit nixpkgs;
-            };
+            kestrel = import inputs.kestrel { inherit system inputs; };
         in
         {
-            nixosConfigurations.${kestrel.mkHostName flakePath} = nixpkgs.lib.nixosSystem {
-                inherit system;
-                specialArgs = {
-                    inherit
-                        inputs
-                        kestrel
-                        ;
-                    # pkgsStable = kestrel.importPkgs inputs.nixpkgs-stable;
-                };
+            nixosConfigurations = kestrel.mkConfig {
                 modules = [
                     ./device.nix
                     ./hardware-configuration.nix
-                    (kestrel.mkDefaultModule flakePath)
                 ];
+                inherit flakePath kestrel;
             };
         };
 }

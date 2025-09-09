@@ -16,6 +16,7 @@
             url = "github:catppuccin/nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     };
     outputs =
         inputs@{
@@ -27,15 +28,23 @@
             ...
         }:
         let
+            system = "x86_64-linux";
+            importPkgs =
+                p:
+                import p {
+                    system = system;
+                    config.allowUnfree = true;
+                };
             hostname = "kes-term";
         in
         {
             nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
+                inherit system;
                 specialArgs = {
                     inherit
                         inputs
                         ;
+                    pkgsStable = importPkgs inputs.nixpkgs-stable;
                 };
                 modules = [
                     ./device.nix

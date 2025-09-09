@@ -1,6 +1,7 @@
 {
     lib,
     pkgs,
+    pkgsStable,
     ...
 }:
 
@@ -35,7 +36,7 @@
         ../../../modules/development/kubernetes.nix
     ];
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgsStable; [
         ytmdesktop
         discord
         anydesk

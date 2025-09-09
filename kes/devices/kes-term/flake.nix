@@ -47,19 +47,12 @@
                         inputs
                         kestrel
                         ;
-                    pkgsStable = kestrel.importPkgs inputs.nixpkgs-stable;
+                    # pkgsStable = kestrel.importPkgs inputs.nixpkgs-stable;
                 };
                 modules = [
                     ./device.nix
                     ./hardware-configuration.nix
-                    {
-                        environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/kes/devices/kes-term";
-                        networking.hostName = nixpkgs.lib.mkForce hostname;
-                        nix.settings.experimental-features = [
-                            "nix-command"
-                            "flakes"
-                        ];
-                    }
+                    (kestrel.mkDefaultModule hostname "/etc/nixos/nixos-config/kes/devices/kes-term")
                 ];
             };
         };

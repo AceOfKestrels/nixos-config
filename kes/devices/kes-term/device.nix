@@ -1,12 +1,10 @@
-args@{
+{
     lib,
     pkgs,
+    pkgsStable,
     ...
 }:
 
-let
-    pkgsStable = args.pkgsStable or pkgs;
-in
 {
     boot.kernelPackages = pkgs.linuxPackages_zen;
 

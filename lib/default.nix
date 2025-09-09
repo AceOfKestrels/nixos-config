@@ -14,11 +14,23 @@ let
             inherit system;
             config.allowUnfree = true;
         };
+
 in
 rec {
-    inherit pkgs;
-    inherit lib;
-    inherit system;
+    inherit
+        pkgs
+        lib
+        system
+        ;
+
+    assertion = {
+        providesInput = name: {
+            assertion = inputs ? ${name};
+            message = ''
+                Must provide module named "${name}" in inputs.
+            '';
+        };
+    };
 
     mkConfig =
         {
@@ -40,6 +52,10 @@ rec {
                 };
                 modules = modules ++ [
                     {
+                        assertions = [
+                            (assertion.providesInput "kestrel")
+                            (assertion.providesInput "nixpkgs")
+                        ];
                         environment.variables.FLAKE_PATH = flakePath;
                         networking.hostName = lib.mkForce hostname;
                         nixpkgs.config.allowUnfree = lib.mkForce true;

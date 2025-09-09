@@ -154,6 +154,7 @@
         teamviewer
         drawio
         nano
+        makemkv
     ];
 
     services.teamviewer.enable = true;

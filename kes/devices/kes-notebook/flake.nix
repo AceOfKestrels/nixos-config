@@ -17,38 +17,23 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
+
     outputs =
-        inputs@{
-            self,
-            nixpkgs,
-            home-manager,
-            plasma-manager,
-            catppuccin,
-            ...
-        }:
+        inputs@{ ... }:
         let
-            hostname = "kes-notebook";
+            kestrel = import ../../../lib {
+                system = "x86_64-linux";
+                inherit inputs;
+            };
         in
         {
-            nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                specialArgs = {
-                    inherit
-                        inputs
-                        ;
-                };
+            nixosConfigurations = kestrel.mkConfig {
+                flakePath = "/etc/nixos/nixos-config/kes/devices/kes-notebook";
                 modules = [
                     ./device.nix
                     ./hardware-configuration.nix
-                    {
-                        environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/kes/devices/kes-notebook";
-                        networking.hostName = nixpkgs.lib.mkForce hostname;
-                        nix.settings.experimental-features = [
-                            "nix-command"
-                            "flakes"
-                        ];
-                    }
                 ];
+                inherit kestrel;
             };
         };
 }

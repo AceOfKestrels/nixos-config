@@ -16,37 +16,22 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
+
     outputs =
-        inputs@{
-            self,
-            nixpkgs,
-            home-manager,
-            catppuccin,
-            lanzaboote,
-            ...
-        }:
+        inputs@{ ... }:
         let
-            hostname = "main-term";
+            kestrel = import ../../../lib {
+                system = "x86_64-linux";
+                inherit inputs;
+            };
         in
         {
-            nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                specialArgs = {
-                    inherit
-                        inputs
-                        ;
-                };
+            nixosConfigurations = kestrel.mkConfig {
+                flakePath = "/etc/nixos/nixos-config/annika/devices/main-term";
                 modules = [
                     ./device.nix
-                    {
-                        environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/annika/devices/main-term";
-                        networking.hostName = nixpkgs.lib.mkForce hostname;
-                        nix.settings.experimental-features = [
-                            "nix-command"
-                            "flakes"
-                        ];
-                    }
                 ];
+                inherit kestrel;
             };
         };
 }

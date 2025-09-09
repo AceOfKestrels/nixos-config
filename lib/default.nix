@@ -35,6 +35,7 @@ rec {
     mkConfig =
         {
             flakePath,
+            kestrel,
             modules ? [ ],
             specialArgs ? { },
             hostname ? builtins.baseNameOf flakePath,
@@ -44,18 +45,13 @@ rec {
             ${hostname} = nixpkgs.lib.nixosSystem {
                 inherit system;
                 specialArgs = specialArgs // {
-                    inherit inputs;
-                    kestrel = import inputs.kestrel { inherit inputs system; };
+                    inherit inputs kestrel;
                     pkgsStable = importPkgs (inputs.nixpkgs-stable or inputs.nixpkgs);
                     pkgsUnstable = importPkgs (inputs.nixpkgs-unstable or inputs.nixpkgs);
                     pkgsMaster = importPkgs (inputs.nixpkgs-master or inputs.nixpkgs);
                 };
                 modules = modules ++ [
                     {
-                        assertions = [
-                            (assertion.providesInput "kestrel")
-                            (assertion.providesInput "nixpkgs")
-                        ];
                         environment.variables.FLAKE_PATH = flakePath;
                         networking.hostName = lib.mkForce hostname;
                         nixpkgs.config.allowUnfree = lib.mkForce true;

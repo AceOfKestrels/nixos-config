@@ -7,11 +7,6 @@
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
         nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
-        kestrel = {
-            url = "path:../../../lib";
-            flake = false;
-        };
-
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +24,7 @@
     outputs =
         inputs@{ ... }:
         let
-            kestrel = import inputs.kestrel {
+            kestrel = import ../../../lib {
                 system = "x86_64-linux";
                 inherit inputs;
             };
@@ -41,6 +36,7 @@
                     ./device.nix
                     ./hardware-configuration.nix
                 ];
+                inherit kestrel;
             };
         };
 }

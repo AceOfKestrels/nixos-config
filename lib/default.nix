@@ -26,17 +26,14 @@ rec {
             modules ? [ ],
             specialArgs ? { },
             hostname ? builtins.baseNameOf flakePath,
-            kestrel,
             ...
         }:
         {
             ${hostname} = nixpkgs.lib.nixosSystem {
                 inherit system;
                 specialArgs = specialArgs // {
-                    inherit
-                        inputs
-                        kestrel
-                        ;
+                    inherit inputs;
+                    kestrel = import inputs.kestrel { inherit inputs system; };
                     pkgsStable = importPkgs (inputs.nixpkgs-stable or inputs.nixpkgs);
                     pkgsUnstable = importPkgs (inputs.nixpkgs-unstable or inputs.nixpkgs);
                     pkgsMaster = importPkgs (inputs.nixpkgs-master or inputs.nixpkgs);

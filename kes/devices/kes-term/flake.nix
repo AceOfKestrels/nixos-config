@@ -3,6 +3,15 @@
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/master";
+        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+        nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+
+        kestrel = {
+            url = "path:../../../lib";
+            flake = false;
+        };
+
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -16,26 +25,22 @@
             url = "github:catppuccin/nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
-        kestrel = {
-            url = "path:../../../lib";
-            flake = false;
-        };
     };
     outputs =
         inputs@{ ... }:
         let
-            flakePath = "/etc/nixos/nixos-config/kes/devices/kes-term";
-            system = "x86_64-linux";
-            kestrel = import inputs.kestrel { inherit system inputs; };
+            kestrel = import inputs.kestrel {
+                system = "x86_64-linux";
+                inherit inputs;
+            };
         in
         {
             nixosConfigurations = kestrel.mkConfig {
+                flakePath = "/etc/nixos/nixos-config/kes/devices/kes-term";
                 modules = [
                     ./device.nix
                     ./hardware-configuration.nix
                 ];
-                inherit flakePath kestrel;
             };
         };
 }

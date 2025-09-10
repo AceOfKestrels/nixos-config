@@ -64,6 +64,9 @@
 
         # Import 3d Printing
         ../../../modules/utility/3d-printing.nix
+
+        # Import Video Tools
+        ../../../modules/utility/video.nix
     ];
 
     # Allow unfree packages
@@ -154,7 +157,6 @@
         teamviewer
         drawio
         nano
-        makemkv
     ];
 
     services.teamviewer.enable = true;

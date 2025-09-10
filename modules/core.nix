@@ -44,4 +44,5 @@
     };
 
     programs.nh.enable = true;
+    nixpkgs.config.allowUnfree = true;
 }

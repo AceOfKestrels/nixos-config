@@ -5,6 +5,10 @@
 }:
 
 {
+    imports = [
+        ./terminus.nix
+    ];
+
     programs.git.config = {
         user = {
             name = lib.mkForce "Annika Leonie Keggenhoff";

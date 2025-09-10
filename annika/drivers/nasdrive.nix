@@ -81,5 +81,9 @@
             where = "/home/annika/disks/nas-games";
             wantedBy = [ "multi-user.target" ];
         }
+        {
+            where = "/home/annika/disks/media";
+            wantedBy = [ "multi-user.target" ];
+        }
     ];
 }

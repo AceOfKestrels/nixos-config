@@ -8,13 +8,6 @@ let
     };
     lib = pkgs.lib;
 
-    importPkgs =
-        p:
-        import p {
-            inherit system;
-            config.allowUnfree = true;
-        };
-
     importModule =
         m:
         lib.callPackageWith {
@@ -23,49 +16,24 @@ let
                 pkgs
                 lib
                 system
+                assertions
+                overlays
+                config
                 ;
             importModule = importModule;
         } m { };
+
+    assertions = importModule ./assertions.nix;
+    overlays = importModule ./overlays.nix;
+    config = importModule ./config.nix;
 in
-rec {
+{
     inherit
         pkgs
         lib
         system
+        assertions
+        overlays
+        config
         ;
-
-    assertions = importModule ./assertions.nix;
-    overlays = importModule ./overlays.nix;
-
-    mkConfig =
-        {
-            flakePath,
-            kestrel,
-            modules ? [ ],
-            specialArgs ? { },
-            hostname ? builtins.baseNameOf flakePath,
-            ...
-        }:
-        {
-            ${hostname} = nixpkgs.lib.nixosSystem {
-                inherit system;
-                specialArgs = specialArgs // {
-                    inherit inputs kestrel;
-                    pkgsStable = importPkgs (inputs.nixpkgs-stable or inputs.nixpkgs);
-                    pkgsUnstable = importPkgs (inputs.nixpkgs-unstable or inputs.nixpkgs);
-                    pkgsMaster = importPkgs (inputs.nixpkgs-master or inputs.nixpkgs);
-                };
-                modules = modules ++ [
-                    {
-                        environment.variables.FLAKE_PATH = flakePath;
-                        networking.hostName = lib.mkForce hostname;
-                        nixpkgs.config.allowUnfree = lib.mkForce true;
-                        nix.settings.experimental-features = [
-                            "nix-command"
-                            "flakes"
-                        ];
-                    }
-                ];
-            };
-        };
 }

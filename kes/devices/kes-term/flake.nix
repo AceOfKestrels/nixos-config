@@ -30,7 +30,7 @@
             };
         in
         {
-            nixosConfigurations = kestrel.mkConfig {
+            nixosConfigurations = kestrel.config.mkConfig {
                 flakePath = "/etc/nixos/nixos-config/kes/devices/kes-term";
                 modules = [
                     ./device.nix

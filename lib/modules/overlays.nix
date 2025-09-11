@@ -1,4 +1,9 @@
-{ system, lib, ... }:
+{
+    system,
+    lib,
+    pkgs,
+    ...
+}:
 
 let
     copyAttrByPath =
@@ -18,7 +23,7 @@ rec {
                 pinned = import src {
                     inherit system;
                     overlays = [ ];
-                    config = prev.config or { allowUnfree = true; };
+                    config = prev.config or pkgs.Config;
                 };
 
                 path = lib.splitString "." package; # list of path segments

@@ -1,5 +1,9 @@
 { system, lib, ... }:
 
+let
+    copyAttrByPath =
+        path: source: if path == [ ] then { } else lib.setAttrByPath path (lib.getAttrFromPath path source);
+in
 rec {
     # package => revision => source => ( final => prev => {} )
     # creates an overlay that pins <package> from <source> to <revision>
@@ -18,15 +22,11 @@ rec {
                 };
 
                 path = lib.splitString "." package; # list of path segments
-                pinnedValue = lib.getAttrFromPath path pinned;
-                parent = lib.init path; # path to our package's parent
 
-                # keep rest of tree
-                left = if parent == [ ] then { } else lib.setAttrByPath parent (lib.getAttrFromPath parent prev);
-                # set value of pinned package
-                right = lib.setAttrByPath path pinnedValue;
+                existing = copyAttrByPath (lib.init path) prev;
+                updated = copyAttrByPath path pinned;
             in
-            lib.recursiveUpdate left right
+            lib.recursiveUpdate existing updated
         );
 
     # package => revision => (final => prev => {})

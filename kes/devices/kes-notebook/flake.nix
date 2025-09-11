@@ -31,7 +31,7 @@
             };
         in
         {
-            nixosConfigurations = kestrel.mkConfig {
+            nixosConfigurations = kestrel.config.mkConfig {
                 flakePath = "/etc/nixos/nixos-config/kes/devices/kes-notebook";
                 modules = [
                     ./device.nix

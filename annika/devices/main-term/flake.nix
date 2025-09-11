@@ -30,7 +30,7 @@
             };
         in
         {
-            nixosConfigurations = kestrel.mkConfig {
+            nixosConfigurations = kestrel.config.mkConfig {
                 flakePath = "/etc/nixos/nixos-config/annika/devices/main-term";
                 modules = [
                     ./device.nix

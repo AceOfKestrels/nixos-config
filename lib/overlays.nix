@@ -9,16 +9,24 @@ rec {
         (
             final: prev:
             let
+                # construct pinned pkgs
                 src = builtins.getFlake "${source}?rev=${revision}";
                 pinned = import src {
                     inherit system;
                     overlays = [ ];
                     config = prev.config or { allowUnfree = true; };
                 };
+
+                path = lib.splitString "." package; # list of path segments
+                pinnedValue = lib.getAttrFromPath path pinned;
+                parent = lib.init path; # path to our package's parent
+
+                # keep rest of tree
+                left = if parent == [ ] then { } else lib.setAttrByPath parent (lib.getAttrFromPath parent prev);
+                # set value of pinned package
+                right = lib.setAttrByPath path pinnedValue;
             in
-            {
-                ${package} = pinned.${package};
-            }
+            lib.recursiveUpdate left right
         );
 
     # package => revision => (final => prev => {})

@@ -2,6 +2,7 @@
     system,
     inputs,
     lib,
+    pkgs,
     ...
 }:
 
@@ -10,7 +11,7 @@ let
         p:
         import p {
             inherit system;
-            config.allowUnfree = true;
+            config = pkgs.config;
         };
 in
 {
@@ -36,7 +37,7 @@ in
                     {
                         environment.variables.FLAKE_PATH = flakePath;
                         networking.hostName = lib.mkForce hostname;
-                        nixpkgs.config.allowUnfree = lib.mkForce true;
+                        nixpkgs.config = pkgs.config;
                         nix.settings.experimental-features = [
                             "nix-command"
                             "flakes"

@@ -8,58 +8,33 @@ let
     };
     lib = pkgs.lib;
 
-    importPkgs =
-        p:
-        import p {
-            inherit system;
-            config.allowUnfree = true;
-        };
-
     importModule =
         m:
-        lib.callPackageWith {
-            inherit inputs pkgs lib;
-            importModule = importModule;
-        } m { };
+        lib.callPackageWith (
+            {
+                inherit
+                    inputs
+                    importModule
+                    importModules
+                    ;
+            }
+            // exports
+        ) m { };
+
+    importModules = lib.mapAttrs (name: value: (importModule value));
+
+    imports = importModules {
+        assertions = ./modules/assertions.nix;
+        overlays = ./modules/overlays.nix;
+        config = ./modules/config.nix;
+    };
+
+    exports = imports // {
+        inherit
+            pkgs
+            lib
+            system
+            ;
+    };
 in
-rec {
-    inherit
-        pkgs
-        lib
-        system
-        ;
-
-    assertions = importModule ./assertions.nix;
-
-    mkConfig =
-        {
-            flakePath,
-            kestrel,
-            modules ? [ ],
-            specialArgs ? { },
-            hostname ? builtins.baseNameOf flakePath,
-            ...
-        }:
-        {
-            ${hostname} = nixpkgs.lib.nixosSystem {
-                inherit system;
-                specialArgs = specialArgs // {
-                    inherit inputs kestrel;
-                    pkgsStable = importPkgs (inputs.nixpkgs-stable or inputs.nixpkgs);
-                    pkgsUnstable = importPkgs (inputs.nixpkgs-unstable or inputs.nixpkgs);
-                    pkgsMaster = importPkgs (inputs.nixpkgs-master or inputs.nixpkgs);
-                };
-                modules = modules ++ [
-                    {
-                        environment.variables.FLAKE_PATH = flakePath;
-                        networking.hostName = lib.mkForce hostname;
-                        nixpkgs.config.allowUnfree = lib.mkForce true;
-                        nix.settings.experimental-features = [
-                            "nix-command"
-                            "flakes"
-                        ];
-                    }
-                ];
-            };
-        };
-}
+exports

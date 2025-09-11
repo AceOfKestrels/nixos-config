@@ -55,11 +55,11 @@
         krita
     ];
 
-    programs.firefox = {
-        enable = true;
-        package = pkgs.firefox-devedition;
-        preferences = {
-            "media.cubeb.backend" = "alsa";
-        };
-    };
+    # programs.firefox = {
+    #     enable = true;
+    #     package = pkgs.firefox-devedition;
+    #     preferences = {
+    #         "media.cubeb.backend" = "alsa";
+    #     };
+    # };
 }

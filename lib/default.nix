@@ -18,7 +18,12 @@ let
     importModule =
         m:
         lib.callPackageWith {
-            inherit inputs pkgs lib;
+            inherit
+                inputs
+                pkgs
+                lib
+                system
+                ;
             importModule = importModule;
         } m { };
 in
@@ -30,6 +35,7 @@ rec {
         ;
 
     assertions = importModule ./assertions.nix;
+    overlays = importModule ./overlays.nix;
 
     mkConfig =
         {

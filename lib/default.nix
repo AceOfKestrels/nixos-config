@@ -14,29 +14,27 @@ let
             {
                 inherit
                     inputs
-                    pkgs
-                    lib
-                    system
                     importModule
                     importModules
                     ;
             }
-            // imports
+            // exports
         ) m { };
 
     importModules = lib.mapAttrs (name: value: (importModule value));
 
     imports = importModules {
-        assertions = ./assertions.nix;
-        overlays = ./overlays.nix;
-        config = ./config.nix;
+        assertions = ./modules/assertions.nix;
+        overlays = ./modules/overlays.nix;
+        config = ./modules/config.nix;
+    };
+
+    exports = imports // {
+        inherit
+            pkgs
+            lib
+            system
+            ;
     };
 in
-{
-    inherit
-        pkgs
-        lib
-        system
-        ;
-}
-// imports
+exports

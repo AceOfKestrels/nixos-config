@@ -10,30 +10,33 @@ let
 
     importModule =
         m:
-        lib.callPackageWith {
-            inherit
-                inputs
-                pkgs
-                lib
-                system
-                assertions
-                overlays
-                config
-                ;
-            importModule = importModule;
-        } m { };
+        lib.callPackageWith (
+            {
+                inherit
+                    inputs
+                    pkgs
+                    lib
+                    system
+                    importModule
+                    importModules
+                    ;
+            }
+            // imports
+        ) m { };
 
-    assertions = importModule ./assertions.nix;
-    overlays = importModule ./overlays.nix;
-    config = importModule ./config.nix;
+    importModules = lib.mapAttrs (name: value: (importModule value));
+
+    imports = importModules {
+        assertions = ./assertions.nix;
+        overlays = ./overlays.nix;
+        config = ./config.nix;
+    };
 in
 {
     inherit
         pkgs
         lib
         system
-        assertions
-        overlays
-        config
         ;
 }
+// imports

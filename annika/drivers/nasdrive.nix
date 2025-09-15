@@ -50,12 +50,13 @@
             ];
         }
 
-        # Media NAS share
+        # Media NAS share (Synology, NFSv3)
         {
             what = "10.100.20.11:/volume1/media";
             where = "/home/annika/disks/media";
-            type = "nfs4";
+            type = "nfs";
             options = builtins.concatStringsSep "," [
+                "vers=3"
                 "rw"
                 "hard"
                 "intr"
@@ -68,6 +69,7 @@
                 "wsize=1048576"
             ];
         }
+
     ];
 
     # Automount units to unmount after idle

@@ -7,5 +7,6 @@
         handbrake
         makemkv
         mkvtoolnix
+        exactaudiocopy
     ];
 }

@@ -157,6 +157,7 @@
         teamviewer
         drawio
         nano
+        unrar
     ];
 
     services.teamviewer.enable = true;

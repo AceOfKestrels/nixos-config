@@ -7,7 +7,6 @@
         handbrake
         makemkv
         mkvtoolnix
-        exactaudiocopy
         mediainfo-gui
         mediainfo
         vlc

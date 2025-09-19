@@ -30,5 +30,9 @@ if ! [[ "$selected_config" = *"$available_configs"* ]]; then
     exit 1
 fi
 
-export FLAKE_PATH="$script_dir"
-sudo nixos-rebuild switch --flake "$FLAKE_PATH#$selected_config"
+export FLAKE_PATH="$1"
+if nh --help &>/dev/null; then
+    nh os switch "$FLAKE_PATH" --hostname "$selected_config" --ask
+else
+    sudo nixos-rebuild switch --flake "$FLAKE_PATH#$selected_config"
+fi 

@@ -26,9 +26,6 @@
         # Add Tor Broser
         ./security/tor/tor.nix
 
-        # add catpichin
-        ./home-manager/catppuccin.nix
-
         # Import 3d Printing
         ./development/3d-printing.nix
 

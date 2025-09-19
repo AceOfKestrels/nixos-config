@@ -1,7 +1,7 @@
 { ... }:
 
 let
-    p10k-prompt = builtins.readFile ../../scripts/p10k.zsh;
+    p10k-prompt = builtins.readFile ./p10k.kes.zsh;
 in
 {
     programs.zsh.promptInit = ''

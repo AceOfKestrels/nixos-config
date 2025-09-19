@@ -15,10 +15,10 @@
         '';
     };
 
-    # imports = kestrel.userModules {
-    #     kes = ./zsh.kes.nix;
-    #     annika = ./zsh.annika.nix;
-    # };
+    imports = kestrel.userModules {
+        kes = ./zsh.kes.nix;
+        annika = ./zsh.annika.nix;
+    };
 
     # Set it as the default shell
     users.defaultUserShell = pkgs.zsh;

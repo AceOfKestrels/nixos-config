@@ -16,10 +16,10 @@ in
     imports = [
         enableModule
         inputs.catppuccin.nixosModules.catppuccin
-    ];
-    # ++ kestrel.userModules {
-    #     kes = ./catppuccin.kes.nix;
-    # };
+    ]
+    ++ kestrel.userModules {
+        kes = ./catppuccin.kes.nix;
+    };
 
     home-manager.sharedModules = [
         enableModule

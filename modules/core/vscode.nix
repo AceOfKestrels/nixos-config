@@ -10,9 +10,9 @@
         nixd
     ];
 
-    # imports = kestrel.userModules {
-    #     kes = ./vscode.kes.nix;
-    # };
+    imports = kestrel.userModules {
+        kes = ./vscode.kes.nix;
+    };
 }
 // kestrel.mkHome {
     programs.vscode = {

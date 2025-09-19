@@ -14,11 +14,11 @@
         ./core/zsh.nix # ZSH
         ./core/shell-sources.nix # shell sources
         ./core/garbage-collect.nix # Deleat old nix stuff
-    ];
-    # ++ kestrel.userModules {
-    #     kes = ./core.kes.nix;
-    #     annika = ./core.annika.nix;
-    # };
+    ]
+    ++ kestrel.userModules {
+        kes = ./core.kes.nix;
+        annika = ./core.annika.nix;
+    };
 
     # Include core packages
     environment.systemPackages = with pkgs; [

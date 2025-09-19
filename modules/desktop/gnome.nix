@@ -25,8 +25,8 @@
         dbus
     ];
 
-    # imports = kestrel.userModules {
-    #     kes = ./gnome.kes.nix;
-    #     annika = ./gnome.annika.nix;
-    # };
+    imports = kestrel.userModules {
+        kes = ./gnome.kes.nix;
+        annika = ./gnome.annika.nix;
+    };
 }

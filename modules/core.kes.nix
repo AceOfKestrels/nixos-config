@@ -16,27 +16,21 @@
     security.sudo.enable = true;
 
     imports = [
-        ../../modules/core.nix
+        ./development/docker.nix
+        ./development/dotnet.nix
+        ./development/webdev.nix
+        ./utility/wireguard.nix
 
-        ../../modules/development/docker.nix
-        ../../modules/development/dotnet.nix
-        ../../modules/development/webdev.nix
-        ../../modules/development/wireguard.nix
+        ./security/udev.nix
 
-        ../../modules/security/udev.nix
+        ./bootloader/grub.nix
 
-        ../../modules/bootloader/grub.nix
-
-        ./core/locale.nix
-        ./core/pipewire.nix
+        ./utility/audio.nix
         ./core/zsh.nix
 
-        ./software/tmux.nix
-    ];
+        ./terminal/tmux.nix
 
-    home-manager.sharedModules = [
-        ./home/catppuccin.home.nix
-        ./home/vscode.home.nix
+        ./home-manager/catppuccin.nix
     ];
 
     programs.git.config = {

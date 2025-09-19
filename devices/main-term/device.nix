@@ -5,7 +5,6 @@
 }:
 
 {
-    userModules = "annika";
     imports = [
         # Import lanzaboote
         ./drivers/lanzaboote.nix
@@ -24,6 +23,7 @@
 
         # Load Core Configurations
         ../../modules/core.nix
+        ../../modules/home-manager/catppuccin.nix
 
         # Load NAS Mount
         ./drivers/nasdrive.nix

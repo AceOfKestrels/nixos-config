@@ -5,8 +5,6 @@
 }:
 
 {
-    userModules = "kes";
-
     boot.kernelPackages = pkgs.linuxPackages_zen;
 
     networking.hostName = "kes-notebook";
@@ -32,5 +30,7 @@
         ../../modules/core.nix
         ../../modules/desktop/gnome.nix
         ../../modules/utility/power-management.nix
+
+        ../../modules/bootloader/grub.nix
     ];
 }

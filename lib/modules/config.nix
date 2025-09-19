@@ -3,6 +3,8 @@
     inputs,
     lib,
     pkgs,
+    user,
+    flake,
     ...
 }:
 
@@ -17,7 +19,6 @@ in
 {
     mkConfig =
         {
-            flake,
             kestrel,
             modules ? [ ],
             specialArgs ? { },
@@ -38,17 +39,13 @@ in
                     ../../devices/${flake}/device.nix
                     ../../devices/${flake}/hardware.nix
                     {
-                        environment.variables.FLAKE_PATH = (/etc/nixos/nixos-config/devices + flake);
+                        environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/devices/${flake}";
                         networking.hostName = lib.mkForce hostname;
                         nixpkgs.config = pkgs.config;
                         nix.settings.experimental-features = [
                             "nix-command"
                             "flakes"
                         ];
-                        userModules = lib.mkOption {
-                            default = false;
-                            type = lib.types.string;
-                        };
                     }
                 ];
             };
@@ -62,12 +59,10 @@ in
         };
 
     userModules =
-        config:
         {
             kes ? { },
             annika ? { },
             ...
         }:
-        lib.optional (config.userModules == "kes") [ kes ]
-        ++ lib.optional (config.userModules == "annika") [ annika ];
+        (lib.optional (user == "kes") kes) ++ (lib.optional (user == "annika") annika);
 }

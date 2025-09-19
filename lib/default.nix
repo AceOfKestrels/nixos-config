@@ -1,4 +1,10 @@
-{ system, inputs, ... }:
+{
+    system,
+    inputs,
+    flake,
+    user ? "",
+    ...
+}:
 
 let
     nixpkgs = inputs.nixpkgs;
@@ -16,6 +22,8 @@ let
                     inputs
                     importModule
                     importModules
+                    user
+                    flake
                     ;
             }
             // exports

@@ -26,13 +26,12 @@
         let
             kestrel = import ../../lib {
                 system = "x86_64-linux";
+                flake = "main-term";
+                user = "annika";
                 inherit inputs;
             };
         in
         {
-            nixosConfigurations = kestrel.config.mkConfig {
-                flake = "main-term";
-                inherit kestrel;
-            };
+            nixosConfigurations = kestrel.config.mkConfig { inherit kestrel; };
         };
 }

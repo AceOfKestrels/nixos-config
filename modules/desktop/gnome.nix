@@ -1,6 +1,5 @@
 {
     kestrel,
-    config,
     pkgs,
     ...
 }:
@@ -26,8 +25,8 @@
         dbus
     ];
 
-    imports = kestrel.userModules config {
-        kes = ./gnome.kes.nix;
-        annika = ./gnome.annika.nix;
-    };
+    # imports = kestrel.userModules {
+    #     kes = ./gnome.kes.nix;
+    #     annika = ./gnome.annika.nix;
+    # };
 }

@@ -9,8 +9,6 @@
 
     networking.hostName = "nixos";
 
-    userModules = "kes";
-
     users.users.kes = {
         isNormalUser = true;
         description = "Kessandra";
@@ -36,6 +34,8 @@
         ../../modules/gaming/steam.nix
 
         ../../modules/development/kubernetes.nix
+
+        ../../modules/bootloader/grub.nix
     ];
 
     environment.systemPackages = with pkgs; [

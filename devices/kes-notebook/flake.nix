@@ -27,13 +27,12 @@
         let
             kestrel = import ../../lib {
                 system = "x86_64-linux";
+                flake = "kes-notebook";
+                user = "kes";
                 inherit inputs;
             };
         in
         {
-            nixosConfigurations = kestrel.config.mkConfig {
-                flake = "kes-notebook";
-                inherit kestrel;
-            };
+            nixosConfigurations = kestrel.config.mkConfig { inherit kestrel; };
         };
 }

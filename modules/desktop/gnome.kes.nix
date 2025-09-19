@@ -1,9 +1,6 @@
 { kestrel, ... }:
 {
     imports = [
-        # import Default Gnome Config
-        ./gnome.nix
-
         # import Gnome extensions
         ./kes/gnome/extensions.nix
 

@@ -12,8 +12,10 @@ in
     imports = [
         enableModule
         inputs.catppuccin.nixosModules.catppuccin
-        ../home-manager.nix
     ];
 
-    home-manager.sharedModules = [ inputs.catppuccin.homeModules.catppuccin ];
+    home-manager.sharedModules = [
+        enableModule
+        inputs.catppuccin.homeModules.catppuccin
+    ];
 }

@@ -2,7 +2,6 @@
 
 {
     imports = [
-        ../../modules/home-manager.nix
         ../../modules/home/catppuccin.nix
     ];
 

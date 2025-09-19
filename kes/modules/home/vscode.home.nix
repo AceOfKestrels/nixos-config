@@ -155,6 +155,7 @@ in
 
         extensions = with pkgs.vscode-extensions; [
             hediet.vscode-drawio
+            ms-python.python
         ];
     };
 }

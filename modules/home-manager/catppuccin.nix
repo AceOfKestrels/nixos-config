@@ -1,4 +1,9 @@
-{ inputs, ... }:
+{
+    kestrel,
+    config,
+    inputs,
+    ...
+}:
 
 let
     enableModule =
@@ -12,7 +17,11 @@ in
     imports = [
         enableModule
         inputs.catppuccin.nixosModules.catppuccin
-    ];
+    ]
+    ++ kestrel.userModules config {
+        kes = ./zsh.kes.nix;
+        annika = ./zsh.annika.nix;
+    };
 
     home-manager.sharedModules = [
         enableModule

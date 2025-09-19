@@ -5,6 +5,7 @@
 }:
 
 {
+    userModules = "annika";
     imports = [
         # Import lanzaboote
         ../../drivers/lanzaboote.nix

@@ -9,6 +9,8 @@
 
     networking.hostName = "nixos";
 
+    userModules = "kes";
+
     users.users.kes = {
         isNormalUser = true;
         description = "Kessandra";

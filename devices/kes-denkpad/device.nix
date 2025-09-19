@@ -5,6 +5,8 @@
 }:
 
 {
+    userModules = "kes";
+
     boot.kernelPackages = pkgs.linuxPackages_zen;
 
     networking.hostName = "kes-notebook";

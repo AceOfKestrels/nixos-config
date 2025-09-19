@@ -43,6 +43,10 @@ in
                             "nix-command"
                             "flakes"
                         ];
+                        userModules = lib.mkOption {
+                            default = false;
+                            type = lib.types.string;
+                        };
                     }
                 ];
             };
@@ -54,4 +58,14 @@ in
             imports = [ ../../modules/home-manager.nix ];
             home-manager.sharedModules = [ args ];
         };
+
+    userModules =
+        config:
+        {
+            kes ? { },
+            annika ? { },
+            ...
+        }:
+        lib.optional (config.useKesModules == "kes") [ kes ]
+        ++ lib.optional (config.useKesModules == "annika") [ annika ];
 }

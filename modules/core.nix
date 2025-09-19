@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+    kestrel,
+    config,
+    pkgs,
+    ...
+}:
 
 {
     # Import core modules
@@ -10,7 +15,11 @@
         ./core/zsh.nix # ZSH
         ./core/shell-sources.nix # shell sources
         ./core/garbage-collect.nix # Deleat old nix stuff
-    ];
+    ]
+    ++ kestrel.userModules config {
+        kes = ./core.kes.nix;
+        annika = ./core.annika.nix;
+    };
 
     # Include core packages
     environment.systemPackages = with pkgs; [

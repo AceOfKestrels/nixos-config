@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+    kestrel,
+    config,
+    pkgs,
+    ...
+}:
 
 {
     # Enable Zsh
@@ -9,6 +14,11 @@
             __zsh_nix_shell_path=$(ls /nix/store | grep zsh-nix-shell | grep -v '\.drv$' | head -n 1)
             source "/nix/store/$__zsh_nix_shell_path/share/zsh-nix-shell/nix-shell.plugin.zsh"
         '';
+    };
+
+    imports = kestrel.userModules config {
+        kes = ./zsh.kes.nix;
+        annika = ./zsh.annika.nix;
     };
 
     # Set it as the default shell

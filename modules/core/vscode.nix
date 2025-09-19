@@ -1,10 +1,19 @@
-{ kestrel, pkgs, ... }:
+{
+    kestrel,
+    config,
+    pkgs,
+    ...
+}:
 
 {
     environment.systemPackages = with pkgs; [
         nixfmt-rfc-style
         nixd
     ];
+
+    imports = kestrel.userModules config {
+        kes = ./vscode.kes.nix;
+    };
 
     home-manager.sharedModules = [ ./vscode.home.nix ];
 }

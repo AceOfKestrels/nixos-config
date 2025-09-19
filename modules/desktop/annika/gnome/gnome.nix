@@ -2,7 +2,7 @@
 {
     imports = [
         # import Default Gnome Config
-        ../../../modules/desktop/gnome.nix
+        ../../gnome.nix
 
         # import Gnome extensions
         ./extensions.gnome.nix

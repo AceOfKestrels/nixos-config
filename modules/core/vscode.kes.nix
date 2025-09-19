@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ kestrel, pkgs, ... }:
 
 let
     tabSize = 4;
 in
-{
+kestrel.mkHome {
     programs.vscode = {
         enable = true;
         package = pkgs.vscodium;

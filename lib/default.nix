@@ -13,6 +13,7 @@ let
         config.allowUnfree = true;
     };
     lib = pkgs.lib;
+    hm = import (inputs.home-manager + "/modules/lib") { inherit lib; };
 
     importModule =
         m:
@@ -42,6 +43,7 @@ let
             pkgs
             lib
             system
+            hm
             ;
     };
 in

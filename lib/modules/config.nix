@@ -3,6 +3,7 @@
     inputs,
     lib,
     pkgs,
+    hm,
     user,
     flake,
     ...
@@ -29,7 +30,12 @@ in
             ${hostname} = inputs.nixpkgs.lib.nixosSystem {
                 inherit system;
                 specialArgs = specialArgs // {
-                    inherit inputs kestrel;
+                    inherit
+                        inputs
+                        kestrel
+                        lib
+                        hm
+                        ;
                     pkgsStable = importPkgs (inputs.nixpkgs-stable or inputs.nixpkgs);
                     pkgsUnstable = importPkgs (inputs.nixpkgs-unstable or inputs.nixpkgs);
                     pkgsMaster = importPkgs (inputs.nixpkgs-master or inputs.nixpkgs);
@@ -54,7 +60,6 @@ in
     mkHome =
         args@{ ... }:
         {
-            imports = [ ../../modules/home-manager.nix ];
             home-manager.sharedModules = [ args ];
         };
 

@@ -1,4 +1,4 @@
-{ kestrel, lib, ... }:
+{ kestrel, hm, ... }:
 
 kestrel.mkHome {
     dconf.settings = {
@@ -30,11 +30,11 @@ kestrel.mkHome {
         };
 
         "org/gnome/nautilus/window-state" = {
-            initial-size = lib.hm.gvariant.mkTuple [
+            initial-size = hm.gvariant.mkTuple [
                 890
                 638
             ];
-            initial-size-file-chooser = lib.hm.gvariant.mkTuple [
+            initial-size-file-chooser = hm.gvariant.mkTuple [
                 890
                 550
             ];

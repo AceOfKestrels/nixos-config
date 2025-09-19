@@ -26,7 +26,6 @@
         ./bootloader/grub.nix
 
         ./utility/audio.nix
-        ./core/zsh.nix
 
         ./terminal/tmux.nix
 

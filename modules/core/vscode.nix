@@ -4,17 +4,7 @@
     ...
 }:
 
-{
-    environment.systemPackages = with pkgs; [
-        nixfmt-rfc-style
-        nixd
-    ];
-
-    imports = kestrel.userModules {
-        kes = ./vscode.kes.nix;
-    };
-}
-// kestrel.mkHome {
+kestrel.mkHome {
     programs.vscode = {
         enable = true;
 
@@ -39,4 +29,14 @@
     home.packages = with pkgs.nerd-fonts; [
         meslo-lg
     ];
+}
+// {
+    environment.systemPackages = with pkgs; [
+        nixfmt-rfc-style
+        nixd
+    ];
+
+    imports = kestrel.userModules {
+        kes = ./vscode.kes.nix;
+    };
 }

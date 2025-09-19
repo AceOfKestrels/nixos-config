@@ -28,7 +28,6 @@
 
     imports = [
         ../../modules/kes-core.nix
-        # ../../modules/desktop/plasma.nix
         ../../modules/desktop/gnome.nix
         ../../modules/misc/power-management.nix
     ];

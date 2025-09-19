@@ -34,6 +34,7 @@ in
                     pkgsMaster = importPkgs (inputs.nixpkgs-master or inputs.nixpkgs);
                 };
                 modules = modules ++ [
+                    ../../modules/home-manager.nix
                     {
                         environment.variables.FLAKE_PATH = flakePath;
                         networking.hostName = lib.mkForce hostname;
@@ -45,5 +46,12 @@ in
                     }
                 ];
             };
+        };
+
+    mkHome =
+        args@{ ... }:
+        {
+            imports = [ ../../modules/home-manager.nix ];
+            home-manager.sharedModules = [ args ];
         };
 }

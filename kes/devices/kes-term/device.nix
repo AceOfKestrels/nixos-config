@@ -26,6 +26,7 @@
 
     imports = [
         ../../modules/kes-core.nix
+        ../../modules/desktop/plasma.nix
 
         ../../modules/amdgpu.nix
 

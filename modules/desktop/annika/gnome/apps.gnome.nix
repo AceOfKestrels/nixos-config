@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ kestrel, pkgs, ... }:
 {
     imports = [
         # Import Calculator
@@ -9,10 +9,6 @@
 
         # Import Nautilus
         ./nautilus.apps.gnome.nix
-    ];
-
-    home-manager.sharedModules = [
-        ./apps.gnome.home.nix
     ];
 
     environment.gnome.excludePackages = (
@@ -32,4 +28,25 @@
             gnome-contacts
         ]
     );
+}
+// kestrel.mkHome {
+    dconf.settings = {
+        "org/gnome/shell" = {
+
+            favorite-apps = [
+                "google-chrome.desktop"
+                "org.keepassxc.KeePassXC.desktop"
+                "org.gnome.Console.desktop"
+                "termius-app.desktop"
+                "org.gnome.Nautilus.desktop"
+                "steam.desktop"
+                "proton-mail.desktop"
+                "discord.desktop"
+                "signal.desktop"
+                "teamspeak.desktop"
+                "plex-desktop.desktop"
+            ];
+
+        };
+    };
 }

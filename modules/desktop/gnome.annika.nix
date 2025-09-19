@@ -1,21 +1,15 @@
-{ pkgs, ... }:
+{ kestrel, pkgs, ... }:
 {
     imports = [
-        # import Default Gnome Config
-        ../../gnome.nix
 
         # import Gnome extensions
-        ./extensions.gnome.nix
+        ./annika/gnome/extensions.gnome.nix
 
         # import Gnome Themes
-        ./theme.gnome.nix
+        ./annika/gnome/theme.gnome.nix
 
         # Import Apps
-        ./apps.gnome.nix
-    ];
-
-    home-manager.sharedModules = [
-        ./gnome.home.nix
+        ./annika/gnome/apps.gnome.nix
     ];
 
     programs.dconf.enable = true;
@@ -37,4 +31,11 @@
             gnome-contacts
         ]
     );
+}
+// kestrel.mkHome {
+    dconf.settings = {
+        "org/gnome/shell" = {
+            last-selected-power-profile = "performance";
+        };
+    };
 }

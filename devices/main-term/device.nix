@@ -20,7 +20,7 @@
         ../../modules/utility/audio.nix
 
         # Load Desktop Environment
-        ../../modules/desktop/annika/gnome/gnome.nix
+        ../../modules/desktop/gnome.nix
 
         # Load Core Configurations
         ../../modules/core.nix

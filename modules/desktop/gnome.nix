@@ -28,5 +28,6 @@
 
     imports = kestrel.userModules config {
         kes = ./gnome.kes.nix;
+        annika = ./gnome.annika.nix;
     };
 }

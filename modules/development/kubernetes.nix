@@ -2,13 +2,14 @@
 
 {
     imports = [
-        ../../overlays/freelens.overlay.nix
         ./terraform.nix
+        ./kubernetes.overlay.nix
     ];
 
     environment.systemPackages = with pkgs; [
         packer
         kubectl
         coreutils
+        freelens
     ];
 }

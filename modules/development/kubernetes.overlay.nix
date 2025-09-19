@@ -55,6 +55,4 @@ in
 
         })
     ];
-
-    environment.systemPackages = with pkgs; [ freelens ];
 }

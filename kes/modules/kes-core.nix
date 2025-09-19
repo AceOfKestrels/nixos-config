@@ -32,8 +32,11 @@
         ./core/zsh.nix
 
         ./software/tmux.nix
+    ];
 
-        ./kes-home.nix
+    home-manager.sharedModules = [
+        ./home/catppuccin.home.nix
+        ./home/vscode.home.nix
     ];
 
     programs.git.config = {
@@ -53,12 +56,4 @@
         krita
         kitty
     ];
-
-    # programs.firefox = {
-    #     enable = true;
-    #     package = pkgs.firefox-devedition;
-    #     preferences = {
-    #         "media.cubeb.backend" = "alsa";
-    #     };
-    # };
 }

@@ -10,13 +10,12 @@
         ./core/zsh.nix # ZSH
         ./core/shell-sources.nix # shell sources
         ./core/garbage-collect.nix # Deleat old nix stuff
-
-        ../overlays/core.overlay.nix
     ];
 
     # Include core packages
     environment.systemPackages = with pkgs; [
         firefox-devedition
+        chromium
 
         keepassxc
         nextcloud-client
@@ -31,6 +30,7 @@
         dig # to have dns tools like nslookup
 
         veracrypt # To Encrypt External Media for Cros Platform use
+
     ];
 
     environment.variables = {

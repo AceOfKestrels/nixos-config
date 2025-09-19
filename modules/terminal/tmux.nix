@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-    script = builtins.readFile ../../scripts/tmux-attach-to-latest.sh;
+    script = builtins.readFile ./tmux-attach-to-latest.sh;
     terminal = "screen-256color";
 in
 {

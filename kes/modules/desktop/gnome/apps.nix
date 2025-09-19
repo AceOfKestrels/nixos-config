@@ -27,6 +27,7 @@
             gnome-contacts
             gnome-chess
             gnome-console
+            epiphany
         ]
     );
 

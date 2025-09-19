@@ -25,37 +25,8 @@
         # Load Core Configurations
         ../../modules/core.nix
 
-        # Setup Libvirt VM Manager
-        ../../modules/utility/libvirt.nix
-
-        # Setup Dev Envierments
-        ../../modules/development/docker.nix
-        ../../modules/development/dotnet.nix
-        ../../modules/development/python.nix
-        ../../modules/development/webdev.nix
-        ../../modules/development/kubernetes.nix
-
-        # Setup Gaming Stuff
-        ../../modules/gaming/minecraft.nix
-        ../../modules/gaming/steam.nix
-
-        # installl ica clie
-        ../../modules/utility/citrix-ica-client.nix
-
         # Load NAS Mount
         ./drivers/nasdrive.nix
-
-        # Add Tor Broser
-        ../../modules/security/tor/tor.nix
-
-        # add catpichin
-        ../../modules/home-manager/catppuccin.nix
-
-        # Import 3d Printing
-        ../../modules/development/3d-printing.nix
-
-        # Import Video Tools
-        ../../modules/utility/video.nix
     ];
 
     # Allow unfree packages

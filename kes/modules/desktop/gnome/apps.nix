@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ kestrel, pkgs, ... }:
 {
     imports = [
         # Import Calculator
@@ -9,10 +9,6 @@
 
         # Import Nautilus
         ./apps/nautilus.nix
-    ];
-
-    home-manager.sharedModules = [
-        ./apps.home.nix
     ];
 
     environment.gnome.excludePackages = (
@@ -29,6 +25,13 @@
             gnome-maps
             gnome-weather
             gnome-contacts
+            gnome-chess
+            gnome-console
         ]
     );
+
+    environment.systemPackages = with pkgs; [ gnome-terminal ];
+}
+// kestrel.mkHome {
+    dconf.settings."org/gnome/shell".favorite-apps = [ ];
 }

@@ -47,4 +47,11 @@ in
                 ];
             };
         };
+
+    mkHome =
+        args@{ ... }:
+        {
+            imports = [ ../../modules/home-manager.nix ];
+            home-manager.sharedModules = [ args ];
+        };
 }

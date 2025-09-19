@@ -37,4 +37,7 @@ let
             ;
     };
 in
-exports
+{
+    mkHome = exports.config.mkHome;
+}
+// exports

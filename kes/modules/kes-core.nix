@@ -51,6 +51,7 @@
 
     environment.systemPackages = with pkgs; [
         krita
+        kitty
     ];
 
     # programs.firefox = {

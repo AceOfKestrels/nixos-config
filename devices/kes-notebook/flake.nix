@@ -25,18 +25,14 @@
     outputs =
         inputs@{ ... }:
         let
-            kestrel = import ../../../lib {
+            kestrel = import ../../lib {
                 system = "x86_64-linux";
                 inherit inputs;
             };
         in
         {
             nixosConfigurations = kestrel.config.mkConfig {
-                flakePath = "/etc/nixos/nixos-config/kes/devices/kes-notebook";
-                modules = [
-                    ./device.nix
-                    ./hardware-configuration.nix
-                ];
+                flake = "kes-notebook";
                 inherit kestrel;
             };
         };

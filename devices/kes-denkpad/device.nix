@@ -29,8 +29,8 @@
     ];
 
     imports = [
-        ../../modules/kes-core.nix
+        ../../modules/core.nix
         ../../modules/desktop/gnome.nix
-        ../../modules/misc/power-management.nix
+        ../../modules/utility/power-management.nix
     ];
 }

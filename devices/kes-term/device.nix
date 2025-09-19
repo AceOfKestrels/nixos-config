@@ -27,15 +27,15 @@
     security.sudo.wheelNeedsPassword = false;
 
     imports = [
-        ../../modules/kes-core.nix
-        ../../modules/desktop/plasma.nix
+        ../../modules/core.nix
+        ../../modules/desktop/plasma6.nix
 
-        ../../modules/amdgpu.nix
+        ./drivers/amdgpu.nix
 
-        ../../../modules/gaming/minecraft.nix
-        ../../../modules/gaming/steam.nix
+        ../../modules/gaming/minecraft.nix
+        ../../modules/gaming/steam.nix
 
-        ../../../modules/development/kubernetes.nix
+        ../../modules/development/kubernetes.nix
     ];
 
     environment.systemPackages = with pkgs; [

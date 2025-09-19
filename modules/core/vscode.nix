@@ -14,8 +14,6 @@
     imports = kestrel.userModules config {
         kes = ./vscode.kes.nix;
     };
-
-    home-manager.sharedModules = [ ./vscode.home.nix ];
 }
 // kestrel.mkHome {
     programs.vscode = {

@@ -17,11 +17,11 @@ in
 {
     mkConfig =
         {
-            flakePath,
+            flake,
             kestrel,
             modules ? [ ],
             specialArgs ? { },
-            hostname ? builtins.baseNameOf flakePath,
+            hostname ? flake,
             ...
         }:
         {
@@ -35,8 +35,10 @@ in
                 };
                 modules = modules ++ [
                     ../../modules/home-manager.nix
+                    ../../devices/${flake}/device.nix
+                    ../../devices/${flake}/hardware.nix
                     {
-                        environment.variables.FLAKE_PATH = flakePath;
+                        environment.variables.FLAKE_PATH = (/etc/nixos/nixos-config/devices + flake);
                         networking.hostName = lib.mkForce hostname;
                         nixpkgs.config = pkgs.config;
                         nix.settings.experimental-features = [
@@ -66,6 +68,6 @@ in
             annika ? { },
             ...
         }:
-        lib.optional (config.useKesModules == "kes") [ kes ]
-        ++ lib.optional (config.useKesModules == "annika") [ annika ];
+        lib.optional (config.userModules == "kes") [ kes ]
+        ++ lib.optional (config.userModules == "annika") [ annika ];
 }

@@ -24,17 +24,14 @@
     outputs =
         inputs@{ ... }:
         let
-            kestrel = import ../../../lib {
+            kestrel = import ../../lib {
                 system = "x86_64-linux";
                 inherit inputs;
             };
         in
         {
             nixosConfigurations = kestrel.config.mkConfig {
-                flakePath = "/etc/nixos/nixos-config/annika/devices/main-term";
-                modules = [
-                    ./device.nix
-                ];
+                flake = "main-term";
                 inherit kestrel;
             };
         };

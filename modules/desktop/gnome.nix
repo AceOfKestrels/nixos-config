@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+    kestrel,
+    config,
+    pkgs,
+    ...
+}:
 
 {
     # Enable the X11 windowing system.
@@ -20,4 +25,8 @@
         ibus
         dbus
     ];
+
+    imports = kestrel.userModules config {
+        kes = ./gnome.kes.nix;
+    };
 }

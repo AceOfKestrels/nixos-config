@@ -1,6 +1,6 @@
 { ... }:
 {
-    imports = [ ../../modules/bootloader/lanzaboote.nix ];
+    imports = [ ../../../modules/bootloader/lanzaboote.nix ];
 
     # Extra entries appear in /boot/loader/entries/*.conf
     boot.loader.systemd-boot.extraEntries = {

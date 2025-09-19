@@ -1,4 +1,6 @@
 {
+    kestrel,
+    config,
     pkgs,
     ...
 }:
@@ -15,4 +17,8 @@
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         plasma-browser-integration
     ];
+
+    imports = kestrel.userModules config {
+        kes = ./plasma6.kes.nix;
+    };
 }

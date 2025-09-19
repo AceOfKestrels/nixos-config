@@ -39,5 +39,6 @@ let
 in
 {
     mkHome = exports.config.mkHome;
+    userModules = exports.config.userModules;
 }
 // exports

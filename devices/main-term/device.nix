@@ -8,66 +8,54 @@
     userModules = "annika";
     imports = [
         # Import lanzaboote
-        ../../drivers/lanzaboote.nix
-
-        # Import Hardware
-        ./hardware.nix
+        ./drivers/lanzaboote.nix
 
         # Import Nvidia Drivers
-        ../../drivers/nvidia.nix
+        ./drivers/nvidia.nix
 
         # Load Printer Drivers and Set Them up
-        ../../drivers/printing.nix
+        ../../modules/utility/printing.nix
 
         # Load Audio Drivers and Set Them up
-        ../../drivers/audio.nix
+        ../../modules/utility/audio.nix
 
         # Load Desktop Environment
-        ../../desktop/gnome/gnome.nix
+        ../../modules/desktop/annika/gnome/gnome.nix
 
         # Load Core Configurations
-        ../../../modules/core.nix
+        ../../modules/core.nix
 
         # Setup Libvirt VM Manager
-        ../../../modules/development/libvirt.nix
-
-        # Load Shell Aliases
-        ../../shell/shell.nix
+        ../../modules/utility/libvirt.nix
 
         # Setup Dev Envierments
-        ../../../modules/development/docker.nix
-        ../../../modules/development/dotnet.nix
-        ../../../modules/development/python.nix
-        ../../../modules/development/webdev.nix
-        ../../../modules/development/kubernetes.nix
+        ../../modules/development/docker.nix
+        ../../modules/development/dotnet.nix
+        ../../modules/development/python.nix
+        ../../modules/development/webdev.nix
+        ../../modules/development/kubernetes.nix
 
         # Setup Gaming Stuff
-        ../../../modules/gaming/minecraft.nix
-        ../../../modules/gaming/steam.nix
-
-        # Load my Standert Software
-        ../../software/standert.nix
+        ../../modules/gaming/minecraft.nix
+        ../../modules/gaming/steam.nix
 
         # installl ica clie
-        ../../../modules/utility/citrix-ica-client.nix
+        ../../modules/utility/citrix-ica-client.nix
 
         # Load NAS Mount
-        ../../drivers/nasdrive.nix
+        ./drivers/nasdrive.nix
 
         # Add Tor Broser
-        ../../../modules/security/tor/tor.nix
-
-        # add Scarab
-        #../../../modules/gaming/scarab.nix
+        ../../modules/security/tor/tor.nix
 
         # add catpichin
-        ../../../modules/home/catppuccin.nix
+        ../../modules/home-manager/catppuccin.nix
 
         # Import 3d Printing
-        ../../../modules/utility/3d-printing.nix
+        ../../modules/development/3d-printing.nix
 
         # Import Video Tools
-        ../../../modules/utility/video.nix
+        ../../modules/utility/video.nix
     ];
 
     # Allow unfree packages

@@ -7,7 +7,7 @@
 {
     boot.kernelPackages = pkgs.linuxPackages_zen;
 
-    networking.hostName = "nixos";
+    networking.hostName = "kes-notebook";
 
     users.users.kes = {
         isNormalUser = true;
@@ -15,30 +15,19 @@
         extraGroups = [
             "networkmanager"
             "wheel"
-            "docker"
+            "bluetooth"
         ];
     };
 
     home-manager.users.kes.home.stateVersion = lib.mkDefault "25.05";
     system.stateVersion = lib.mkDefault "24.11";
 
-    security.sudo.wheelNeedsPassword = false;
+    environment.systemPackages = with pkgs; [
+        android-studio
+    ];
 
     imports = [
         ../../modules/kes-core.nix
-        ../../modules/desktop/plasma.nix
-
-        ../../modules/amdgpu.nix
-
-        ../../../modules/gaming/minecraft.nix
-        ../../../modules/gaming/steam.nix
-
-        ../../../modules/development/kubernetes.nix
-    ];
-
-    environment.systemPackages = with pkgs; [
-        ytmdesktop
-        discord
-        anydesk
+        ../../modules/misc/power-management.nix
     ];
 }

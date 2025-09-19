@@ -15,8 +15,4 @@
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         plasma-browser-integration
     ];
-
-    imports = [
-        ../home/plasma.nix
-    ];
 }

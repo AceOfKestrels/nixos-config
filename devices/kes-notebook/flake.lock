@@ -95,16 +95,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1758383459,
+        "lastModified": 1758384158,
         "narHash": "sha256-pHCE9VZv3qZ6FP31zoyKKCDPHZtqJqWA7WWlt+jkhsQ=",
         "owner": "AceOfKestrels",
         "repo": "shell-sources",
-        "rev": "e06c938b0b6f330d0aa8acec2240412c9dc4a4bb",
+        "rev": "c5a26e4637bb58716bcf9ea3e30be55f7e477d2d",
         "type": "github"
       },
       "original": {
         "owner": "AceOfKestrels",
-        "ref": "feature/flake",
         "repo": "shell-sources",
         "type": "github"
       }

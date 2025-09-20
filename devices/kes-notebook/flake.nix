@@ -20,6 +20,10 @@
             url = "github:catppuccin/nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        shell-sources = {
+            url = "github:AceOfKestrels/shell-sources";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs =

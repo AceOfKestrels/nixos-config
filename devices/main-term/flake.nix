@@ -19,6 +19,10 @@
             url = "github:nix-community/lanzaboote";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        shell-sources = {
+            url = "github:AceOfKestrels/shell-sources";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs =

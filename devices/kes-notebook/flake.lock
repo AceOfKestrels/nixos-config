@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758296614,
-        "narHash": "sha256-l60D1i0aaSqemy9dL7wP0ePMfcv/oZbeKpvUMY+q0kQ=",
+        "lastModified": 1758375677,
+        "narHash": "sha256-BLtD+6qWz7fQjPk2wpwyXQLGI0E30Ikgf2ppn2nVadI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "55b1f5b7b191572257545413b98e37abab2fdb00",
+        "rev": "edc7468e12be92e926847cb02418e649b02b59dd",
         "type": "github"
       },
       "original": {
@@ -84,7 +84,29 @@
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "shell-sources": "shell-sources"
+      }
+    },
+    "shell-sources": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1758383459,
+        "narHash": "sha256-pHCE9VZv3qZ6FP31zoyKKCDPHZtqJqWA7WWlt+jkhsQ=",
+        "owner": "AceOfKestrels",
+        "repo": "shell-sources",
+        "rev": "e06c938b0b6f330d0aa8acec2240412c9dc4a4bb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AceOfKestrels",
+        "ref": "feature/flake",
+        "repo": "shell-sources",
+        "type": "github"
       }
     }
   },

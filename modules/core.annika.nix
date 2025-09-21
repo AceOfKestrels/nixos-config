@@ -1,4 +1,5 @@
 {
+    kestrel,
     pkgs,
     lib,
     ...
@@ -38,6 +39,10 @@
             name = lib.mkForce "Annika Leonie Keggenhoff";
             email = lib.mkForce "mail@annika-keggenhoff.de";
         };
+    };
+
+    nixpkgs.overlays = kestrel.overlays.mkOverlays {
+        termius = "9807714d6944a957c2e036f84b0ff8caf9930bc0";
     };
 
     environment.systemPackages = with pkgs; [

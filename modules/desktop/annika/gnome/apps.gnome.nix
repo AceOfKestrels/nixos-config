@@ -44,7 +44,7 @@
                 "discord.desktop"
                 "signal.desktop"
                 "teamspeak.desktop"
-                "plex-desktop.desktop"
+                "jellyflix.desktop"
             ];
 
         };

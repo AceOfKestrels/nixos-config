@@ -26,7 +26,8 @@
 
     imports = [
         ../../modules/core.nix
-        ../../modules/desktop/plasma6.nix
+        # ../../modules/desktop/plasma6.nix
+        ../../modules/desktop/gnome.nix
 
         ./drivers/amdgpu.nix
 

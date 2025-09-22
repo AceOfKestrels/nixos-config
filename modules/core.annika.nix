@@ -32,6 +32,9 @@
 
         # Import Video Tools
         ./utility/video.nix
+
+        # Import Keybord shit
+        ./development/keybord.nix
     ];
 
     programs.git.config = {

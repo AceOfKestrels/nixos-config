@@ -1,4 +1,10 @@
-{ system, inputs, ... }:
+{
+    system,
+    inputs,
+    flake,
+    user ? "",
+    ...
+}:
 
 let
     nixpkgs = inputs.nixpkgs;
@@ -7,6 +13,7 @@ let
         config.allowUnfree = true;
     };
     lib = pkgs.lib;
+    hm = import (inputs.home-manager + "/modules/lib") { inherit lib; };
 
     importModule =
         m:
@@ -16,6 +23,8 @@ let
                     inputs
                     importModule
                     importModules
+                    user
+                    flake
                     ;
             }
             // exports
@@ -34,10 +43,12 @@ let
             pkgs
             lib
             system
+            hm
             ;
     };
 in
 {
     mkHome = exports.config.mkHome;
+    userModules = exports.config.userModules;
 }
 // exports

@@ -24,6 +24,7 @@
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
-        "*.nix": "${basename}.*.nix"
+        "*.nix": "${basename}.*.nix",
+        "*.zsh": "${basename}.*.zsh"
     }
 }

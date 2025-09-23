@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+    kestrel,
+    pkgs,
+    ...
+}:
 
 {
     # Import core modules
@@ -10,13 +14,16 @@
         ./core/zsh.nix # ZSH
         ./core/shell-sources.nix # shell sources
         ./core/garbage-collect.nix # Deleat old nix stuff
-
-        ../overlays/core.overlay.nix
-    ];
+    ]
+    ++ kestrel.userModules {
+        kes = ./core.kes.nix;
+        annika = ./core.annika.nix;
+    };
 
     # Include core packages
     environment.systemPackages = with pkgs; [
         firefox-devedition
+        chromium
 
         keepassxc
         nextcloud-client
@@ -31,6 +38,9 @@
         dig # to have dns tools like nslookup
 
         veracrypt # To Encrypt External Media for Cros Platform use
+
+        jellyflix
+
     ];
 
     environment.variables = {

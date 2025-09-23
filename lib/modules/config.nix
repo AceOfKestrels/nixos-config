@@ -3,6 +3,9 @@
     inputs,
     lib,
     pkgs,
+    hm,
+    user,
+    flake,
     ...
 }:
 
@@ -17,26 +20,32 @@ in
 {
     mkConfig =
         {
-            flakePath,
             kestrel,
             modules ? [ ],
             specialArgs ? { },
-            hostname ? builtins.baseNameOf flakePath,
+            hostname ? flake,
             ...
         }:
         {
             ${hostname} = inputs.nixpkgs.lib.nixosSystem {
                 inherit system;
                 specialArgs = specialArgs // {
-                    inherit inputs kestrel;
+                    inherit
+                        inputs
+                        kestrel
+                        lib
+                        hm
+                        ;
                     pkgsStable = importPkgs (inputs.nixpkgs-stable or inputs.nixpkgs);
                     pkgsUnstable = importPkgs (inputs.nixpkgs-unstable or inputs.nixpkgs);
                     pkgsMaster = importPkgs (inputs.nixpkgs-master or inputs.nixpkgs);
                 };
                 modules = modules ++ [
                     ../../modules/home-manager.nix
+                    ../../devices/${flake}/device.nix
+                    ../../devices/${flake}/hardware.nix
                     {
-                        environment.variables.FLAKE_PATH = flakePath;
+                        environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/devices/${flake}";
                         networking.hostName = lib.mkForce hostname;
                         nixpkgs.config = pkgs.config;
                         nix.settings.experimental-features = [
@@ -51,7 +60,14 @@ in
     mkHome =
         args@{ ... }:
         {
-            imports = [ ../../modules/home-manager.nix ];
             home-manager.sharedModules = [ args ];
         };
+
+    userModules =
+        {
+            kes ? { },
+            annika ? { },
+            ...
+        }:
+        (lib.optional (user == "kes") kes) ++ (lib.optional (user == "annika") annika);
 }

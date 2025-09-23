@@ -6,6 +6,9 @@ on:
     paths:
       - '**/*.sh'
       - '.github/workflows/**'
+  pull_request: 
+    branches: 
+      - main
 
 jobs:
   lint-bash:

@@ -49,6 +49,11 @@
         krita
         kitty
     ];
+
+    environment.variables = {
+        GIT_BROWSER = "firefox-devedition";
+    };
+
     time.timeZone = "Europe/Berlin";
 
     i18n.defaultLocale = "en_GB.UTF-8";

@@ -1,5 +1,4 @@
 {
-    kestrel,
     pkgs,
     lib,
     ...
@@ -35,6 +34,8 @@
 
         # Import Keybord shit
         ./development/keybord.nix
+
+        ./terminal/termius.nix
     ];
 
     programs.git.config = {
@@ -44,15 +45,10 @@
         };
     };
 
-    nixpkgs.overlays = kestrel.overlays.mkOverlays {
-        termius = "9807714d6944a957c2e036f84b0ff8caf9930bc0";
-    };
-
     environment.systemPackages = with pkgs; [
         discord # Install Official Discord app
         google-chrome # Install google chrom
         plex-desktop # Install Plex
         protonmail-desktop # Install Proton Mail
-        termius # SSH Client
     ];
 }

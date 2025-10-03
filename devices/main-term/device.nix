@@ -110,8 +110,6 @@
         KES_NIX_CONFIGS_DIR = lib.mkForce "/etc/nixos/nixos-config";
     };
 
-    system.stateVersion = "24.11"; # Did you read the comment?
-
     environment.systemPackages = with pkgs; [
         teamspeak6-client
         remmina

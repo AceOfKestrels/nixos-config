@@ -44,6 +44,7 @@ in
                     ../../modules/home-manager.nix
                     ../../devices/${flake}/device.nix
                     ../../devices/${flake}/hardware.nix
+                    ../../devices/${flake}/state.nix
                     {
                         environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/devices/${flake}";
                         networking.hostName = lib.mkForce hostname;

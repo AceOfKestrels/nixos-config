@@ -1,5 +1,4 @@
 {
-    lib,
     pkgs,
     ...
 }:
@@ -18,15 +17,12 @@
             "docker"
         ];
     };
-
-    home-manager.users.kes.home.stateVersion = lib.mkDefault "25.05";
-    system.stateVersion = lib.mkDefault "24.11";
+    home-manager.users.kes = { }; # needed for HM to apply config to user
 
     security.sudo.wheelNeedsPassword = false;
 
     imports = [
         ../../modules/core.nix
-        # ../../modules/desktop/plasma6.nix
         ../../modules/desktop/gnome.nix
 
         ./drivers/amdgpu.nix

@@ -10,14 +10,12 @@
     hardware.graphics = {
         extraPackages = with pkgs; [
             vulkan-loader
-            amdvlk
         ];
 
         # Same for 32 bit
         enable32Bit = true;
         extraPackages32 = with pkgs.pkgsi686Linux; [
             vulkan-loader
-            amdvlk
         ];
     };
 

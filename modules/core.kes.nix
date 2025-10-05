@@ -28,6 +28,7 @@
         ./utility/audio.nix
 
         ./terminal/tmux.nix
+        ./terminal/kitty.nix
 
         ./home-manager/catppuccin.nix
     ];
@@ -47,7 +48,6 @@
 
     environment.systemPackages = with pkgs; [
         krita
-        kitty
     ];
 
     environment.variables = {

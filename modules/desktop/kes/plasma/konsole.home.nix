@@ -58,7 +58,7 @@ in
         };
 
         profiles.${defaultProfile}.extraConfig = profilesBase // {
-            General.Command = "/run/current-system/sw/bin/tmux-attach-to-latest konsole-session";
+            General.Command = "/run/current-system/sw/bin/tmux-attach-to-latest terminal-session";
         };
         profiles.${altProfile}.extraConfig = profilesBase // {
             General.Command = "/run/current-system/sw/bin/zsh";

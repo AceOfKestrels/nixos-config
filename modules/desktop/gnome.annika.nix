@@ -14,6 +14,8 @@
 
     programs.dconf.enable = true;
 
+    services.displayManager.defaultSession = "gnome-xorg";
+
     environment.gnome.excludePackages = (
         with pkgs;
         [

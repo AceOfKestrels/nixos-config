@@ -12,6 +12,8 @@
     ];
 
     programs.dconf.enable = true;
+
+    services.displayManager.defaultSession = "gnome";
 }
 // kestrel.mkHome {
     dconf.settings = {

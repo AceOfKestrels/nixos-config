@@ -11,7 +11,6 @@
     # Enable GNOME
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
-    services.displayManager.defaultSession = "gnome-xorg";
 
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = true;

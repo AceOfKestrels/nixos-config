@@ -1,5 +1,7 @@
 #! /bin/bash
 
+printf '\e]2; \a'
+
 # start a normal zsh/bash if tmux cannot start
 if ! tmux start-server &>/dev/null; then
     if where zsh &>/dev/null; then
@@ -58,4 +60,4 @@ if [ -z "$sessionName" ]; then
 fi
 
 # attach to an existing session, otherwise create a new one
-tmux new-session -A -s "$sessionName"
+exec tmux new-session -A -s "$sessionName"

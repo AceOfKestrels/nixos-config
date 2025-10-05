@@ -1,6 +1,7 @@
 #! /bin/bash
 
 printf '\e]2; \a'
+usage="usage: tmux-attach-to-session [session-name] [options]"
 
 # start a normal zsh/bash if tmux cannot start
 if ! tmux start-server &>/dev/null; then
@@ -12,31 +13,57 @@ if ! tmux start-server &>/dev/null; then
     return
 fi
 
-# parse arguments
 if [ -n "$1" ]; then
-    for arg in "$@"; do
-        case $arg in
-            --include-directory)
-                includeDirectory=1
-                break
-            ;;
-            --help|-h)
-                echo "usage: tmux-attach-to-session [session-name] [options]"
-                echo
-                echo attach to the latest unattached tmux session matching session-name
-                echo or create a new one when none is found
-                echo
-                echo "options"
-                echo "  -h --help           show this help"
-                echo "  --include-directory include the working directory in the session name"
+    sessionNameArg="$1-";
+    shift
+fi
+
+# parse arguments
+while [ -n "$1" ]; do
+    case "$1" in
+        --include-directory|-d)
+            if [ "$includeDirectory" = 1 ]; then
+                echo "$usage"
                 return 1
-            ;;
-            *)
-                sessionNameArg="$1-";
-                shift
-            ;;
-        esac
-    done
+            fi
+            includeDirectory=1
+            shift
+        ;;
+        --title|-t)
+            if [ "$title" = 1 ]; then
+                echo "$usage"
+                return 1
+            fi
+            shift
+            if [ -z "$1" ]; then
+                echo "$usage"
+                return 1
+            fi
+            title="$1"
+            shift
+        ;;
+        --help|-h)
+            echo "$usage"
+            echo
+            echo attach to the latest unattached tmux session matching session-name
+            echo or create a new one when none is found
+            echo
+            echo "options"
+            echo "  -h --help               show this help"
+            echo "  -d --include-directory  include the working directory in the session name"
+            echo "  -t --title <title>      the title used for the terminal"
+            return 1
+        ;;
+        *)
+            echo "$usage"
+            return 1
+        ;;
+    esac
+done
+
+if [ -n "$title" ]; then
+    # shellcheck disable=SC2059
+    printf "\e]2;$title\a"
 fi
 
 # build session base name

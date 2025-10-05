@@ -15,6 +15,7 @@
         vulkan-tools
         protontricks
         protonup-qt
+        gamescope
     ];
 
     hardware.steam-hardware.enable = true;

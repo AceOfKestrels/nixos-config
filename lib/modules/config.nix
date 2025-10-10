@@ -58,11 +58,9 @@ in
             };
         };
 
-    mkHome =
-        args@{ ... }:
-        {
-            home-manager.sharedModules = [ args ];
-        };
+    mkHome = m: {
+        home-manager.sharedModules = [ m ];
+    };
 
     userModules =
         {

@@ -39,8 +39,7 @@
 
         veracrypt # To Encrypt External Media for Cros Platform use
 
-        jellyflix
-
+        # jellyflix
     ];
 
     environment.variables = {

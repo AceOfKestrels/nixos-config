@@ -6,6 +6,7 @@
     hm,
     user,
     flake,
+    flakePath,
     ...
 }:
 
@@ -23,7 +24,7 @@ in
             kestrel,
             modules ? [ ],
             specialArgs ? { },
-            hostname ? flake,
+            hostname ? builtins.baseNameOf flake,
             ...
         }:
         {
@@ -42,11 +43,11 @@ in
                 };
                 modules = modules ++ [
                     ../../modules/home-manager.nix
-                    ../../devices/${flake}/device.nix
-                    ../../devices/${flake}/hardware.nix
-                    ../../devices/${flake}/state.nix
+                    (flake + "/device.nix")
+                    (flake + "/hardware.nix")
+                    (flake + "/state.nix")
                     {
-                        environment.variables.FLAKE_PATH = "/etc/nixos/nixos-config/devices/${flake}";
+                        environment.variables.FLAKE_PATH = lib.mkDefault flakePath;
                         networking.hostName = lib.mkForce hostname;
                         nixpkgs.config = pkgs.config;
                         nix.settings.experimental-features = [

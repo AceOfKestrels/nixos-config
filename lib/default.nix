@@ -2,6 +2,7 @@
     system,
     inputs,
     flake,
+    flakePath ? "",
     user ? "",
     ...
 }:
@@ -25,6 +26,7 @@ let
                     importModules
                     user
                     flake
+                    flakePath
                     ;
             }
             // exports

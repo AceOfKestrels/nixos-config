@@ -30,7 +30,8 @@
         let
             kestrel = import ../../lib {
                 system = "x86_64-linux";
-                flake = "main-term";
+                flake = ./.;
+                flakePath = "/etc/nixos/nixos-config/devices/main-term";
                 user = "annika";
                 inherit inputs;
             };

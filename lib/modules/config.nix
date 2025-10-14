@@ -42,10 +42,11 @@ in
                     pkgsMaster = importPkgs (inputs.nixpkgs-master or inputs.nixpkgs);
                 };
                 modules = modules ++ [
-                    ../../modules/home-manager.nix
                     (flake + "/device.nix")
                     (flake + "/hardware.nix")
                     (flake + "/state.nix")
+                    inputs.home-manager.nixosModules.home-manager
+                    ../options/options.nix
                     {
                         environment.variables.FLAKE_PATH = lib.mkDefault flakePath;
                         networking.hostName = lib.mkForce hostname;
@@ -54,6 +55,12 @@ in
                             "nix-command"
                             "flakes"
                         ];
+
+                        home-manager = {
+                            useGlobalPkgs = lib.mkDefault true;
+                            useUserPackages = lib.mkDefault true;
+                            backupFileExtension = lib.mkDefault "backup";
+                        };
                     }
                 ];
             };

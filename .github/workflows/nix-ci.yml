@@ -1,0 +1,11 @@
+name: "Nix CI"
+
+on:
+    push:
+    pull_request: 
+
+jobs: 
+    build:
+        uses: KestrelsDevelopment/.github/.github/workflows/nix-build.yml@main 
+    lint:
+        uses: KestrelsDevelopment/.github/.github/workflows/nix-lint.yml@main 

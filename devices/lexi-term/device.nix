@@ -3,8 +3,9 @@
 {
 
     imports = [
-        ../modules/amdgpu.nix
-        ../modules/kde-plasma.nix
+        ./drivers/amdgpu.nix
+
+        ../../modules/desktop/plasma6.nix
 
         ../../modules/core/office.nix
         ../../modules/core/garbage-collect.nix
@@ -34,8 +35,6 @@
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-
-    networking.hostName = "nixos"; # Define your hostname.
 
     # Enable networking
     networking.networkmanager.enable = true;

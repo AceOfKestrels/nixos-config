@@ -1,5 +1,5 @@
 {
-    description = "flake for kes-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/nixos-config/devices/kes-term#kes-term' to apply.";
+    description = "flake for lexi-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/nixos-config/devices/lexi-term#lexi-term' to apply.";
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -31,7 +31,7 @@
             kestrel = import ../../lib {
                 system = "x86_64-linux";
                 flake = ./.;
-                flakePath = "/etc/nixos/nixos-config/devices/kes-term";
+                flakePath = "/etc/nixos/nixos-config/devices/lexi-term";
                 user = "kes";
                 inherit inputs;
             };

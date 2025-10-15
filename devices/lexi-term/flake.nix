@@ -32,7 +32,7 @@
                 system = "x86_64-linux";
                 flake = ./.;
                 flakePath = "/etc/nixos/nixos-config/devices/lexi-term";
-                user = "kes";
+                user = "lexi";
                 inherit inputs;
             };
         in

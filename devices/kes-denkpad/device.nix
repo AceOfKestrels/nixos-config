@@ -19,9 +19,6 @@
         ];
     };
 
-    home-manager.users.kes.home.stateVersion = lib.mkDefault "25.05";
-    system.stateVersion = lib.mkDefault "24.11";
-
     environment.systemPackages = with pkgs; [
         android-studio
     ];

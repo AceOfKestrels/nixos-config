@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+    kestrel,
+    pkgs,
+    lib,
+    ...
+}:
 let
     gcmWrapped = pkgs.symlinkJoin {
         name = "git-credential-manager-wrapped";
@@ -26,8 +31,8 @@ in
 
         config = {
             user = {
-                name = "CHANGE_ME";
-                email = "changeme@example.com";
+                name = lib.mkDefault "CHANGE_ME";
+                email = lib.mkDefault "changeme@example.com";
             };
             core.editor = "nano";
             alias.pfusch = "push --force";
@@ -45,4 +50,10 @@ in
         libsecret # not strictly required (wrapped), but handy for tools like secret-tool
         seahorse # optional GUI to view saved creds
     ];
+
+    imports = kestrel.userModules {
+        kes = ./git.kes.nix;
+        annika = ./git.annika.nix;
+        lexi = ./git.lexi.nix;
+    };
 }

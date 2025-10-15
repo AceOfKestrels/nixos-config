@@ -1,8 +1,4 @@
-{
-    lib,
-    pkgs,
-    ...
-}:
+{ pkgs, ... }:
 
 {
     networking.networkmanager.enable = true;
@@ -32,14 +28,6 @@
 
         ./home-manager/catppuccin.nix
     ];
-
-    programs.git.config = {
-        user = {
-            name = lib.mkForce "AceOfKestrels";
-            email = lib.mkForce "aceofkestrels@gmail.com";
-        };
-        core.editor = lib.mkForce "nvim";
-    };
 
     environment.shellAliases = {
         edit-shell-sources = ''code "$SHELL_SOURCES_DIR"'';

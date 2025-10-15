@@ -1,8 +1,4 @@
-{
-    pkgs,
-    lib,
-    ...
-}:
+{ pkgs, ... }:
 
 {
     imports = [
@@ -37,13 +33,6 @@
 
         ./terminal/termius.nix
     ];
-
-    programs.git.config = {
-        user = {
-            name = lib.mkForce "Annika Leonie Keggenhoff";
-            email = lib.mkForce "mail@annika-keggenhoff.de";
-        };
-    };
 
     environment.systemPackages = with pkgs; [
         discord # Install Official Discord app

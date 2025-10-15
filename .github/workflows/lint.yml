@@ -1,16 +1,48 @@
-# .github/workflows/lint-sh.yml
-name: Lint Shell Scripts
+# .github/workflows/lint-nix.yml
+name: "Lint Files"
 
 on:
   push:
-    paths:
-      - '**/*.sh'
-      - '.github/workflows/**'
   pull_request: 
     branches: 
       - main
 
 jobs:
+  lint-nix:
+    name: Lint Nix Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
+      - name: Run nixfmt --check
+        run: |
+          set -euo pipefail
+
+          failures=0
+
+          for cfg in $(git ls-files '*.nix'); do
+            if nix run nixpkgs#nixfmt-rfc-style -- --check --indent=4 $cfg >/dev/null 2>/dev/null; then
+              echo "  ✓ $cfg"
+            else
+              echo "  ✗ $cfg"
+              failures=$((failures+1))
+            fi
+          done
+
+          if [ "$failures" -ne 0 ]; then
+            echo -e "\n❌ $failures files failed linting."
+            exit 1
+          else
+            echo -e "\n✅ All files passed linting!"
+          fi
+
   lint-bash:
     name: Lint-Bash
     runs-on: ubuntu-latest

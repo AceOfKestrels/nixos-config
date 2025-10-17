@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1760009352,
-        "narHash": "sha256-VGR+U4hZ1q3RU4rTF9H9mlbN2q0IDkCLLMBoyrovRIA=",
+        "lastModified": 1760692571,
+        "narHash": "sha256-SgqC+B7F7hHDKug+zRUL83vhibCSknzhRl0+OxUYjn4=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "c8d5931c4f69d6a019a3945663f7cb7a7ab484e7",
+        "rev": "8a084b86b6a4b2a1575e8cc67e07c4a687fce276",
         "type": "github"
       },
       "original": {
@@ -23,15 +23,16 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
+          "kestrix",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1760061988,
-        "narHash": "sha256-CeuMo7fjWm3XaoK+b1PGyaVIlE1GHudoxk9jrJFvfbY=",
+        "lastModified": 1760662441,
+        "narHash": "sha256-mlDqR1Ntgs9uYYEAUR1IhamKBO0lxoNS4zGLzEZaY0A=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c7f4214faca2f196c551b767c12a70bfa0614510",
+        "rev": "722792af097dff5790f1a66d271a47759f477755",
         "type": "github"
       },
       "original": {
@@ -40,13 +41,34 @@
         "type": "github"
       }
     },
+    "kestrix": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760723616,
+        "narHash": "sha256-rjRdYHm3Yc5WZ6myqqW/PdQZFoZ/Md75Jwkt1s55CKQ=",
+        "owner": "KestrelsDevelopment",
+        "repo": "KestrIx",
+        "rev": "146e6e76b9ca7cb5119c611ab179431796996aa7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KestrelsDevelopment",
+        "repo": "KestrIx",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1759831965,
-        "narHash": "sha256-vgPm2xjOmKdZ0xKA6yLXPJpjOtQPHfaZDRtH+47XEBo=",
+        "lastModified": 1760524057,
+        "narHash": "sha256-EVAqOteLBFmd7pKkb0+FIUyzTF61VKi7YmvP1tw4nEw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c9b6fb798541223bbb396d287d16f43520250518",
+        "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
         "type": "github"
       },
       "original": {
@@ -59,7 +81,7 @@
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
-        "home-manager": "home-manager",
+        "kestrix": "kestrix",
         "nixpkgs": "nixpkgs",
         "shell-sources": "shell-sources"
       }

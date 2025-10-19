@@ -7,10 +7,6 @@
         # nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
         # nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
-        home-manager = {
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         catppuccin = {
             url = "github:catppuccin/nix";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -19,20 +15,20 @@
             url = "github:AceOfKestrels/shell-sources";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        kestrix = {
+            url = "github:KestrelsDevelopment/KestrIx";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs =
-        inputs@{ ... }:
-        let
-            kestrel = import ../../lib {
-                system = "x86_64-linux";
-                flake = ./.;
-                flakePath = "/etc/nixos/nixos-config/devices/kes-denkpad";
-                user = "kes";
-                inherit inputs;
-            };
-        in
-        {
-            nixosConfigurations = kestrel.config.mkConfig { inherit kestrel; };
+    outputs = inputs: {
+        nixosConfigurations = inputs.kestrix.mkConfig {
+            system = "x86_64-linux";
+            flake = ./.;
+            src = "/etc/nixos/nixos-config/devices/kes-denkpad";
+            user = "kes";
+            inherit inputs;
         };
+    };
 }

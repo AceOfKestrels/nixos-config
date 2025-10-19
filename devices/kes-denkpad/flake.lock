@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758270360,
-        "narHash": "sha256-yqh6EEhlpVWRoKl85o1s+QZ72UHWTvornnc3C0Ls484=",
+        "lastModified": 1760692571,
+        "narHash": "sha256-SgqC+B7F7hHDKug+zRUL83vhibCSknzhRl0+OxUYjn4=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "2e0aacdd6abbecd1b1c0511a2fcd1460a6bc6645",
+        "rev": "8a084b86b6a4b2a1575e8cc67e07c4a687fce276",
         "type": "github"
       },
       "original": {
@@ -23,15 +23,16 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
+          "kestrix",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1758375677,
-        "narHash": "sha256-BLtD+6qWz7fQjPk2wpwyXQLGI0E30Ikgf2ppn2nVadI=",
+        "lastModified": 1760662441,
+        "narHash": "sha256-mlDqR1Ntgs9uYYEAUR1IhamKBO0lxoNS4zGLzEZaY0A=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "edc7468e12be92e926847cb02418e649b02b59dd",
+        "rev": "722792af097dff5790f1a66d271a47759f477755",
         "type": "github"
       },
       "original": {
@@ -40,13 +41,34 @@
         "type": "github"
       }
     },
+    "kestrix": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760894875,
+        "narHash": "sha256-59T4GXRZSYHi1XTXW6P+LZc3nMRK4XEfatCDFvgQVSM=",
+        "owner": "KestrelsDevelopment",
+        "repo": "KestrIx",
+        "rev": "383ec616e4a597b67af945e271f959fdda87d629",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KestrelsDevelopment",
+        "repo": "KestrIx",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1758277210,
-        "narHash": "sha256-iCGWf/LTy+aY0zFu8q12lK8KuZp7yvdhStehhyX1v8w=",
+        "lastModified": 1760524057,
+        "narHash": "sha256-EVAqOteLBFmd7pKkb0+FIUyzTF61VKi7YmvP1tw4nEw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8eaee110344796db060382e15d3af0a9fc396e0e",
+        "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
         "type": "github"
       },
       "original": {
@@ -59,7 +81,7 @@
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
-        "home-manager": "home-manager",
+        "kestrix": "kestrix",
         "nixpkgs": "nixpkgs",
         "shell-sources": "shell-sources"
       }
@@ -71,11 +93,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758384158,
-        "narHash": "sha256-pHCE9VZv3qZ6FP31zoyKKCDPHZtqJqWA7WWlt+jkhsQ=",
+        "lastModified": 1759509897,
+        "narHash": "sha256-HbY+LYUFoc2JLGWetmmFWJc/6Tcg4PaPLeHe6+6pmpc=",
         "owner": "AceOfKestrels",
         "repo": "shell-sources",
-        "rev": "c5a26e4637bb58716bcf9ea3e30be55f7e477d2d",
+        "rev": "d554ac79ed5e696e6425dba8e73f815ebb4d68a3",
         "type": "github"
       },
       "original": {

@@ -7,13 +7,15 @@ if ! [[ "$script_dir" = "/etc/nixos/nixos-config" ]]; then
 fi
 
 if [ -z "$1" ] || ! [ -d "$1" ] || ! [ -f "$1/flake.nix" ]; then
-    echo "usage: build.sh <flake_path> [config_name]"
+    echo "usage: install.sh <flake_path> [config_name]"
     echo
     echo "available flakes:"
+    cd "$script_dir" || exit 1
     git ls-files --full-name -- '*/flake.nix' \
         | xargs -r -n1 dirname \
         | sort -u \
         | sed "s|^|$(git rev-parse --show-toplevel)/|"
+    cd - > /dev/null || exit 1
     exit 1
 fi
 

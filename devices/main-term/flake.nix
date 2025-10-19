@@ -23,20 +23,21 @@
             url = "github:AceOfKestrels/shell-sources";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        kestrix = {
+            url = "github:KestrelsDevelopment/KestrIx";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.home-manager.follows = "home-manager";
+        };
     };
 
-    outputs =
-        inputs@{ ... }:
-        let
-            kestrel = import ../../lib {
-                system = "x86_64-linux";
-                flake = ./.;
-                flakePath = "/etc/nixos/nixos-config/devices/main-term";
-                user = "annika";
-                inherit inputs;
-            };
-        in
-        {
-            nixosConfigurations = kestrel.config.mkConfig { inherit kestrel; };
+    outputs = inputs: {
+        nixosConfigurations = inputs.kestrix.mkConfig {
+            system = "x86_64-linux";
+            flake = ./.;
+            src = "/etc/nixos/nixos-config/devices/main-term";
+            user = "annika";
+            inherit inputs;
         };
+    };
 }

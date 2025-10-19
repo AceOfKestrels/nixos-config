@@ -22,17 +22,13 @@
         };
     };
 
-    outputs =
-        inputs@{ ... }:
-        let
-            kestrel = inputs.kestrix.lib_x86_64-linux {
-                flake = ./.;
-                flakePath = "/etc/nixos/nixos-config/devices/kes-term";
-                user = "kes";
-                inherit inputs;
-            };
-        in
-        {
-            nixosConfigurations = kestrel.config.mkConfig { inherit kestrel; };
+    outputs = inputs: {
+        nixosConfigurations = inputs.kestrix.mkConfig {
+            system = "x86_64-linux";
+            flake = ./.;
+            src = "/etc/nixos/nixos-config/devices/kes-notebook";
+            user = "kes";
+            inherit inputs;
         };
+    };
 }

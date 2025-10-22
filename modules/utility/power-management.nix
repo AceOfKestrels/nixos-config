@@ -30,7 +30,7 @@
 
             # Battery charge thresholds (optional, prolongs pack life)
             # ThinkPad-specific, tweak as you like:
-            START_CHARGE_THRESH_BAT0 = 40;
+            START_CHARGE_THRESH_BAT0 = 75;
             STOP_CHARGE_THRESH_BAT0 = 80;
         };
     };

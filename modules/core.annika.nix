@@ -17,7 +17,7 @@
         ./gaming/steam.nix
 
         # installl ica clie
-        ./utility/citrix-ica-client.nix
+        #./utility/citrix-ica-client.nix
 
         # Add Tor Broser
         ./security/tor/tor.nix

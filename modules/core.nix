@@ -54,4 +54,8 @@
 
     programs.nh.enable = true;
     nixpkgs.config.allowUnfree = true;
+
+    nixpkgs.overlays = kestrel.overlays.mkOverlays {
+        nextcloud-client = "8eaee110344796db060382e15d3af0a9fc396e0e";
+    };
 }

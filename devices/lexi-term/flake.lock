@@ -7,17 +7,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1760692571,
-        "narHash": "sha256-SgqC+B7F7hHDKug+zRUL83vhibCSknzhRl0+OxUYjn4=",
-        "owner": "catppuccin",
-        "repo": "nix",
-        "rev": "8a084b86b6a4b2a1575e8cc67e07c4a687fce276",
-        "type": "github"
+        "lastModified": 1760953099,
+        "narHash": "sha256-sOKx2YcHa+lWEvaEOIGqLN2WWk1Wf5z6KM02tdfhMtw=",
+        "ref": "main",
+        "rev": "f5b21876888265d2fee7fb0640d1b66a1c1c6503",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/catppuccin/nix.git"
       },
       "original": {
-        "owner": "catppuccin",
-        "repo": "nix",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/catppuccin/nix.git"
       }
     },
     "home-manager": {
@@ -27,17 +29,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1760887455,
-        "narHash": "sha256-/xU8iYZjolWbMUNBQF6af5zgGs73Qw21WMgz1tLs3Yw=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "aeabc1ac63e6ebb8ba4714c4abdfe0556f2de765",
-        "type": "github"
+        "lastModified": 1761468550,
+        "narHash": "sha256-nY4vyN1QdHhC5Gj3545fI2Y7FSr/gs8ID4gPmF8HPww=",
+        "ref": "master",
+        "rev": "1830716059bfee7cbcfbfcc38d7be98e482a5762",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/home-manager.git"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
+        "ref": "master",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/home-manager.git"
       }
     },
     "kestrix": {
@@ -50,33 +54,36 @@
         ]
       },
       "locked": {
-        "lastModified": 1760894875,
-        "narHash": "sha256-59T4GXRZSYHi1XTXW6P+LZc3nMRK4XEfatCDFvgQVSM=",
-        "owner": "KestrelsDevelopment",
-        "repo": "KestrIx",
-        "rev": "383ec616e4a597b67af945e271f959fdda87d629",
-        "type": "github"
+        "lastModified": 1761496226,
+        "narHash": "sha256-qy5iaUKuTWGWWmy7EaL3JU0ZlLLbX1mK+je9+wiAPCM=",
+        "ref": "main",
+        "rev": "479fca5e9e32665678c20932148daeeabdd2e040",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
       },
       "original": {
-        "owner": "KestrelsDevelopment",
-        "repo": "KestrIx",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1760524057,
-        "narHash": "sha256-EVAqOteLBFmd7pKkb0+FIUyzTF61VKi7YmvP1tw4nEw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
-        "type": "github"
+        "lastModified": 1761373498,
+        "narHash": "sha256-Q/uhWNvd7V7k1H1ZPMy/vkx3F8C13ZcdrKjO7Jv7v0c=",
+        "ref": "nixos-unstable",
+        "rev": "6a08e6bb4e46ff7fcbb53d409b253f6bad8a28ce",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       },
       "original": {
-        "owner": "NixOS",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
     "plasma-manager": {
@@ -89,17 +96,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1759321049,
-        "narHash": "sha256-8XkU4gIrLT2DJZWQyvsP5woXGZF5eE/7AnKfwQkiwYU=",
-        "owner": "nix-community",
-        "repo": "plasma-manager",
-        "rev": "205dcfd4a30d4a5d1b4f28defee69daa7c7252cd",
-        "type": "github"
+        "lastModified": 1761078382,
+        "narHash": "sha256-JNJesbe9MMN1Brq41BHEpuH+Z+Zg74y/nI5AFZX84Vw=",
+        "ref": "trunk",
+        "rev": "27dfa61b64d0cdb8e4ba6f3aaa4d4e067d64cb5c",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/plasma-manager.git"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "plasma-manager",
-        "type": "github"
+        "ref": "trunk",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/plasma-manager.git"
       }
     },
     "root": {
@@ -121,15 +130,17 @@
       "locked": {
         "lastModified": 1759509897,
         "narHash": "sha256-HbY+LYUFoc2JLGWetmmFWJc/6Tcg4PaPLeHe6+6pmpc=",
-        "owner": "AceOfKestrels",
-        "repo": "shell-sources",
+        "ref": "main",
         "rev": "d554ac79ed5e696e6425dba8e73f815ebb4d68a3",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/AceOfKestrels/shell-sources.git"
       },
       "original": {
-        "owner": "AceOfKestrels",
-        "repo": "shell-sources",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/AceOfKestrels/shell-sources.git"
       }
     }
   },

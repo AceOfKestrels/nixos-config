@@ -2,7 +2,7 @@
     description = "flake for lexi-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/nixos-config/devices/lexi-term#lexi-term' to apply.";
 
     inputs = {
-        nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25-05";
+        nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
         # nixpkgs-stable.url   = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
         # nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
         # nixpkgs-master.url   = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";

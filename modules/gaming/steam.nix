@@ -16,6 +16,8 @@
         protontricks
         protonup-qt
         gamescope
+        wine
+        wine64
     ];
 
     hardware.steam-hardware.enable = true;

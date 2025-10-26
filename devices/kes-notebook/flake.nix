@@ -7,6 +7,12 @@
         # nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
         # nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
+        home-manager = {
+            url = "github:nix-community/home-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.home-manager.follows = "home-manager";
+        };
+
         catppuccin = {
             url = "github:catppuccin/nix";
             inputs.nixpkgs.follows = "nixpkgs";

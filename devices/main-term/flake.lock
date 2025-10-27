@@ -124,11 +124,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761542185,
-        "narHash": "sha256-VdpLvrd0D9jcbuRj8RqtBBSBy1LXCl6oMTqDe5HO0DQ=",
+        "lastModified": 1761603145,
+        "narHash": "sha256-lE1uN/o4xS5AO03imcYEkQUx7nxCokIL17cprTu1kTM=",
         "owner": "KestrelsDevelopment",
         "repo": "KestrIx",
-        "rev": "a744f4bf165b144720d4eb6c32c06f19f37723b8",
+        "rev": "a87bbb14b43b018910244903b645866dc933b119",
         "type": "github"
       },
       "original": {

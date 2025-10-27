@@ -8,5 +8,6 @@ cd - > /dev/null || exit 1
 
 for flake in $flakes ;
 do
-    nix flake update --flake "$script_dir/$flake"
+    # shellcheck disable=SC2068
+    nix flake update --flake "$script_dir/$flake" $@
 done

@@ -39,7 +39,7 @@
 
         veracrypt # To Encrypt External Media for Cros Platform use
 
-        # jellyflix
+        jellyflix # To use Jellyfin with proper hardware acceleration
     ];
 
     environment.variables = {
@@ -57,5 +57,6 @@
 
     nixpkgs.overlays = kestrel.overlays.mkOverlays {
         nextcloud-client = "8eaee110344796db060382e15d3af0a9fc396e0e";
+        jellyflix = "7a5400ad45bd64c5de63dfcde0035b8bcce7e73a";
     };
 }

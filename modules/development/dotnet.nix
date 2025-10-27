@@ -4,8 +4,11 @@
     environment.systemPackages = with pkgs; [
         jetbrains.rider
 
-        dotnetCorePackages.dotnet_8.sdk # .NET 8
-        dotnetCorePackages.dotnet_9.sdk # .NET 9
+        (dotnetCorePackages.combinePackages [
+            dotnetCorePackages.sdk_8_0
+            dotnetCorePackages.sdk_9_0
+            dotnetCorePackages.sdk_10_0
+        ])
     ];
 
     nixpkgs.overlays = kestrel.overlays.mkOverlays {

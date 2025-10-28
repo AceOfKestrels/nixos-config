@@ -23,7 +23,7 @@
         };
 
         kestrix = {
-            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=main";
+            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=dev";
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.home-manager.follows = "home-manager";
         };

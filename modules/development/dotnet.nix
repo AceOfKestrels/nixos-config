@@ -14,6 +14,6 @@
     ];
 
     nixpkgs.overlays = kestrel.overlays.mkOverlays {
-        jetbrains = "8eaee110344796db060382e15d3af0a9fc396e0e";
+        jetbrains = "1666250dbe4141e4ca8aaf89b40a3a51c2e36144";
     };
 }

@@ -4,7 +4,7 @@
     programs.git.config = {
         user = {
             name = "AceOfKestrels";
-            email = "aceofkestrels@gmail.com";
+            email = "git@kestrels.dev";
         };
         core.editor = lib.mkForce "nvim";
     };

@@ -36,6 +36,7 @@
 
     environment.systemPackages = with pkgs; [
         krita
+        tutanota-desktop
     ];
 
     environment.variables = {

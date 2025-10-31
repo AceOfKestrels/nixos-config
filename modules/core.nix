@@ -25,6 +25,8 @@
         firefox-devedition
         chromium
 
+        wine
+
         keepassxc
         nextcloud-client
         localsend

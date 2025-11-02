@@ -16,7 +16,7 @@ with lib;
     config = mkIf cfg.enable {
         # User-scoped packages
         home.packages = [
-            pkgs.tor-browser-bundle-bin
+            pkgs.tor-browser
             pkgs.firejail
         ];
 
@@ -46,7 +46,7 @@ with lib;
                 #!${pkgs.bash}/bin/bash
                 exec ${pkgs.firejail}/bin/firejail \
                   --profile="${config.xdg.configHome}/firejail/torbrowser.profile" \
-                  ${pkgs.tor-browser-bundle-bin}/bin/tor-browser "$@"
+                  ${pkgs.tor-browser}/bin/tor-browser "$@"
             '';
             executable = true;
         };

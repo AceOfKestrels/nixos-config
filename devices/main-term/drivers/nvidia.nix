@@ -34,7 +34,7 @@
     environment.systemPackages = with pkgs; [
         vulkan-tools
         vulkan-loader
-        glxinfo
+        mesa-demos
     ];
 
     environment.variables.VK_ICD_FILENAMES = "/run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd.i686.json:/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";

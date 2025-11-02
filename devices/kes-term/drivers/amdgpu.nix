@@ -33,7 +33,7 @@
     programs.gamemode.enable = true; # auto performance boosts while gaming
     environment.systemPackages = with pkgs; [
         vulkan-tools
-        glxinfo
+        mesa-demos
         linux-firmware
     ];
 }

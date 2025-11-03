@@ -10,5 +10,6 @@
         mediainfo-gui
         mediainfo
         vlc
+        asunder
     ];
 }

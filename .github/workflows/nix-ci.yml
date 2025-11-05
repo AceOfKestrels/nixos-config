@@ -4,11 +4,9 @@ on:
     push:
     pull_request: 
     workflow_dispatch: 
+    schedule:
+        - cron: "0 5 * * *"   # daily at 05:00 UTC
 
 jobs: 
     ci:
-        uses: KestrelsDevelopment/.github/.github/workflows/nix.yml@main 
-    # build:
-    #     uses: KestrelsDevelopment/.github/.github/workflows/nix-build.yml@main 
-    # lint:
-    #     uses: KestrelsDevelopment/.github/.github/workflows/nix-lint.yml@main 
+        uses: KestrelsDevelopment/Workflows/.github/workflows/nix.yml@main 

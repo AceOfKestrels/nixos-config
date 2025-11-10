@@ -29,10 +29,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1762721397,
-        "narHash": "sha256-E428EuouA4nFTNlLuqlL4lVR78X+EbBIqDqsBFnB79w=",
+        "lastModified": 1762787259,
+        "narHash": "sha256-t2U/GLLXHa2+kJkwnFNRVc2fEJ/lUfyZXBE5iKzJdcs=",
         "ref": "master",
-        "rev": "b8645b18b0f5374127bbade6de7381ef0b3d5720",
+        "rev": "37a3d97f2873e0f68711117c34d04b7c7ead8f4e",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -102,10 +102,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1762512163,
-        "narHash": "sha256-uWGBN2NMpQ96ad1lw6bZlV6WOvLfG9RVmR13PCOId28=",
+        "lastModified": 1762812311,
+        "narHash": "sha256-wq5ejX6Ij1qigdo6709XjrTsOMp16PYf047/JzHWdug=",
         "ref": "main",
-        "rev": "3323cc35910c7c5c875adeef84b2e7c29ae94614",
+        "rev": "8c416340a60745d10969a3d72f9bab4a7d421d7b",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/AceOfKestrels/shell-sources.git"

@@ -2,37 +2,37 @@
     description = "flake for annika-main-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/nixos-config/devices/main-term#main-term' to apply.";
 
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
-        nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-        nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+        nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+        nixpkgs-stable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
+        nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+        nixpkgs-master.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";
 
         catppuccin = {
-            url = "github:catppuccin/nix";
+            url = "git+https://github.com/catppuccin/nix.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         home-manager = {
-            url = "github:nix-community/home-manager";
+            url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         lanzaboote = {
-            url = "github:nix-community/lanzaboote";
+            url = "git+https://github.com/nix-community/lanzaboote.git?shallow=1&ref=master";
             inputs = {
                 nixpkgs.follows = "nixpkgs";
                 rust-overlay.follows = "rust-overlay";
             };
         };
         rust-overlay = {
-            url = "github:oxalica/rust-overlay";
+            url = "git+https://github.com/oxalica/rust-overlay.git?shallow=1&ref=master";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         shell-sources = {
-            url = "github:AceOfKestrels/shell-sources";
+            url = "git+https://github.com/AceOfKestrels/shell-sources.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
         kestrix = {
-            url = "github:KestrelsDevelopment/KestrIx";
+            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.home-manager.follows = "home-manager";
         };

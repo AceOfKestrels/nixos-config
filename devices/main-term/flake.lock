@@ -9,15 +9,17 @@
       "locked": {
         "lastModified": 1762510976,
         "narHash": "sha256-KGoSj8qMOOPaNE48RTtuNBbqOvKLTeklnRHWWvE/TXo=",
-        "owner": "catppuccin",
-        "repo": "nix",
+        "ref": "main",
         "rev": "728cb0a667ce37bb0c68557dba819c7fb54ff1c8",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/catppuccin/nix.git"
       },
       "original": {
-        "owner": "catppuccin",
-        "repo": "nix",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/catppuccin/nix.git"
       }
     },
     "crane": {
@@ -101,17 +103,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1762721397,
-        "narHash": "sha256-E428EuouA4nFTNlLuqlL4lVR78X+EbBIqDqsBFnB79w=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "b8645b18b0f5374127bbade6de7381ef0b3d5720",
-        "type": "github"
+        "lastModified": 1762964643,
+        "narHash": "sha256-RYHN8O/Aja59XDji6WSJZPkJpYVUfpSkyH+PEupBJqM=",
+        "ref": "master",
+        "rev": "827f2a23373a774a8805f84ca5344654c31f354b",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/home-manager.git"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
+        "ref": "master",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/home-manager.git"
       }
     },
     "kestrix": {
@@ -124,17 +128,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1762665249,
-        "narHash": "sha256-2m4tSLEqJa5fzybdG98G2iCOYnzZaqS7JCULDlDWI24=",
-        "owner": "KestrelsDevelopment",
-        "repo": "KestrIx",
-        "rev": "0c395239ef9d7cd5807a2d6192429af60b2c6882",
-        "type": "github"
+        "lastModified": 1762838159,
+        "narHash": "sha256-+p0Y3v+kdfz4UFwXQ80T8o4vJsVtlfmm8pmv053C6AI=",
+        "ref": "main",
+        "rev": "56f819506c88c92a743fe193858412ca0fc2be90",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
       },
       "original": {
-        "owner": "KestrelsDevelopment",
-        "repo": "KestrIx",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
       }
     },
     "lanzaboote": {
@@ -153,79 +159,85 @@
       "locked": {
         "lastModified": 1762205063,
         "narHash": "sha256-If6vQ+KvtKs3ARBO9G3l+4wFSCYtRBrwX1z+I+B61wQ=",
-        "owner": "nix-community",
-        "repo": "lanzaboote",
+        "ref": "master",
         "rev": "88b8a563ff5704f4e8d8e5118fb911fa2110ca05",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/lanzaboote.git"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "lanzaboote",
-        "type": "github"
+        "ref": "master",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/lanzaboote.git"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1762596750,
-        "narHash": "sha256-rXXuz51Bq7DHBlfIjN7jO8Bu3du5TV+3DSADBX7/9YQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b6a8526db03f735b89dd5ff348f53f752e7ddc8e",
-        "type": "github"
+        "lastModified": 1762844143,
+        "narHash": "sha256-SlybxLZ1/e4T2lb1czEtWVzDCVSTvk9WLwGhmxFmBxI=",
+        "ref": "nixos-unstable",
+        "rev": "9da7f1cf7f8a6e2a7cb3001b048546c92a8258b4",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       },
       "original": {
-        "owner": "NixOS",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1762725266,
-        "narHash": "sha256-JVKfHA8pNtTM/uILSDye+AnPHCWuUtnr8RCB7qOzZRA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "aa05ff745ec5182c8bed5dbbb1ae39b1cc26b8e8",
-        "type": "github"
+        "lastModified": 1762984639,
+        "narHash": "sha256-vhDmF/FkyuwwKUPbVgKKrdZyTtDSXwMUFTayqYUEbgM=",
+        "ref": "master",
+        "rev": "b75097f98f8866bc2de70194897d038338c35f25",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       },
       "original": {
-        "owner": "NixOS",
         "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1762498405,
-        "narHash": "sha256-Zg/SCgCaAioc0/SVZQJxuECGPJy+OAeBcGeA5okdYDc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "6faeb062ee4cf4f105989d490831713cc5a43ee1",
-        "type": "github"
+        "lastModified": 1762756533,
+        "narHash": "sha256-HiRDeUOD1VLklHeOmaKDzf+8Hb7vSWPVFcWwaTrpm+U=",
+        "ref": "nixos-25.05",
+        "rev": "c2448301fb856e351aab33e64c33a3fc8bcf637d",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       },
       "original": {
-        "owner": "NixOS",
         "ref": "nixos-25.05",
-        "repo": "nixpkgs",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1762596750,
-        "narHash": "sha256-rXXuz51Bq7DHBlfIjN7jO8Bu3du5TV+3DSADBX7/9YQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b6a8526db03f735b89dd5ff348f53f752e7ddc8e",
-        "type": "github"
+        "lastModified": 1762844143,
+        "narHash": "sha256-SlybxLZ1/e4T2lb1czEtWVzDCVSTvk9WLwGhmxFmBxI=",
+        "ref": "nixos-unstable",
+        "rev": "9da7f1cf7f8a6e2a7cb3001b048546c92a8258b4",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       },
       "original": {
-        "owner": "NixOS",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
     "pre-commit-hooks-nix": {
@@ -275,17 +287,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1762655942,
-        "narHash": "sha256-hOM12KcQNQALrhB9w6KJmV5hPpm3GA763HRe9o7JUiI=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "6ac961b02d4235572692241e333d0470637f5492",
-        "type": "github"
+        "lastModified": 1762915112,
+        "narHash": "sha256-d9j1g8nKmYDHy+/bIOPQTh9IwjRliqaTM0QLHMV92Ic=",
+        "ref": "master",
+        "rev": "aa1e85921cfa04de7b6914982a94621fbec5cc02",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/oxalica/rust-overlay.git"
       },
       "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
+        "ref": "master",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/oxalica/rust-overlay.git"
       }
     },
     "shell-sources": {
@@ -295,17 +309,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1762512163,
-        "narHash": "sha256-uWGBN2NMpQ96ad1lw6bZlV6WOvLfG9RVmR13PCOId28=",
-        "owner": "AceOfKestrels",
-        "repo": "shell-sources",
-        "rev": "3323cc35910c7c5c875adeef84b2e7c29ae94614",
-        "type": "github"
+        "lastModified": 1762943054,
+        "narHash": "sha256-2k8DSMr101EVAlB0CmNT+jGF77UjGDAXOsEK/zzZ1go=",
+        "ref": "main",
+        "rev": "ef6335ca5496bceb03acbe893943dfe0455f56b0",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/AceOfKestrels/shell-sources.git"
       },
       "original": {
-        "owner": "AceOfKestrels",
-        "repo": "shell-sources",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/AceOfKestrels/shell-sources.git"
       }
     }
   },

@@ -6,7 +6,7 @@
         onlyoffice-desktopeditors
         gimp3
         inkscape
-        pdfsam-basic
+        pkgsStable.pdfsam-basic
     ];
 
     # How to make onlyoffice detect fonts?

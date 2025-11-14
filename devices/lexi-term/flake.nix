@@ -3,7 +3,7 @@
 
     inputs = {
         nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
-        # nixpkgs-stable.url   = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
+        nixpkgs-stable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
         # nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
         # nixpkgs-master.url   = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";
 
@@ -29,8 +29,11 @@
         };
 
         kestrix = {
-            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=main";
+            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=dev";
             inputs.nixpkgs.follows = "nixpkgs";
+            inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+            inputs.nixpkgs-unstable.follows = "nixpkgs";
+            inputs.nixpkgs-master.follows = "nixpkgs";
             inputs.home-manager.follows = "home-manager";
         };
     };

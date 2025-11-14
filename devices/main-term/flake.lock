@@ -7,10 +7,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1762510976,
-        "narHash": "sha256-KGoSj8qMOOPaNE48RTtuNBbqOvKLTeklnRHWWvE/TXo=",
+        "lastModified": 1763110997,
+        "narHash": "sha256-S2vF+3D/9vna3/vBV7LHiGUbp+ltPsQhvccIyim6VQg=",
         "ref": "main",
-        "rev": "728cb0a667ce37bb0c68557dba819c7fb54ff1c8",
+        "rev": "e6928cdd3dd20636326c2756d2bc8fd1cd825768",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/catppuccin/nix.git"
@@ -125,13 +125,22 @@
         ],
         "nixpkgs": [
           "nixpkgs"
+        ],
+        "nixpkgs-master": [
+          "nixpkgs-master"
+        ],
+        "nixpkgs-stable": [
+          "nixpkgs-stable"
+        ],
+        "nixpkgs-unstable": [
+          "nixpkgs-unstable"
         ]
       },
       "locked": {
-        "lastModified": 1762838159,
-        "narHash": "sha256-+p0Y3v+kdfz4UFwXQ80T8o4vJsVtlfmm8pmv053C6AI=",
+        "lastModified": 1763123910,
+        "narHash": "sha256-PB62DQ6z7xqFCk/WCLstXbMUrNhpCpcZmBLPuQ5tw04=",
         "ref": "main",
-        "rev": "56f819506c88c92a743fe193858412ca0fc2be90",
+        "rev": "45f5565fd38d7dccbfe52552ac58bf3bee57ae98",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -174,10 +183,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1762844143,
-        "narHash": "sha256-SlybxLZ1/e4T2lb1czEtWVzDCVSTvk9WLwGhmxFmBxI=",
+        "lastModified": 1762977756,
+        "narHash": "sha256-4PqRErxfe+2toFJFgcRKZ0UI9NSIOJa+7RXVtBhy4KE=",
         "ref": "nixos-unstable",
-        "rev": "9da7f1cf7f8a6e2a7cb3001b048546c92a8258b4",
+        "rev": "c5ae371f1a6a7fd27823bc500d9390b38c05fa55",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -191,10 +200,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1762984639,
-        "narHash": "sha256-vhDmF/FkyuwwKUPbVgKKrdZyTtDSXwMUFTayqYUEbgM=",
+        "lastModified": 1763121904,
+        "narHash": "sha256-TTgF6ly0HRia8avFrN5tUj1nUQh1+F06Iejovi/avvw=",
         "ref": "master",
-        "rev": "b75097f98f8866bc2de70194897d038338c35f25",
+        "rev": "53005e4181138a62330f167587f5c5f0079c317c",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -225,10 +234,10 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1762844143,
-        "narHash": "sha256-SlybxLZ1/e4T2lb1czEtWVzDCVSTvk9WLwGhmxFmBxI=",
+        "lastModified": 1762977756,
+        "narHash": "sha256-4PqRErxfe+2toFJFgcRKZ0UI9NSIOJa+7RXVtBhy4KE=",
         "ref": "nixos-unstable",
-        "rev": "9da7f1cf7f8a6e2a7cb3001b048546c92a8258b4",
+        "rev": "c5ae371f1a6a7fd27823bc500d9390b38c05fa55",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -287,10 +296,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1762915112,
-        "narHash": "sha256-d9j1g8nKmYDHy+/bIOPQTh9IwjRliqaTM0QLHMV92Ic=",
+        "lastModified": 1763087910,
+        "narHash": "sha256-eB9Z1mWd1U6N61+F8qwDggX0ihM55s4E0CluwNukJRU=",
         "ref": "master",
-        "rev": "aa1e85921cfa04de7b6914982a94621fbec5cc02",
+        "rev": "cf4a68749733d45c0420726596367acd708eb2e8",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay.git"
@@ -309,10 +318,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1762943054,
-        "narHash": "sha256-2k8DSMr101EVAlB0CmNT+jGF77UjGDAXOsEK/zzZ1go=",
+        "lastModified": 1763040546,
+        "narHash": "sha256-ME+mQgUr2bPiuTYZIzF69rzXDo1947ZnVdf9B6wBTZ4=",
         "ref": "main",
-        "rev": "ef6335ca5496bceb03acbe893943dfe0455f56b0",
+        "rev": "a9a070ba869d20a79ea11eba06892e36e08b77fe",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/AceOfKestrels/shell-sources.git"

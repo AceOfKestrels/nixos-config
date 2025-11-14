@@ -1,6 +1,7 @@
 {
     kestrel,
     pkgs,
+    lib,
     ...
 }:
 
@@ -19,6 +20,8 @@
         kes = ./core.kes.nix;
         annika = ./core.annika.nix;
     };
+
+    nixpkgs.config.allowInsecurePredicate = lib.mkDefault (_: true);
 
     # Include core packages
     environment.systemPackages = with pkgs; [

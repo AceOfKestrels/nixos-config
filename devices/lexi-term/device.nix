@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
 
@@ -13,6 +13,7 @@
         ../../modules/gaming/minecraft.nix
         ../../modules/gaming/steam.nix
     ];
+    nixpkgs.config.allowInsecurePredicate = lib.mkDefault (_: true);
 
     programs.git.enable = true;
 

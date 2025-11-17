@@ -29,10 +29,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1763313531,
-        "narHash": "sha256-yvdCYUL85zEDp2NzPUBmaNBXP6KnWEOhAk3j7PTfsKw=",
+        "lastModified": 1763389499,
+        "narHash": "sha256-GuG3PW8U41f8XqROreZQaUvrcjQt+Gh92g16X7zBUck=",
         "ref": "master",
-        "rev": "3670a78eee49deebe4825fc8ecc46b172d1a8391",
+        "rev": "7538d965352d3bfd4c380f5b3aa618bc839a84b4",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -80,10 +80,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1763333199,
-        "narHash": "sha256-vY+FWILo4v7FCLL2CgV02kppYxqJaR6U6kHQtzZdVGE=",
+        "lastModified": 1763406358,
+        "narHash": "sha256-rzwws1GoQ+pA3/GvsCoLBpMfk9Kk3RP0n4FP50NP3fA=",
         "ref": "master",
-        "rev": "aaed8bfd0140fbc02afd559983cbab272939f5bf",
+        "rev": "98369598a364a51ab27a713c34d62f536f2a03cd",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -114,10 +114,10 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1762977756,
-        "narHash": "sha256-4PqRErxfe+2toFJFgcRKZ0UI9NSIOJa+7RXVtBhy4KE=",
+        "lastModified": 1763283776,
+        "narHash": "sha256-Y7TDFPK4GlqrKrivOcsHG8xSGqQx3A6c+i7novT85Uk=",
         "ref": "nixos-unstable",
-        "rev": "c5ae371f1a6a7fd27823bc500d9390b38c05fa55",
+        "rev": "50a96edd8d0db6cc8db57dab6bb6d6ee1f3dc49a",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -150,10 +150,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1763040546,
-        "narHash": "sha256-ME+mQgUr2bPiuTYZIzF69rzXDo1947ZnVdf9B6wBTZ4=",
+        "lastModified": 1763377006,
+        "narHash": "sha256-3XMb4+UWXt7dsue+RvBa8TJH1+xmJKJQZZe64vZDzGU=",
         "ref": "main",
-        "rev": "a9a070ba869d20a79ea11eba06892e36e08b77fe",
+        "rev": "6332c9e081125788b15adf0afe99e8fbee23cf68",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/AceOfKestrels/shell-sources.git"

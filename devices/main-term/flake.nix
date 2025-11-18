@@ -19,12 +19,7 @@
             url = "git+https://github.com/nix-community/lanzaboote.git?shallow=1&ref=master";
             inputs = {
                 nixpkgs.follows = "nixpkgs";
-                rust-overlay.follows = "rust-overlay";
             };
-        };
-        rust-overlay = {
-            url = "git+https://github.com/oxalica/rust-overlay.git?shallow=1&ref=master";
-            inputs.nixpkgs.follows = "nixpkgs";
         };
         shell-sources = {
             url = "git+https://github.com/AceOfKestrels/shell-sources.git?shallow=1&ref=main";

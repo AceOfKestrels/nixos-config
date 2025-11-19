@@ -80,10 +80,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1763508096,
-        "narHash": "sha256-hCwqYbXvOKcCeW+NWMk8XnYPDjNawkbfr29m0pjtMgY=",
+        "lastModified": 1763579915,
+        "narHash": "sha256-RxyasahLWJSj+NY4NFWs1W/Xm1/qaXX9qaCHGDtF7pA=",
         "ref": "master",
-        "rev": "135df8b99c60a34037e564b212605beaec52a1ec",
+        "rev": "656329f6bfbc5454b4ba289bf9984913a76ed7b5",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -150,10 +150,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1763579349,
-        "narHash": "sha256-raMqY0J0Ra2aE9RbrxO3RAde4ZiFDTG30a0b66OfuMU=",
+        "lastModified": 1763580202,
+        "narHash": "sha256-yO6TVQ4FvP9B/jlUgOOVWjoo+sMIXhXhdSVt0Dr4CAU=",
         "ref": "main",
-        "rev": "acc86e9f1735da0db81bbad7f76781193241f16e",
+        "rev": "7d6ff5899865e7724bb7d7612d22a5a5e808a9e1",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/AceOfKestrels/shell-sources.git"

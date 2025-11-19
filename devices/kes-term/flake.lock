@@ -150,10 +150,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1763468918,
-        "narHash": "sha256-QUamnGcY4gIv5q5OasTgtCI89PqkUvSo+4KJ1jUuGL0=",
+        "lastModified": 1763579349,
+        "narHash": "sha256-raMqY0J0Ra2aE9RbrxO3RAde4ZiFDTG30a0b66OfuMU=",
         "ref": "main",
-        "rev": "d45c9a3c5c18ddbc137074d1ad0cd7ea1fd84408",
+        "rev": "acc86e9f1735da0db81bbad7f76781193241f16e",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/AceOfKestrels/shell-sources.git"

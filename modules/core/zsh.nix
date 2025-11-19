@@ -53,6 +53,8 @@
 
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
-        ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+        ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)# Source - https://superuser.com/a
+
+        zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
     '';
 }

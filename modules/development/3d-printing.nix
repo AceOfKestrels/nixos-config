@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, kestrel, ... }:
 
 {
     environment.systemPackages = with pkgs; [

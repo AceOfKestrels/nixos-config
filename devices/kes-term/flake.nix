@@ -3,10 +3,10 @@
 
     inputs = {
         nixpkgs-stable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
-        nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+        nixpkgs-unstable.follows = "nixpkgs";
         nixpkgs-master.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";
 
-        nixpkgs.follows = "nixpkgs-unstable";
+        nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
 
         home-manager = {
             url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";

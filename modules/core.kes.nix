@@ -11,6 +11,8 @@
 
     security.sudo.enable = true;
 
+    nix.package = pkgs.lixPackageSets.stable.lix;
+
     imports = [
         ./development/docker.nix
         ./development/dotnet.nix

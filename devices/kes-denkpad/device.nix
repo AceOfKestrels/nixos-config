@@ -17,6 +17,7 @@
             "bluetooth"
         ];
     };
+    home-manager.users.kes = {};    
 
     environment.systemPackages = with pkgs; [
         android-studio

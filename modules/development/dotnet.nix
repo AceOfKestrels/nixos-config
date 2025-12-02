@@ -13,7 +13,7 @@
         ])
     ];
 
-    nixpkgs.overlays = kestrel.overlays.mkOverlays {
-        jetbrains = "c5ae371f1a6a7fd27823bc500d9390b38c05fa55";
-    };
+    #nixpkgs.overlays = kestrel.overlays.mkOverlays {
+    #    jetbrains = "c5ae371f1a6a7fd27823bc500d9390b38c05fa55";
+    #};
 }

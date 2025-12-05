@@ -11,6 +11,7 @@
         ./development/python.nix
         ./development/webdev.nix
         ./development/kubernetes.nix
+        ./development/php.nix
 
         # Setup Gaming Stuff
         ./gaming/minecraft.nix

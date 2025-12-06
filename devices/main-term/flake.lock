@@ -7,10 +7,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1764325801,
-        "narHash": "sha256-LQ7tsrXs1wuB6KBwUctL3JlUsG/FWI2pCI6NkoO52dk=",
+        "lastModified": 1764885363,
+        "narHash": "sha256-P6UHmw6enwxmP5wP4Lv722+tgpq1PFDAPAdtj7l/16U=",
         "ref": "main",
-        "rev": "a696fed6b9b6aa89ef495842cdca3fc2a7cef0de",
+        "rev": "95042630028d613080393e0f03c694b77883c7db",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/catppuccin/nix.git"
@@ -82,10 +82,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1764636297,
-        "narHash": "sha256-S41K55kw+hWgDfgKmZ9/fMZ3F0BQDMvqFfE120fMHeE=",
+        "lastModified": 1764998300,
+        "narHash": "sha256-fZatn/KLfHLDXnF0wy7JxXqGaZmGDTVufT4o/AOlj44=",
         "ref": "master",
-        "rev": "ff067cfc619fdf6f82d50344e7d19ff2323f0827",
+        "rev": "27a6182347ccae90a88231ae0dc5dfa7d15815bb",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -116,10 +116,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1764652552,
-        "narHash": "sha256-7xueHj8a1jLqjR0cJs3nNhBEQ7AJI1F+87xi0dY+y5o=",
+        "lastModified": 1764998074,
+        "narHash": "sha256-AjXcgCBh5eoiHP7glXqmEdzPz/te4u1/d95iV6NNZYo=",
         "ref": "main",
-        "rev": "6e8a372cb587f1f9c3d69fb6cc756995dbd5cc9d",
+        "rev": "7ea3594fc24f4b3d47bbfc98e5610a53bffa2978",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -158,10 +158,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1764517877,
-        "narHash": "sha256-pp3uT4hHijIC8JUK5MEqeAWmParJrgBVzHLNfJDZxg4=",
+        "lastModified": 1764950072,
+        "narHash": "sha256-BmPWzogsG2GsXZtlT+MTcAWeDK5hkbGRZTeZNW42fwA=",
         "ref": "nixos-unstable",
-        "rev": "2d293cbfa5a793b4c50d17c05ef9e385b90edf6c",
+        "rev": "f61125a668a320878494449750330ca58b78c557",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -175,10 +175,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1764711408,
-        "narHash": "sha256-wPnSKT60dS/QBM1lNLlcVL321YINjFSGkTbv7zYmiCc=",
+        "lastModified": 1765037639,
+        "narHash": "sha256-UKRkMz5jMvcE/iWg3IkUJi9o3PqpDmTn4bqCUEpat48=",
         "ref": "master",
-        "rev": "af48a8c96d1456aacebe8600c5fb7c4d07dbba80",
+        "rev": "feba3849f0e9c29272da2f8e6dd5a55df3617e2c",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -192,10 +192,10 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1764560356,
-        "narHash": "sha256-M5aFEFPppI4UhdOxwdmceJ9bDJC4T6C6CzCK1E2FZyo=",
+        "lastModified": 1764836381,
+        "narHash": "sha256-8jemYbbW9EBttQKHep7Rj8kzXaxsrk/lACdXA2DN5Xk=",
         "ref": "nixos-25.05",
-        "rev": "6c8f0cca84510cc79e09ea99a299c9bc17d03cb6",
+        "rev": "ff06bd3398fb1bea6c937039ece7e7c8aa396ebf",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -209,10 +209,10 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1764517877,
-        "narHash": "sha256-pp3uT4hHijIC8JUK5MEqeAWmParJrgBVzHLNfJDZxg4=",
+        "lastModified": 1764950072,
+        "narHash": "sha256-BmPWzogsG2GsXZtlT+MTcAWeDK5hkbGRZTeZNW42fwA=",
         "ref": "nixos-unstable",
-        "rev": "2d293cbfa5a793b4c50d17c05ef9e385b90edf6c",
+        "rev": "f61125a668a320878494449750330ca58b78c557",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"

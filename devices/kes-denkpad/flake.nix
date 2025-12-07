@@ -14,6 +14,7 @@
         };
 
         catppuccin = {
+            url = "git+https://github.com/catppuccin/nix.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 

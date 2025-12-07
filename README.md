@@ -66,7 +66,7 @@ After importing the `lanzaboote` module and rebuilding your system, a few additi
    - Enroll the generated keys into your firmware:
 
      ```sh
-     sbctl enroll-keys   # Installs keys into your firmware/UEFI
+     sbctl enroll-keys --microsoft # Installs keys into your firmware/UEFI with Microsoft Vendor Keys
      ```
 
    - You may need to enter your firmware (UEFI/BIOS) to confirm the enrollment.

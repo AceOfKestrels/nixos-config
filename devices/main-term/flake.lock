@@ -116,10 +116,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1764998074,
-        "narHash": "sha256-AjXcgCBh5eoiHP7glXqmEdzPz/te4u1/d95iV6NNZYo=",
+        "lastModified": 1765084465,
+        "narHash": "sha256-gk9kBGhmhBMMQqWJVFtFvuNONWpmgfmDQ/gtutO+UHI=",
         "ref": "main",
-        "rev": "7ea3594fc24f4b3d47bbfc98e5610a53bffa2978",
+        "rev": "482bbfdb9886f03b168385f4bee79635cfcc9de9",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -141,10 +141,10 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1764622702,
-        "narHash": "sha256-HggOVvg2U3EwT44wPHEwFKromf9qR9rTqfV1i3q7rYs=",
+        "lastModified": 1765062926,
+        "narHash": "sha256-p0DkyfrMae/6SVPCb/XY5f9fOFc+fwtOCteRqD297QE=",
         "ref": "master",
-        "rev": "6242b3b2b5e5afcf329027ed4eb5fa6e2eab10f1",
+        "rev": "4f5fc14c175cd0574ca0f4c5a05fae63758f0c47",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/lanzaboote.git"
@@ -175,10 +175,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1765037639,
-        "narHash": "sha256-UKRkMz5jMvcE/iWg3IkUJi9o3PqpDmTn4bqCUEpat48=",
+        "lastModified": 1765139815,
+        "narHash": "sha256-WcwVKobTYkbQ+av2Af54XXhuoU8dMk1SABlRmlKQsEw=",
         "ref": "master",
-        "rev": "feba3849f0e9c29272da2f8e6dd5a55df3617e2c",
+        "rev": "87120188ec02181f436fdbbaf44c0ec165cc57a4",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"

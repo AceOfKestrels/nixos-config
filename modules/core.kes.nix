@@ -26,6 +26,8 @@
         ./terminal/tmux.nix
         ./terminal/kitty.nix
 
+        ./security/librewolf.nix
+
         ./home-manager/catppuccin.nix
     ];
 
@@ -40,7 +42,7 @@
     ];
 
     environment.variables = {
-        GIT_BROWSER = "firefox-devedition";
+        GIT_BROWSER = "libewolf";
     };
 
     time.timeZone = "Europe/Berlin";

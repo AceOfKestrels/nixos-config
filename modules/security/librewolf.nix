@@ -27,9 +27,9 @@
             "browser.sessionstore.resuming_after_os_restart" = true;
             "browser.sessionstore.resume_session_once" = true;
 
-            # if RFP causes issues
-            # "privacy.resistFingerprinting" = false;
-            "privacy.resistFingerprinting.letterboxing" = true;
+            "privacy.resistFingerprinting" = false;
+            "privacy.fingerprintingProtection" = false;
+            "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
         };
     };
 }

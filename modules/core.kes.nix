@@ -39,6 +39,9 @@
     environment.systemPackages = with pkgs; [
         krita
         tutanota-desktop
+
+        teamspeak6-client
+        teamspeak3
     ];
 
     environment.variables = {

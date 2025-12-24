@@ -25,7 +25,10 @@
 
     imports = [
         ../../modules/core.nix
-        ../../modules/desktop/gnome.nix
+
+        # ../../modules/desktop/gnome.nix
+        ../../modules/desktop/cosmic.nix
+
         ../../modules/utility/power-management.nix
 
         ../../modules/bootloader/grub.nix

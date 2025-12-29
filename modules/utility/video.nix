@@ -1,24 +1,20 @@
 { pkgs, ... }:
 
 {
-    nixpkgs.overlays = [
-        (import ./video.overlay.nix)
-    ];
-
     boot.kernelModules = [ "sg" ];
 
     environment.systemPackages = with pkgs; [
         (symlinkJoin {
-            name = "HandBrakeCLI-nvdec";
-            paths = [ handbrake-hw ];
+            name = "ffmpeg-hw";
+            paths = [ ffmpeg-full ];
             buildInputs = [ makeWrapper ];
             postBuild = ''
-                wrapProgram $out/bin/HandBrakeCLI \
+                wrapProgram $out/bin/ffmpeg \
                   --prefix LD_LIBRARY_PATH : "/run/opengl-driver/lib"
             '';
         })
+        handbrake
         parallel-full
-        ffmpeg-full
         makemkv
         mkvtoolnix
         mediainfo-gui

@@ -3,7 +3,7 @@
 {
     imports = [
         # Setup Libvirt VM Manager
-        #./utility/libvirt.nix
+        #./utility/virt-manager.nix
 
         # Setup Dev Envierments
         ./development/docker.nix

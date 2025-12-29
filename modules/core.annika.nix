@@ -29,10 +29,14 @@
         # Import Video Tools
         ./utility/video.nix
 
-        # Import Keybord shit
+        # Import Keybord DevTools
         ./development/keybord.nix
 
+        # Import Terminus
         ./terminal/termius.nix
+
+        # Import Win Boat
+        #./utility/winboat.nix
     ];
 
     environment.systemPackages = with pkgs; [

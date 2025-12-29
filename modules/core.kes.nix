@@ -41,7 +41,6 @@
         tutanota-desktop
 
         teamspeak6-client
-        teamspeak3
     ];
 
     environment.variables = {

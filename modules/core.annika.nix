@@ -3,14 +3,14 @@
 {
     imports = [
         # Setup Libvirt VM Manager
-        ./utility/libvirt.nix
+        #./utility/libvirt.nix
 
         # Setup Dev Envierments
         ./development/docker.nix
         ./development/dotnet.nix
-        ./development/python.nix
+        #./development/python.nix
         ./development/webdev.nix
-        ./development/kubernetes.nix
+        #./development/kubernetes.nix
         ./development/php.nix
 
         # Setup Gaming Stuff
@@ -24,7 +24,7 @@
         ./security/tor/tor.nix
 
         # Import 3d Printing
-        ./development/3d-printing.nix
+        #./development/3d-printing.nix
 
         # Import Video Tools
         ./utility/video.nix

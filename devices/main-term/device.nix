@@ -117,4 +117,6 @@
 
     services.teamviewer.enable = true;
 
+    # Zen Kernal
+    boot.kernelPackages = pkgs.linuxPackages_zen;
 }

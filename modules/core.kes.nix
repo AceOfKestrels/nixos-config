@@ -39,6 +39,7 @@
     environment.systemPackages = with pkgs; [
         krita
         tutanota-desktop
+        proton-authenticator
 
         vesktop
 

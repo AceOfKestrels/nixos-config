@@ -38,4 +38,6 @@
         discord
         anydesk
     ];
+
+    services.flatpak.enable = true;
 }

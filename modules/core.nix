@@ -38,7 +38,7 @@
         nix-search-cli # Search Nix packages via CLI
         nixfmt-rfc-style # Formatter for nix files
 
-        vesktop # Discord
+        #BROKEN vesktop # Discord
         signal-desktop-bin # Signal messenger
 
         dig # to have dns tools like nslookup

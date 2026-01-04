@@ -40,6 +40,8 @@
         krita
         tutanota-desktop
 
+        vesktop
+
         teamspeak6-client
     ];
 

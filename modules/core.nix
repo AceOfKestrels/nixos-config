@@ -38,7 +38,6 @@
         nix-search-cli # Search Nix packages via CLI
         nixfmt-rfc-style # Formatter for nix files
 
-        #BROKEN vesktop # Discord
         signal-desktop-bin # Signal messenger
 
         dig # to have dns tools like nslookup
@@ -64,5 +63,6 @@
     nixpkgs.overlays = kestrel.overlays.mkOverlays {
         nextcloud-client = "8eaee110344796db060382e15d3af0a9fc396e0e";
         jellyflix = "7a5400ad45bd64c5de63dfcde0035b8bcce7e73a";
+        vesktop = "be3ce565ff3d24d9c0a54763f0ba0a1cc5f0c337"; # Pin to stabel
     };
 }

@@ -47,7 +47,7 @@
     ];
 
     environment.variables = {
-        GIT_BROWSER = "libewolf";
+        GIT_BROWSER = "librewolf";
     };
 
     time.timeZone = "Europe/Berlin";

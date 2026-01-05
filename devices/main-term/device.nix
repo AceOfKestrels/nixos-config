@@ -75,6 +75,7 @@
             "docker"
             "dialout"
             "libvirtd"
+            "clamav"
         ];
     };
     users.users.kes = {
@@ -86,6 +87,7 @@
             "docker"
             "dialout"
             "libvirtd"
+            "clamav"
         ];
     };
 

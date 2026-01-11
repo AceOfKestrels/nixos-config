@@ -7,6 +7,8 @@
         yaak
 
         nodejs
+        typescript
+        nodemon
 
         # Browser version is quicker and more stable
         # figma-linux

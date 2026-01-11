@@ -44,10 +44,13 @@
         vesktop
 
         teamspeak6-client
+
+        yazi # terminal file browser
     ];
 
     environment.variables = {
         GIT_BROWSER = "librewolf";
+        EDITOR = "nvim";
     };
 
     time.timeZone = "Europe/Berlin";

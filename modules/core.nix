@@ -37,7 +37,7 @@
         localsend
 
         nix-search-cli # Search Nix packages via CLI
-        nixfmt-rfc-style # Formatter for nix files
+        nixfmt # Formatter for nix files
 
         signal-desktop-bin # Signal messenger
 

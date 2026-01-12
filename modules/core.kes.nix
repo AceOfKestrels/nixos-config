@@ -50,6 +50,8 @@
 
     environment.variables = {
         GIT_BROWSER = "librewolf";
+        CODE_PROGRAM = "codium";
+        FILE_BROWSER = "yazi";
         EDITOR = "nvim";
     };
 

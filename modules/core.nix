@@ -20,6 +20,7 @@
         ./security/clamav.nix # Import Anti virus
         ./security/firewall.nix # Import Firewall Config
         ./security/sudo.nix # Import Sudo Replacment Nix File
+        ./security/apparmor.nix # Import App armor
 
     ]
     ++ kestrel.userModules {

@@ -19,6 +19,8 @@
         # Security Modules
         ./security/clamav.nix # Import Anti virus
         ./security/firewall.nix # Import Firewall Config
+        ./security/sudo.nix # Import Sudo Replacment Nix File
+
     ]
     ++ kestrel.userModules {
         kes = ./core.kes.nix;

@@ -15,7 +15,10 @@
         ./core/zsh.nix # ZSH
         ./core/shell-sources.nix # shell sources
         ./core/garbage-collect.nix # Deleat old nix stuff
+
+        # Security Modules
         ./security/clamav.nix # Import Anti virus
+        ./security/firewall.nix # Import Firewall Config
     ]
     ++ kestrel.userModules {
         kes = ./core.kes.nix;

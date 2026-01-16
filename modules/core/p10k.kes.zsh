@@ -1774,7 +1774,9 @@
 
   function prompt_tmux_session() {
     if [[ $TERM = *"screen"* ]] || [[ $TERM = *"tmux"* ]]; then
-        p10k segment -t "tmux"
+        p10k segment -t "tmux (zsh)"
+    else
+        p10k segment -t "zsh"
     fi
   }
 

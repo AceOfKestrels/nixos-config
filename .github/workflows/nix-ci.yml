@@ -9,4 +9,4 @@ on:
 
 jobs: 
     ci:
-        uses: KestrelsDevelopment/Workflows/.github/workflows/nix.yml@main 
+        uses: KestrelsDevelopment/Workflows/.github/workflows/nix.yml@dev 

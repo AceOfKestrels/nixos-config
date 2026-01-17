@@ -9,7 +9,7 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    security.sudo.enable = true;
+    #security.sudo.enable = true; #Commentent out becouse of dublication with the sudo.nix
 
     imports = [
         ./development/docker.nix

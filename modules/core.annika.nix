@@ -37,6 +37,9 @@
 
         # Import Win Boat
         #./utility/winboat.nix
+
+        # Import Tidal
+        ./utility/tidal.nix
     ];
 
     environment.systemPackages = with pkgs; [

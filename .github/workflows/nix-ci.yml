@@ -9,4 +9,8 @@ on:
 
 jobs: 
     ci:
-        uses: KestrelsDevelopment/Workflows/.github/workflows/nix.yml@dev 
+        uses: KestrelsDevelopment/Workflows/.github/workflows/nix.yml@main
+        permissions:
+            contents: read
+        with:
+            check_updated: ${{ github.event_name == 'schedule' }}

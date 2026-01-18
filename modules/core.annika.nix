@@ -46,6 +46,5 @@
         discord # Install Official Discord app
         google-chrome # Install google chrom
         plex-desktop # Install Plex
-        protonmail-desktop # Install Proton Mail
     ];
 }

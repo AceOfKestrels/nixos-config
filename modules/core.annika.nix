@@ -40,6 +40,9 @@
 
         # Import Tidal
         ./utility/tidal.nix
+
+        #Import Ausweis App
+        ./utility/ausweisapp.nix
     ];
 
     environment.systemPackages = with pkgs; [

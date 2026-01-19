@@ -82,10 +82,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1768598210,
-        "narHash": "sha256-kkgA32s/f4jaa4UG+2f8C225Qvclxnqs76mf8zvTVPg=",
+        "lastModified": 1768798936,
+        "narHash": "sha256-eHld4id3TeD9Sxx5vgv58BnTl1fz+ewIKspz/kEoAE8=",
         "ref": "master",
-        "rev": "c47b2cc64a629f8e075de52e4742de688f930dc6",
+        "rev": "2954aa29441a1a98901362e4d35515875761ad65",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -116,10 +116,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1768627010,
-        "narHash": "sha256-R0BMLdsKODznGH4HD9wV9guRhItVOLMSFm60vOYgQEU=",
+        "lastModified": 1768733740,
+        "narHash": "sha256-b4ZEaLgqvWS/Atljr+7yW3s4sb9Xf5liWTsmPUva8eI=",
         "ref": "main",
-        "rev": "d13624b93105783b6bcb53d9939406a25bf9beda",
+        "rev": "a1b0e2e63be9a755c4d1ee4f5186cca00d416cd5",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -175,10 +175,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1768698434,
-        "narHash": "sha256-EyUvvFqz7pStmP3Qc6zbwxzR3AnXUYuPzDpFHI+yDcA=",
+        "lastModified": 1768813917,
+        "narHash": "sha256-y/4IT+/ORL3mtHHeD5qtxpaZXl8gye0a0jNYlFTXYJ4=",
         "ref": "master",
-        "rev": "80f2dc3bafb68e8574f1adcbf982e328c43cfa33",
+        "rev": "b14e337e4a8e339d4526f3302ef4935a215e5894",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"

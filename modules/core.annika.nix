@@ -46,5 +46,6 @@
         discord # Install Official Discord app
         google-chrome # Install google chrom
         plex-desktop # Install Plex
+        ausweisapp
     ];
 }

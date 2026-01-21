@@ -9,24 +9,21 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    #security.sudo.enable = true; #Commentent out becouse of dublication with the sudo.nix
-
     imports = [
         ./development/docker.nix
         ./development/dotnet.nix
         ./development/webdev.nix
-        ./utility/wireguard.nix
 
         ./security/udev.nix
+        ./security/librewolf.nix
 
         ./bootloader/grub.nix
 
+        ./utility/wireguard.nix
         ./utility/audio.nix
 
         ./terminal/tmux.nix
         ./terminal/kitty.nix
-
-        ./security/librewolf.nix
 
         ./home-manager/catppuccin.nix
     ];

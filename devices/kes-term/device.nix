@@ -31,6 +31,8 @@
         ../../modules/gaming/steam.nix
 
         ../../modules/bootloader/grub.nix
+
+        ../../modules/utility/tidal.nix
     ];
 
     environment.systemPackages = with pkgs; [

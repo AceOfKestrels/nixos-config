@@ -19,7 +19,7 @@
     };
     home-manager.users.kes = { }; # needed for HM to apply config to user
 
-    security.sudo.wheelNeedsPassword = false;
+    security.sudo-rs.wheelNeedsPassword = false;
 
     imports = [
         ../../modules/core.nix

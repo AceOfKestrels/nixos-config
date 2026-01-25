@@ -9,7 +9,7 @@
             url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
         };
         nixpkgs-unstable = {
-            urls = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+            url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
         };
         nixpkgs-master = {
             url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";

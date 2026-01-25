@@ -13,4 +13,4 @@ jobs:
         permissions:
             contents: read
         with:
-            check_updated: ${{ github.event_name == 'schedule' }}
+            check_updated: true

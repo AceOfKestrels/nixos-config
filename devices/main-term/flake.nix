@@ -2,11 +2,18 @@
     description = "flake for annika-main-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/nixos-config/devices/main-term#main-term' to apply.";
 
     inputs = {
-        nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
-        nixpkgs-stable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
-        nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
-        nixpkgs-master.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";
-
+        nixpkgs = {
+            url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+        };
+        nixpkgs-stable = {
+            url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
+        };
+        nixpkgs-unstable = {
+            urls = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+        };
+        nixpkgs-master = {
+            url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";
+        };
         catppuccin = {
             url = "git+https://github.com/catppuccin/nix.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -57,7 +64,6 @@
                 nixpkgs.follows = "nixpkgs";
             };
         };
-
         kestrix = {
             url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=main";
             inputs = {

@@ -15,10 +15,24 @@
             url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        pre-commit = {
+            url = "git+https://github.com/cachix/pre-commit-hooks.nix?shallow=1&ref=master";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        crane = {
+            url = "git+https://github.com/ipetkov/crane?shallow=1&ref=master";
+        };
+        rust-overlay = {
+            url = "git+https://github.com/oxalica/rust-overlay?shallow=1&ref=master";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         lanzaboote = {
             url = "git+https://github.com/nix-community/lanzaboote.git?shallow=1&ref=master";
             inputs = {
                 nixpkgs.follows = "nixpkgs";
+                pre-commit.follows = "pre-commit";
+                crane.follows = "crane";
+                rust-overlay.follows = "rust-overlay";
             };
         };
         shell-sources = {

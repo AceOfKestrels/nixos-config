@@ -21,10 +21,15 @@
         ];
     };
 
-    boot.kernelModules = [
-        "nvidia"
-        "nvidia_uvm"
-    ];
+    boot = {
+        kernelModules = [
+            "nvidia"
+            "nvidia_uvm"
+        ];
+        kernelParams = [
+            "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+        ];
+    };
 
     hardware.nvidia = {
         modesetting.enable = true;

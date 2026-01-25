@@ -15,16 +15,32 @@
             url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        flake-compat = {
+            url = "git+https://github.com/NixOS/flake-compat?shallow=1&ref=master";
+            flake = false;
+        };
+        gitignore = {
+            url = "git+https://github.com/hercules-ci/gitignore.nix?shallow=1&ref=master";
+            inputs = {
+                nixpkgs.follows = "nixpkgs";
+            };
+        };
         pre-commit = {
             url = "git+https://github.com/cachix/pre-commit-hooks.nix?shallow=1&ref=master";
-            inputs.nixpkgs.follows = "nixpkgs";
+            inputs = {
+                nixpkgs.follows = "nixpkgs";
+                gitignore.follows = "gitignore";
+                flake-compat.follows = "flake-compat";
+            };
         };
         crane = {
             url = "git+https://github.com/ipetkov/crane?shallow=1&ref=master";
         };
         rust-overlay = {
             url = "git+https://github.com/oxalica/rust-overlay?shallow=1&ref=master";
-            inputs.nixpkgs.follows = "nixpkgs";
+            inputs = {
+                nixpkgs.follows = "nixpkgs";
+            };
         };
         lanzaboote = {
             url = "git+https://github.com/nix-community/lanzaboote.git?shallow=1&ref=master";
@@ -37,16 +53,20 @@
         };
         shell-sources = {
             url = "git+https://github.com/AceOfKestrels/shell-sources.git?shallow=1&ref=main";
-            inputs.nixpkgs.follows = "nixpkgs";
+            inputs = {
+                nixpkgs.follows = "nixpkgs";
+            };
         };
 
         kestrix = {
             url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=main";
-            inputs.nixpkgs.follows = "nixpkgs";
-            inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-            inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
-            inputs.nixpkgs-master.follows = "nixpkgs-master";
-            inputs.home-manager.follows = "home-manager";
+            inputs = {
+                nixpkgs.follows = "nixpkgs";
+                nixpkgs-stable.follows = "nixpkgs-stable";
+                nixpkgs-unstable.follows = "nixpkgs-unstable";
+                nixpkgs-master.follows = "nixpkgs-master";
+                home-manager.follows = "home-manager";
+            };
         };
     };
 

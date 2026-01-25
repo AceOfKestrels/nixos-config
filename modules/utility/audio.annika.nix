@@ -13,7 +13,7 @@
                 "default.clock.allowed-rates" = [ 192000 ];
                 "default.clock.quantum" = 256;
                 "default.clock.min-quantum" = 32;
-                "default.clock.max-quantum" = 256;
+                "default.clock.max-quantum" = 512;
             };
         };
     };

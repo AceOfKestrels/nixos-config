@@ -13,7 +13,7 @@
                   --prefix LD_LIBRARY_PATH : "/run/opengl-driver/lib"
             '';
         })
-        handbrake
+        pkgsStable.handbrake
         parallel-full
         makemkv
         mkvtoolnix
@@ -22,4 +22,5 @@
         vlc
         asunder
     ];
+
 }

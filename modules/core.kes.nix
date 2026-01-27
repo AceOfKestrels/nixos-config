@@ -21,6 +21,7 @@
 
         ./utility/wireguard.nix
         ./utility/audio.nix
+        ./utility/lix.nix
 
         ./terminal/tmux.nix
         ./terminal/kitty.nix

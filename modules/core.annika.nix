@@ -43,6 +43,8 @@
 
         #Import Ausweis App
         ./utility/ausweisapp.nix
+
+        ./utility/lix.nix
     ];
 
     environment.systemPackages = with pkgs; [

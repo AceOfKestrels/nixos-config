@@ -129,6 +129,31 @@
         "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
+    "plasma-manager": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767662275,
+        "narHash": "sha256-d5Q1GmQ+sW1Bt8cgDE0vOihzLaswsm8cSdg8124EqXE=",
+        "ref": "trunk",
+        "rev": "51816be33a1ff0d4b22427de83222d5bfa96d30e",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/plasma-manager.git"
+      },
+      "original": {
+        "ref": "trunk",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/nix-community/plasma-manager.git"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
@@ -140,6 +165,7 @@
         "nixpkgs-unstable": [
           "nixpkgs"
         ],
+        "plasma-manager": "plasma-manager",
         "shell-sources": "shell-sources"
       }
     },

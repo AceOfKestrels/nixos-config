@@ -23,7 +23,7 @@
 
     imports = [
         ../../modules/core.nix
-        ../../modules/desktop/cosmic.nix
+        ../../modules/desktop/plasma6.nix
 
         ./drivers/amdgpu.nix
 

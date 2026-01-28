@@ -54,7 +54,7 @@ in
         defaultProfile = "${defaultProfile}";
 
         customColorSchemes = {
-            "Catppuccin" = ./assets/catppuccin-customized.colorscheme;
+            "Catppuccin" = ../assets/catppuccin-customized.colorscheme;
         };
 
         profiles.${defaultProfile}.extraConfig = profilesBase // {

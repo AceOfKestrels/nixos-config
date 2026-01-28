@@ -23,6 +23,12 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        plasma-manager = {
+            url = "git+https://github.com/nix-community/plasma-manager.git?shallow=1&ref=trunk";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.home-manager.follows = "home-manager";
+        };
+
         kestrix = {
             url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=dev";
             inputs.nixpkgs.follows = "nixpkgs";

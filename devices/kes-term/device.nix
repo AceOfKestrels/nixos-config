@@ -29,6 +29,7 @@
 
         ../../modules/gaming/minecraft.nix
         ../../modules/gaming/steam.nix
+        ../../modules/gaming/lutris.nix
 
         ../../modules/bootloader/grub.nix
 

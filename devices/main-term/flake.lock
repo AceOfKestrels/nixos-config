@@ -151,10 +151,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1769949118,
-        "narHash": "sha256-Ue9kYZenqMw9yHGFnBpoWxQqhs2tlH/el4AxKVicXBE=",
+        "lastModified": 1770064250,
+        "narHash": "sha256-3HB6gfnKZnwDoH77lnJktJtQWEZ+D35Oi53pNF6YwO4=",
         "ref": "master",
-        "rev": "0be0641613a13323a61a6406c46b6f28b8894395",
+        "rev": "9985b98c74dcc7b1c7ccfe8693daf37caa4ed2ea",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/lanzaboote.git"
@@ -185,10 +185,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1770057536,
-        "narHash": "sha256-Y/Dqu+7StqRVlzQEbow5l2Ws02P9IrHO3eVnpVWbLTE=",
+        "lastModified": 1770127173,
+        "narHash": "sha256-F99uW/J86AnBNfYz2M4BdK8nwj8aQe1bj4KTFBKDRrg=",
         "ref": "master",
-        "rev": "79faf5ae0424fe8cd1d07064a513667e6b6ae65a",
+        "rev": "7314424e6c6a0137078fa2b971371545ceb48e3b",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -287,10 +287,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1770001842,
-        "narHash": "sha256-ZAyTeILfdWwDp1nuF0RK3McBduMi49qnJvrS+3Ezpac=",
+        "lastModified": 1770088046,
+        "narHash": "sha256-4hfYDnUTvL1qSSZEA4CEThxfz+KlwSFQ30Z9jgDguO0=",
         "ref": "master",
-        "rev": "5018343419ea808f8a413241381976b7e60951f2",
+        "rev": "71f9daa4e05e49c434d08627e755495ae222bc34",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay"

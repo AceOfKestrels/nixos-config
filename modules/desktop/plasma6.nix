@@ -12,6 +12,9 @@
     # Enable KDE Plasma 6
     services.desktopManager.plasma6.enable = true;
 
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
+
     hardware.bluetooth.enable = true;
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [

@@ -22,6 +22,9 @@
         ./security/sudo.nix # Import Sudo Replacment Nix File
         ./security/apparmor.nix # Import App armor
 
+        # Import Utility Stuff
+        ./utility/rsync.nix
+
     ]
     ++ kestrel.userModules {
         kes = ./core.kes.nix;

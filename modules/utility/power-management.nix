@@ -41,13 +41,6 @@
     powerManagement.powertop.enable = true; # runs --auto-tune at boot
     services.thermald.enable = true; # smooths turbo/temps on 8th-gen Intel
 
-    zramSwap = {
-        enable = true;
-        memoryPercent = 50; # ~8 GB compressed
-        algorithm = "zstd"; # or "lz4" if you prefer lower CPU use
-        priority = 100; # ensure it’s used before disk swap
-    };
-
     environment.shellAliases = {
         fullcharge = "sudo tlp setcharge 95 100";
         setcharge = "sudo tlp setcharge";

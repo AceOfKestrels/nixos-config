@@ -32,5 +32,7 @@
         ../../modules/utility/power-management.nix
 
         ../../modules/bootloader/grub.nix
+
+        ../../modules/gaming/minecraft.nix
     ];
 }

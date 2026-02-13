@@ -1,11 +1,16 @@
 {
     config,
     pkgs,
+    inputs,
     ...
 }:
-
+let
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+in
 {
-    # NVIDIA driver setup
+
+    nixpkgs.overlays = [ inputs.nvidia-patch.overlays.default ];
+
     services.xserver.videoDrivers = [ "nvidia" ];
 
     hardware.graphics = {
@@ -37,7 +42,8 @@
         powerManagement.finegrained = false;
         open = true;
         nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+        package = pkgs.nvidia-patch.patch-nvenc (pkgs.nvidia-patch.patch-fbc package);
     };
 
     # Ensure Vulkan and NVIDIA-specific OpenGL driver paths are available

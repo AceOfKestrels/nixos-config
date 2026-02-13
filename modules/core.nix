@@ -24,6 +24,7 @@
 
         # Import Utility Stuff
         ./utility/rsync.nix
+        ./utility/zram.nix
 
     ]
     ++ kestrel.userModules {

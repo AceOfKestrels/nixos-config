@@ -171,10 +171,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1770734117,
-        "narHash": "sha256-PNXSnK507MRj+hYMgnUR7InNJzVCmOfsjHV4YXZgpwQ=",
+        "lastModified": 1771322141,
+        "narHash": "sha256-7NF2aiWw7cL+KAdOgSXEV9fg4Y6SH8NmEgSBYIdKfcw=",
         "ref": "master",
-        "rev": "2038a9a19adb886eccba775321b055fdbdc5029d",
+        "rev": "89594c01208e1e0218050d63a3570a3e1b4447ac",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/lanzaboote.git"
@@ -205,10 +205,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1771321111,
-        "narHash": "sha256-Aee6q2xAc94U0aQWGxXRbldiUmB04GHoo3iUJUBIBQU=",
+        "lastModified": 1771343865,
+        "narHash": "sha256-l8TBcGz4kkFhKD9lmk9jOdL2Z1bA9H6O3uevYgy0Dvs=",
         "ref": "master",
-        "rev": "eb02d027719e435d775bac1ccd3471ebd745b03d",
+        "rev": "36e6063a3b70c945c5a364d80e10a239adbea804",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"

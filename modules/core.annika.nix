@@ -16,6 +16,7 @@
         # Setup Gaming Stuff
         ./gaming/minecraft.nix
         ./gaming/steam.nix
+        ./gaming/lutris.nix
 
         # installl ica clie
         #./utility/citrix-ica-client.nix

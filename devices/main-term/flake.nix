@@ -81,6 +81,7 @@
             url = "git+https://github.com/icewind1991/nvidia-patch-nixos.git?shallow=1&ref=main";
             inputs = {
                 utils.follows = "flake-utils";
+                nixpkgs.follows = "nixpkgs";
             };
         };
     };

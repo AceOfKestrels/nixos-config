@@ -34,5 +34,6 @@
         ../../modules/bootloader/grub.nix
 
         ../../modules/gaming/minecraft.nix
+        ../../modules/gaming/steam.nix
     ];
 }

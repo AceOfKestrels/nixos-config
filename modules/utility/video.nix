@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, kestrel, ... }:
 
 {
     boot.kernelModules = [ "sg" ];
@@ -22,5 +22,9 @@
         vlc
         asunder
     ];
+
+    nixpkgs.overlays = kestrel.overlays.mkOverlays {
+        makemkv = "0cdfb9727daf9e1c72ed563b2e8aa58bc3dd81e7";
+    };
 
 }

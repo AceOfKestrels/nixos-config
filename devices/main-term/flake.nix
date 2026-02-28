@@ -74,16 +74,6 @@
                 home-manager.follows = "home-manager";
             };
         };
-        flake-utils = {
-            url = "git+https://github.com/numtide/flake-utils.git?shallow=1&ref=main";
-        };
-        nvidia-patch = {
-            url = "git+https://github.com/icewind1991/nvidia-patch-nixos.git?shallow=1&ref=main";
-            inputs = {
-                utils.follows = "flake-utils";
-                nixpkgs.follows = "nixpkgs";
-            };
-        };
     };
 
     outputs = inputs: {

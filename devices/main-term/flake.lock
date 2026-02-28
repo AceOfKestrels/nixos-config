@@ -57,26 +57,6 @@
         "url": "https://github.com/NixOS/flake-compat"
       }
     },
-    "flake-utils": {
-      "inputs": {
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "ref": "main",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/numtide/flake-utils.git"
-      },
-      "original": {
-        "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/numtide/flake-utils.git"
-      }
-    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -254,44 +234,6 @@
         "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1711898512,
-        "narHash": "sha256-l3D67S2ipurSfGZR6/h6c7gqFCIS+dn/YMI9Qswzbt8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "ec835aa3dc8667e0c633d380d4b0ae609ffdb935",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "release-23.11",
-        "type": "indirect"
-      }
-    },
-    "nvidia-patch": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2",
-        "utils": [
-          "flake-utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1771131227,
-        "narHash": "sha256-YuWhXw8zeVyCqhXcVurmK4EtyDtTeQxCKSFxe3iz2Tg=",
-        "ref": "main",
-        "rev": "0117e5b5e0fa6f8bb1e3f673544e1838027aeafb",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/icewind1991/nvidia-patch-nixos.git"
-      },
-      "original": {
-        "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/icewind1991/nvidia-patch-nixos.git"
-      }
-    },
     "pre-commit": {
       "inputs": {
         "flake-compat": [
@@ -325,7 +267,6 @@
         "catppuccin": "catppuccin",
         "crane": "crane",
         "flake-compat": "flake-compat",
-        "flake-utils": "flake-utils",
         "gitignore": "gitignore",
         "home-manager": "home-manager",
         "kestrix": "kestrix",
@@ -334,7 +275,6 @@
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "nvidia-patch": "nvidia-patch",
         "pre-commit": "pre-commit",
         "rust-overlay": "rust-overlay",
         "shell-sources": "shell-sources"
@@ -382,21 +322,6 @@
         "shallow": true,
         "type": "git",
         "url": "https://github.com/AceOfKestrels/shell-sources.git"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
       }
     }
   },

@@ -18,6 +18,7 @@
         gamescope
         wine
         wine64
+        steam-run
     ];
 
     hardware.steam-hardware.enable = true;

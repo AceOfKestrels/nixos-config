@@ -49,6 +49,23 @@
                 "wsize=1048576"
             ];
         }
+        {
+            what = "10.100.20.10:/mnt/bunker.nas.local.wa-ls.net/games";
+            where = "/home/kes/disks/nas-games";
+            type = "nfs4";
+            options = builtins.concatStringsSep "," [
+                "rw"
+                "hard"
+                "intr"
+                "proto=tcp"
+                "_netdev"
+                "exec"
+                "nolock"
+                "noatime"
+                "rsize=1048576"
+                "wsize=1048576"
+            ];
+        }
 
         # Media NAS share (Synology, NFSv3)
         {
@@ -78,9 +95,12 @@
             where = "/home/annika/disks/nas-personal";
             wantedBy = [ "multi-user.target" ];
         }
-
         {
             where = "/home/annika/disks/nas-games";
+            wantedBy = [ "multi-user.target" ];
+        }
+        {
+            where = "/home/kes/disks/nas-games";
             wantedBy = [ "multi-user.target" ];
         }
         {

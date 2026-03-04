@@ -49,7 +49,7 @@
         nix-search-cli # Search Nix packages via CLI
         nixfmt # Formatter for nix files
 
-        signal-desktop-bin # Signal messenger
+        signal-desktop # Signal messenger
 
         dig # to have dns tools like nslookup
 

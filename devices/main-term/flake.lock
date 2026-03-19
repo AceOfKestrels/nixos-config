@@ -24,10 +24,10 @@
     },
     "crane": {
       "locked": {
-        "lastModified": 1773189535,
-        "narHash": "sha256-E1G/Or6MWeP+L6mpQ0iTFLpzSzlpGrITfU2220Gq47g=",
+        "lastModified": 1773857772,
+        "narHash": "sha256-5xsK26KRHf0WytBtsBnQYC/lTWDhQuT57HJ7SzuqZcM=",
         "ref": "master",
-        "rev": "6fa2fb4cf4a89ba49fc9dd5a3eb6cde99d388269",
+        "rev": "b556d7bbae5ff86e378451511873dfd07e4504cd",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/ipetkov/crane"
@@ -86,10 +86,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1773422513,
-        "narHash": "sha256-MPjR48roW7CUMU6lu0+qQGqj92Kuh3paIulMWFZy+NQ=",
+        "lastModified": 1773935367,
+        "narHash": "sha256-+RjULqqbCYmOJG+99pNqEGRJV7bX8DYPbxKUhKWFKsI=",
         "ref": "master",
-        "rev": "ef12a9a2b0f77c8fa3dda1e7e494fca668909056",
+        "rev": "a7ec5440474cdcc9939cc67c320f01aea0a2f195",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -168,10 +168,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1773389992,
-        "narHash": "sha256-wvfdLLWJ2I9oEpDd9PfMA8osfIZicoQ5MT1jIwNs9Tk=",
+        "lastModified": 1773821835,
+        "narHash": "sha256-TJ3lSQtW0E2JrznGVm8hOQGVpXjJyXY2guAxku2O9A4=",
         "ref": "nixos-unstable",
-        "rev": "c06b4ae3d6599a672a6210b7021d699c351eebda",
+        "rev": "b40629efe5d6ec48dd1efba650c797ddbd39ace0",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -185,10 +185,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1773546718,
-        "narHash": "sha256-qXTOPvJ8zBlqB/HaJeQU/V+GWswgyhODEbopUm/Uqaw=",
+        "lastModified": 1773938363,
+        "narHash": "sha256-GyuXdf18QltiM0MGuTBjkY1VJ+0XnvA/Y+VKOLmkC70=",
         "ref": "master",
-        "rev": "1256b046ce4b8632ef5aee15bc39a4b2a6f601ba",
+        "rev": "dcb37593768850c86f7d0795f4c6998c2b270fd2",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -219,10 +219,10 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1773389992,
-        "narHash": "sha256-wvfdLLWJ2I9oEpDd9PfMA8osfIZicoQ5MT1jIwNs9Tk=",
+        "lastModified": 1773821835,
+        "narHash": "sha256-TJ3lSQtW0E2JrznGVm8hOQGVpXjJyXY2guAxku2O9A4=",
         "ref": "nixos-unstable",
-        "rev": "c06b4ae3d6599a672a6210b7021d699c351eebda",
+        "rev": "b40629efe5d6ec48dd1efba650c797ddbd39ace0",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -287,10 +287,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1773544328,
-        "narHash": "sha256-Iv+qez54LAz+isij4APBk31VWA//Go81hwFOXr5iWTw=",
+        "lastModified": 1773889863,
+        "narHash": "sha256-tSsmZOHBgq4qfu5MNCAEsKZL1cI4avNLw2oUTXWeb74=",
         "ref": "master",
-        "rev": "4f977d776793c8bfbfdd7eca7835847ccc48874e",
+        "rev": "dbfd51be2692cb7022e301d14c139accb4ee63f0",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay"

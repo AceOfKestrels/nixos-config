@@ -7,7 +7,7 @@
     environment.shellAliases = {
         cp = "rsync -ahP";
         # We alias mv to our custom function defined below
-        mv = "rsync_mv";
+        mvr = "rsync_mv";
         # Added a dry-run version as a bonus
         mvd = "rsync_mv --dry-run";
     };

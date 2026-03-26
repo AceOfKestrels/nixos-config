@@ -27,7 +27,11 @@
         # Load NAS Mount
         ./drivers/nasdrive.nix
 
+        # Load Catpuchin
         ../../modules/home-manager/catppuccin.nix
+
+        # Load SSh Server
+        ../../modules/utility/open-ssh-server.nix
     ];
 
     # Allow unfree packages

@@ -2,10 +2,13 @@
 
 let
     standardModules = [
+        ../standard/tools/docker.nix
         ../standard/tools/git.nix
         ../standard/tools/rsync.nix
         ../standard/tools/tools.nix
         ../standard/tools/vscode.nix
+
+        ../standard/desktop/cosmic.nix
 
         ../standard/terminal/aliases.nix
         ../standard/terminal/kitty.nix

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-    environment.systemPackages = [ pkgs.librewolf ];
+    home.packages = [ pkgs.librewolf ];
 
     programs.firefox = {
         enable = true;

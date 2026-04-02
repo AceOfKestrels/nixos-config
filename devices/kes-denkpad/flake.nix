@@ -24,7 +24,7 @@
         };
 
         kestrix = {
-            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=dev";
+            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=feature/tags";
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.nixpkgs-stable.follows = "nixpkgs-stable";
             inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
@@ -39,6 +39,7 @@
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-denkpad";
             user = "kes";
+            tags = [ "kes" ];
             inherit inputs;
         };
     };

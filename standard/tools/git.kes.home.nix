@@ -1,7 +1,7 @@
 { lib, ... }:
 
 {
-    programs.git.config = {
+    programs.git.settings = {
         user = {
             name = "AceOfKestrels";
             email = "git@kestrels.dev";

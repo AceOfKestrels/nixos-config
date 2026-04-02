@@ -4,7 +4,7 @@ let
     p10k-prompt = builtins.readFile ./p10k.annika.zsh;
 in
 {
-    programs.zsh.promptInit = ''
+    programs.zsh.initContent = ''
         ${p10k-prompt}
     '';
 

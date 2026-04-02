@@ -16,8 +16,8 @@
     };
 
     imports = kestrix.taggedForUser {
-        kes = ./zsh.kes.home.nix;
-        annika = ./zsh.annika.home.nix;
+        kes = [ ./zsh.kes.home.nix ];
+        annika = [ ./zsh.annika.home.nix ];
     };
 
     # Set it as the default shell

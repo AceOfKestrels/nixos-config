@@ -52,7 +52,7 @@ in
     ];
 
     imports = kestrix.taggedForUser {
-        kes = ./git.kes.home.nix;
-        annika = ./git.annika.home.nix;
+        kes = [ ./git.kes.home.nix ];
+        annika = [ ./git.annika.home.nix ];
     };
 }

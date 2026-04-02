@@ -1,5 +1,5 @@
 {
-    kestrel,
+    kestrix,
     pkgs,
     ...
 }:
@@ -15,9 +15,9 @@
         '';
     };
 
-    imports = kestrel.userModules {
-        kes = ./zsh.kes.nix;
-        annika = ./zsh.annika.nix;
+    imports = kestrix.taggedForUser {
+        kes = ./zsh.kes.home.nix;
+        annika = ./zsh.annika.home.nix;
     };
 
     # Set it as the default shell

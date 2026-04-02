@@ -14,16 +14,9 @@
         ./development/dotnet.nix
         ./development/webdev.nix
 
-        ./security/librewolf.nix
-
         ./bootloader/grub.nix
 
         ./utility/wireguard.nix
-        ./utility/audio.nix
-        ./utility/lix.nix
-
-        ./terminal/tmux.nix
-        ./terminal/kitty.nix
 
         ./home-manager/catppuccin.nix
     ];
@@ -38,11 +31,7 @@
         tutanota-desktop
         proton-authenticator
 
-        vesktop
-
         teamspeak6-client
-
-        yazi # terminal file browser
     ];
 
     environment.variables = {

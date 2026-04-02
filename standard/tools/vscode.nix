@@ -34,6 +34,6 @@ kestrix.mkHome {
 }
 // {
     imports = kestrix.taggedForUser {
-        kes = ./vscode.kes.home.nix;
+        kes = [ ./vscode.kes.home.nix ];
     };
 }

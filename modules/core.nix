@@ -26,6 +26,7 @@
         ./utility/rsync.nix
         ./utility/zram.nix
 
+        ./tags.nix
     ]
     ++ kestrel.userModules {
         kes = ./core.kes.nix;

@@ -14,7 +14,6 @@
         ./development/dotnet.nix
         ./development/webdev.nix
 
-        ./security/udev.nix
         ./security/librewolf.nix
 
         ./bootloader/grub.nix

@@ -30,9 +30,6 @@
         ../../modules/home-manager/catppuccin.nix
     ];
 
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
-
     # Bootloader
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -104,11 +101,9 @@
         catppuccin.flavor = lib.mkForce "mocha";
     };
 
-    environment.variables = {
-        KES_NIX_CONFIGS_DIR = lib.mkForce "/etc/nixos/nixos-config";
-    };
-
     environment.systemPackages = with pkgs; [
+        scarlett2
+        alsa-scarlett-gui
         teamspeak6-client
         remmina
         teamviewer
@@ -118,7 +113,4 @@
     ];
 
     services.teamviewer.enable = true;
-
-    # Zen Kernal
-    boot.kernelPackages = pkgs.linuxPackages_zen;
 }

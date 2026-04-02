@@ -1,5 +1,5 @@
 {
-    kestrel,
+    kestrix,
     pkgs,
     lib,
     ...
@@ -51,9 +51,8 @@ in
         seahorse # optional GUI to view saved creds
     ];
 
-    imports = kestrel.userModules {
-        kes = ./git.kes.nix;
-        annika = ./git.annika.nix;
-        lexi = ./git.lexi.nix;
+    imports = kestrix.taggedForUser {
+        kes = ./git.kes.home.nix;
+        annika = ./git.annika.home.nix;
     };
 }

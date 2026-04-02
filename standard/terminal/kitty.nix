@@ -1,7 +1,7 @@
 { pkgs, kestrel, ... }:
 
 {
-    imports = [ ./tmux.nix ];
+    # imports = [ ./tmux.nix ];
     environment.systemPackages = with pkgs; [
         kitty
     ];

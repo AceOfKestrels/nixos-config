@@ -1,9 +1,6 @@
-{ kestrel, ... }:
+{ ... }:
 
 {
-    imports = kestrel.userModules {
-        annika = ./audio.annika.nix;
-    };
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
@@ -13,7 +10,18 @@
         alsa.support32Bit = true;
         pulse.enable = true;
         jack.enable = true;
+        extraConfig.pipewire."92-low-latency" = {
+            "context.properties" = {
+                "default.clock.rate" = 192000;
+                "default.clock.allowed-rates" = [ 192000 ];
+                "default.clock.quantum" = 256;
+                "default.clock.min-quantum" = 32;
+                "default.clock.max-quantum" = 512;
+            };
+        };
     };
+
+    boot.kernelParams = [ "threadirqs" ];
 
     # Prefer pipewire in clients that support it
     environment.sessionVariables = {

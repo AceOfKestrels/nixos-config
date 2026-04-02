@@ -1,9 +1,9 @@
-{ kestrel, pkgs, ... }:
+{ pkgs, ... }:
 
 let
     tabSize = 4;
 in
-kestrel.mkHome {
+{
     programs.vscode = {
         enable = true;
         package = pkgs.vscodium;
@@ -45,7 +45,7 @@ kestrel.mkHome {
                     "formatting" = {
                         "command" = [
                             "nixfmt"
-                            "--indent=${builtins.toString tabSize}"
+                            "--indent=${toString tabSize}"
                         ];
                     };
                 };
@@ -66,17 +66,17 @@ kestrel.mkHome {
                     "path" = "zsh";
                     "overrideName" = true;
                 };
-                "tmux" = {
-                    "path" = "tmux-attach-to-latest";
-                    "args" = [
-                        "vscode-session"
-                        "--include-directory"
-                    ];
-                    "icon" = "terminal-tmux";
-                    "overrideName" = true;
-                };
+                # "tmux" = {
+                #     "path" = "tmux-attach-to-latest";
+                #     "args" = [
+                #         "vscode-session"
+                #         "--include-directory"
+                #     ];
+                #     "icon" = "terminal-tmux";
+                #     "overrideName" = true;
+                # };
             };
-            "terminal.integrated.defaultProfile.linux" = "tmux";
+            "terminal.integrated.defaultProfile.linux" = "zsh";
             "terminal.integrated.enablePersistentSessions" = false;
             "terminal.integrated.persistentSessionReviveProcess" = "never";
 

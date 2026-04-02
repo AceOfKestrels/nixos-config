@@ -1,10 +1,10 @@
 {
-    kestrel,
+    kestrix,
     pkgs,
     ...
 }:
 
-kestrel.mkHome {
+kestrix.mkHome {
     programs.vscode = {
         enable = true;
 
@@ -26,17 +26,14 @@ kestrel.mkHome {
     };
 
     fonts.fontconfig.enable = true;
-    home.packages = with pkgs.nerd-fonts; [
-        meslo-lg
-    ];
-}
-// {
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
+        nerd-fonts.meslo-lg
         nixfmt
         nixd
     ];
-
-    imports = kestrel.userModules {
-        kes = ./vscode.kes.nix;
+}
+// {
+    imports = kestrix.taggedForUser {
+        kes = ./vscode.kes.home.nix;
     };
 }

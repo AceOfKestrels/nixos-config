@@ -1,11 +1,8 @@
 {
-    pkgs,
     ...
 }:
 
 {
-    boot.kernelPackages = pkgs.linuxPackages_zen;
-
     networking.hostName = "kes-notebook";
 
     users.users.kes = {
@@ -19,21 +16,8 @@
     };
     home-manager.users.kes = { };
 
-    environment.systemPackages = with pkgs; [
-        android-studio
-    ];
-
     imports = [
-        ../../modules/core.nix
-
-        # ../../modules/desktop/gnome.nix
-        ../../modules/desktop/cosmic.nix
-
-        ../../modules/utility/power-management.nix
-
+        ../../definitions/tags.nix
         ../../modules/bootloader/grub.nix
-
-        ../../modules/gaming/minecraft.nix
-        ../../modules/gaming/steam.nix
     ];
 }

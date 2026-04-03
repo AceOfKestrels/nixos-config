@@ -3,8 +3,7 @@
 {
     # IMPORTANT User Podman !!!
     imports = [
-        ./libvirt.nix
-        ../development/docker.nix
+        ../../standard/tools/docker.nix
     ];
 
     environment.systemPackages = with pkgs; [

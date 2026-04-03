@@ -7,7 +7,7 @@
         enable = true;
         package = pkgs.librewolf;
 
-        preferences = {
+        profiles.default.settings = {
             # enable firefox sync
             "identity.fxaccounts.enabled" = true;
 

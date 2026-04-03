@@ -10,7 +10,7 @@ let
     };
 in
 {
-    home.packages = [ pkgs.wireguard-tools ];
+    environment.systemPackages = [ pkgs.wireguard-tools ];
 
     environment = {
         etc."profile.d/wireguard-shortcuts.sh" = shortcuts-script;

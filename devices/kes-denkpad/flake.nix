@@ -38,9 +38,11 @@
             system = "x86_64-linux";
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-denkpad";
+            modules = [ ../../definitions/tags.nix ];
             tags = [
                 "kes"
                 "notebook"
+                "grub"
             ];
             inherit inputs;
         };

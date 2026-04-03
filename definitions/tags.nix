@@ -49,6 +49,8 @@ let
     annika = [
         ../modules/programs/termius.home.nix
         ../modules/programs/chrome.home.nix
+
+        ../modules/users/annika.nix
     ];
 
     kes = [
@@ -58,6 +60,8 @@ let
         ../modules/utility/env.kes.home.nix
 
         ../modules/programs/librewolf.nix
+
+        ../modules/users/kes.nix
     ];
 
     mel = [ ];
@@ -68,6 +72,8 @@ in
         ++ kestrix.tagged {
             notebook = [ ./tags.notebook.nix ];
             pc = [ ./tags.pc.nix ];
+            grub = [ ../modules/bootloader/grub.nix ];
+            secureboot = [ ../modules/bootloader/lanzaboote.nix ];
             kes = kes ++ shared;
             annika = annika ++ shared;
             mel = mel;

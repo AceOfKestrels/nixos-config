@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
         jetbrains.webstorm
 
         yaak
@@ -10,8 +10,5 @@
         typescript
         nodemon
         npm-check-updates
-
-        # Browser version is quicker and more stable
-        # figma-linux
     ];
 }

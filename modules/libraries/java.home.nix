@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-    home.packages = with pkgs; [
-        jdk17
-        jdk8
-    ];
+    home.file."jdks/jdk17".source = pkgs.jdk17;
+    home.file."jdks/jdk8".source = pkgs.jdk8;
 }

@@ -1,6 +1,6 @@
-{ kestrel, ... }:
+{ ... }:
 
-kestrel.mkHome {
+{
     catppuccin = {
         enable = true;
         flavor = "mocha";

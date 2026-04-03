@@ -19,6 +19,7 @@ let
         ../standard/security/clamav.nix
         ../standard/security/firewall.nix
         ../standard/security/sudo.nix
+        ../standard/security/polkit.nix
 
         ../standard/system/audio.nix
         ../standard/system/env.nix

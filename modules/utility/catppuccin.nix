@@ -1,5 +1,5 @@
 {
-    kestrel,
+    kestrix,
     inputs,
     ...
 }:
@@ -17,8 +17,9 @@ in
         enableModule
         inputs.catppuccin.nixosModules.catppuccin
     ]
-    ++ kestrel.userModules {
-        kes = ./catppuccin.kes.nix;
+    ++ kestrix.taggedFoUser {
+        kes = [ ./catppuccin.home.nix ];
+        annika = [ ./catppuccin.home.nix ];
     };
 
     home-manager.sharedModules = [

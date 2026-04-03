@@ -38,8 +38,10 @@
             system = "x86_64-linux";
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-denkpad";
-            user = "kes";
-            tags = [ "kes" ];
+            tags = [
+                "kes"
+                "notebook"
+            ];
             inherit inputs;
         };
     };

@@ -17,7 +17,7 @@ in
         enableModule
         inputs.catppuccin.nixosModules.catppuccin
     ]
-    ++ kestrix.taggedFoUser {
+    ++ kestrix.taggedForUser {
         kes = [ ./catppuccin.home.nix ];
         annika = [ ./catppuccin.home.nix ];
     };

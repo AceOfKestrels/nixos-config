@@ -1,36 +1,23 @@
 { kestrix, ... }:
 
 let
-    sharedHmModules = [
-    ];
-    sharedSystemModules = [
+    shared = [
     ];
 
-    annikaHmModules = [
+    annika = [
+        ../modules/development/terraform.nix
         ../modules/development/php.home.nix
     ];
-    annikaSystemModules = [
-        ../modules/development/terraform.nix
+
+    kes = [
     ];
 
-    kesHmModules = [
-    ];
-    kesSystemModules = [
-    ];
-
-    melHmModules = [ ];
-    melSystemModules = [ ];
+    mel = [ ];
 in
 {
-    imports =
-        kestrix.taggedForUser {
-            kes = sharedHmModules ++ kesHmModules;
-            annika = sharedHmModules ++ annikaHmModules;
-            mel = melHmModules;
-        }
-        ++ kestrix.tagged {
-            kes = sharedSystemModules ++ annikaSystemModules;
-            annika = sharedSystemModules ++ kesSystemModules;
-            mel = melSystemModules;
-        };
+    imports = kestrix.tagged {
+        kes = kes ++ shared;
+        annika = annika ++ shared;
+        mel = mel;
+    };
 }

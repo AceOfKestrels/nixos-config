@@ -1,35 +1,23 @@
 { kestrix, ... }:
 
 let
-    sharedHmModules = [
-    ];
-    sharedSystemModules = [
+    shared = [
         ../modules/utility/power-management.nix
-        ../modules/utility/wireguard.nix
+        ../modules/programs/wireguard.nix
     ];
 
-    annikaHmModules = [
-    ];
-    annikaSystemModules = [ ];
-
-    kesHmModules = [
-    ];
-    kesSystemModules = [
+    annika = [
     ];
 
-    melHmModules = [ ];
-    melSystemModules = [ ];
+    kes = [
+    ];
+
+    mel = [ ];
 in
 {
-    imports =
-        kestrix.taggedForUser {
-            kes = sharedHmModules ++ kesHmModules;
-            annika = sharedHmModules ++ annikaHmModules;
-            mel = melHmModules;
-        }
-        ++ kestrix.tagged {
-            kes = sharedSystemModules ++ annikaSystemModules;
-            annika = sharedSystemModules ++ kesSystemModules;
-            mel = melSystemModules;
-        };
+    imports = kestrix.tagged {
+        kes = kes ++ shared;
+        annika = annika ++ shared;
+        mel = mel;
+    };
 }

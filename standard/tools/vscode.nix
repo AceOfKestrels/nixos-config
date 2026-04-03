@@ -33,7 +33,7 @@ kestrix.mkHome {
     ];
 }
 // {
-    imports = kestrix.taggedForUser {
+    imports = kestrix.tagged {
         kes = [ ./vscode.kes.home.nix ];
     };
 }

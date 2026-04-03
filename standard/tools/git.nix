@@ -51,7 +51,7 @@ in
         seahorse # optional GUI to view saved creds
     ];
 
-    imports = kestrix.taggedForUser {
+    imports = kestrix.tagged {
         kes = [ ./git.kes.home.nix ];
         annika = [ ./git.annika.home.nix ];
     };

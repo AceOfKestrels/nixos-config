@@ -1,7 +1,7 @@
 { kestrix, ... }:
 
 let
-    standardModules = [
+    standard = [
         ../standard/tools/docker.nix
         ../standard/tools/git.nix
         ../standard/tools/rsync.nix
@@ -31,55 +31,45 @@ let
         ../standard/nix/nh.nix
     ];
 
-    sharedHmModules = [
+    shared = [
         ../modules/gaming/minecraft.home.nix
         ../modules/development/dotnet.home.nix
         ../modules/development/webdev.home.nix
-        ../modules/utility/jellyfin.home.nix
-        ../modules/utility/tidal.home.nix
-        ../modules/utility/discord.home.nix
-    ];
-    sharedSystemModules = [
+        ../modules/programs/jellyfin.home.nix
+        ../modules/programs/tidal.home.nix
+        ../modules/programs/discord.home.nix
+
         ../modules/gaming/steam.nix
         ../modules/utility/printing.nix
-        ../modules/utility/tor.nix
+        ../modules/programs/tor.nix
         ../modules/utility/locale-en.nix
         ../modules/utility/catppuccin.nix
     ];
 
-    annikaHmModules = [
-        ../modules/utility/termius.home.nix
-        ../modules/utility/chrome.home.nix
-    ];
-    annikaSystemModules = [
+    annika = [
+        ../modules/programs/termius.home.nix
+        ../modules/programs/chrome.home.nix
     ];
 
-    kesHmModules = [
-        ../modules/utility/librewolf.home.nix
-        ../modules/utility/nvim.home.nix
-        ../modules/utility/drawing.home.nix
+    kes = [
+        ../modules/programs/librewolf.home.nix
+        ../modules/programs/nvim.home.nix
+        ../modules/programs/drawing.home.nix
         ../modules/utility/env.kes.home.nix
-    ];
-    kesSystemModules = [
-        ../modules/utility/librewolf.nix
+
+        ../modules/programs/librewolf.nix
     ];
 
-    melHmModules = [ ];
-    melSystemModules = [ ];
+    mel = [ ];
 in
 {
     imports =
-        standardModules
+        standard
         ++ kestrix.tagged {
             notebook = [ ./tags.notebook.nix ];
             pc = [ ./tags.pc.nix ];
-            kes = sharedHmModules ++ kesHmModules;
-            annika = sharedHmModules ++ annikaHmModules;
-            mel = melHmModules;
-        }
-        ++ kestrix.tagged {
-            kes = sharedSystemModules ++ annikaSystemModules;
-            annika = sharedSystemModules ++ kesSystemModules;
-            mel = melSystemModules;
+            kes = kes ++ shared;
+            annika = annika ++ shared;
+            mel = mel;
         };
 }

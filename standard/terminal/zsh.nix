@@ -15,7 +15,7 @@
         '';
     };
 
-    imports = kestrix.taggedForUser {
+    imports = kestrix.tagged {
         kes = [ ./zsh.kes.home.nix ];
         annika = [ ./zsh.annika.home.nix ];
     };

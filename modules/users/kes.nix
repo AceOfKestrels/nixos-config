@@ -1,10 +1,6 @@
-{
-    ...
-}:
+{ ... }:
 
 {
-    networking.hostName = "kes-notebook";
-
     users.users.kes = {
         isNormalUser = true;
         description = "Kessandra";
@@ -12,12 +8,8 @@
             "networkmanager"
             "wheel"
             "bluetooth"
+            "docker"
         ];
     };
     home-manager.users.kes = { };
-
-    imports = [
-        ../../definitions/tags.nix
-        ../../modules/bootloader/grub.nix
-    ];
 }

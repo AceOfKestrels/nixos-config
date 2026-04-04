@@ -42,6 +42,7 @@ let
         ../modules/gaming/steam.nix
         ../modules/utility/printing.nix
         ../modules/programs/tor.nix
+        ../modules/programs/veracrypt.nix
         ../modules/utility/locale-en.nix
         ../modules/utility/catppuccin.nix
     ];

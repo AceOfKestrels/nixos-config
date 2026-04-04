@@ -41,6 +41,7 @@
             modules = [ ../../definitions/tags.nix ];
             tags = [
                 "kes"
+                "annika"
                 "notebook"
                 "grub"
             ];

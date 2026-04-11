@@ -1,6 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+    environment.systemPackages = [ pkgs.librewolf ];
+
+    programs.firefox = {
+        enable = true;
+        package = pkgs.librewolf;
+    };
     programs.firefox.preferences = {
         # enable firefox sync
         "identity.fxaccounts.enabled" = true;

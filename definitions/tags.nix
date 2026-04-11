@@ -57,7 +57,6 @@ let
     ];
 
     kes = [
-        ../modules/programs/librewolf.home.nix
         ../modules/programs/nvim.home.nix
         ../modules/programs/drawing.home.nix
         ../modules/utility/env.kes.home.nix

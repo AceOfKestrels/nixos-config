@@ -1,15 +1,12 @@
-{ pkgs, kestrel, ... }:
+{ pkgs, kestrix, ... }:
 
 {
-    # imports = [ ./tmux.nix ];
     environment.systemPackages = with pkgs; [
         kitty
     ];
-}
-// kestrel.mkHome {
-    programs.kitty = {
-        enable = true;
 
-        extraConfig = builtins.readFile ./kitty.conf;
+    imports = kestrix.tagged {
+        annika = ./kitty.annika.home.nix;
+        kes = ./kitty.kes.home.nix;
     };
 }

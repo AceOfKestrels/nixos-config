@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-    home.pkgs = with pkgs; [
+    home.packages = with pkgs; [
         onlyoffice-desktopeditors
     ];
 }

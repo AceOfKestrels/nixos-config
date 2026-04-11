@@ -10,6 +10,7 @@ let
         ../modules/development/php.home.nix
         ../modules/programs/teamspeak.home.nix
         ../modules/programs/teamviewer.nix
+        ../modules/programs/onlyoffice.home.nix
     ];
 
     kes = [

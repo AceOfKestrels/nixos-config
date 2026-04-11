@@ -8,9 +8,12 @@ let
     annika = [
         ../modules/development/terraform.nix
         ../modules/development/php.home.nix
+        ../modules/programs/teamspeak.home.nix
+        ../modules/programs/teamviewer.nix
     ];
 
     kes = [
+        ../modules/programs/flatpak.nix
     ];
 
     mel = [ ];

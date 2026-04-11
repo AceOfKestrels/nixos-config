@@ -2,6 +2,7 @@
 
 let
     standard = [
+        ../standard/tools/archive.nix
         ../standard/tools/docker.nix
         ../standard/tools/git.nix
         ../standard/tools/rsync.nix
@@ -50,6 +51,7 @@ let
     annika = [
         ../modules/programs/termius.home.nix
         ../modules/programs/chrome.home.nix
+        ../modules/programs/drawio.home.nix
 
         ../modules/users/annika.nix
     ];
@@ -75,6 +77,8 @@ in
             pc = [ ./tags.pc.nix ];
             grub = [ ../modules/bootloader/grub.nix ];
             secureboot = [ ../modules/bootloader/lanzaboote.nix ];
+            amdgpu = [ ../modules/drivers/amdgpu.nix ];
+            nvidia = [ ../modules/drivers/nvidia.nix ];
             kes = kes ++ shared;
             annika = annika ++ shared;
             mel = mel;

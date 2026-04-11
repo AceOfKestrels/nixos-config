@@ -81,8 +81,18 @@
             system = "x86_64-linux";
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/main-term";
-            user = "annika";
-            modules = [ ./device.nix ];
+            modules = [
+                ../../definitions/tags.nix
+                ./drivers/lanzaboote.nix
+                ./drivers/nasdrive.nix
+            ];
+            tags = [
+                "pc"
+                "kes"
+                "annika"
+                "lanzaboote"
+                "nvidia"
+            ];
             inherit inputs;
         };
     };

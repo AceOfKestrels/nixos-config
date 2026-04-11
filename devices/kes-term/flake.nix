@@ -44,8 +44,14 @@
             system = "x86_64-linux";
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-term";
-            user = "kes";
-            modules = [ ./device.nix ];
+            modules = [ ../../definitions/tags.nix ];
+            tags = [
+                "pc"
+                "kes"
+                "annika"
+                "grub"
+                "amdgpu"
+            ];
             inherit inputs;
         };
     };

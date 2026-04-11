@@ -40,7 +40,6 @@ let
         ../modules/programs/discord.home.nix
 
         ../modules/gaming/steam.nix
-        ../modules/utility/printing.nix
         ../modules/programs/tor.nix
         ../modules/programs/veracrypt.nix
         ../modules/utility/locale-en.nix

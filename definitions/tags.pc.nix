@@ -2,6 +2,7 @@
 
 let
     shared = [
+        ../modules/utility/printing.nix
     ];
 
     annika = [

@@ -1,6 +1,7 @@
 { lib, ... }:
 
 {
+    programs.git.enable = true;
     programs.git.settings = {
         user = {
             name = "AceOfKestrels";

@@ -24,7 +24,7 @@
         };
 
         kestrix = {
-            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=feature/tags";
+            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.nixpkgs-stable.follows = "nixpkgs-stable";
             inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";

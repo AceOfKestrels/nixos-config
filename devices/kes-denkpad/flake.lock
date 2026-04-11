@@ -63,16 +63,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1775245780,
-        "narHash": "sha256-G2S9XMzR7NLoV8Htp0x00gID/jf8ZL5cD8+rUGfV23Y=",
-        "ref": "feature/tags",
-        "rev": "84e97d9c8b2385554235a83e92c55c929c0af59b",
+        "lastModified": 1775930354,
+        "narHash": "sha256-pCdSLxruqEjsxqzJuSsUX1XMlpiBO9qSh8NQBKqRTWM=",
+        "ref": "main",
+        "rev": "ac2fabab687f9e06c103185512f815557d3e5649",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
       },
       "original": {
-        "ref": "feature/tags",
+        "ref": "main",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"

@@ -1,14 +1,10 @@
-{ kestrel, pkgs, ... }:
+{ pkgs, ... }:
+
 let
     # pick your flavor + accent
     cursorPkg = pkgs.catppuccin-cursors.macchiatoDark;
 in
 {
-    environment.systemPackages = with pkgs; [
-        catppuccin-cursors
-    ];
-}
-// kestrel.mkHome {
     home.packages = [ cursorPkg ];
 
     home.pointerCursor = {

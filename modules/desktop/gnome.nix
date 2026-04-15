@@ -1,19 +1,21 @@
 {
-    kestrel,
+    kestrix,
     pkgs,
     ...
 }:
 
 {
-    # Enable the X11 windowing system.
     services.xserver.enable = true;
 
-    # Enable GNOME
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
 
+    services.displayManager.defaultSession = "gnome";
+
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = true;
+
+    programs.dconf.enable = true;
 
     environment.systemPackages = with pkgs; [
         # Gnome Packetes
@@ -24,8 +26,26 @@
         dbus
     ];
 
-    imports = kestrel.userModules {
-        kes = ./gnome.kes.nix;
-        annika = ./gnome.annika.nix;
+    environment.gnome.excludePackages = (
+        with pkgs;
+        [
+            atomix
+            cheese
+            epiphany
+            geary
+            gnome-tour
+            hitori
+            iagno
+            tali
+            gnome-calendar
+            gnome-maps
+            gnome-weather
+            gnome-contacts
+        ]
+    );
+
+    imports = kestrix.tagged {
+        kes = [ ./gnome.kes.home.nix ];
+        annika = [ ./gnome.annika.home.nix ];
     };
 }

@@ -1,6 +1,6 @@
-{ kestrel, ... }:
+{ ... }:
 
-kestrel.mkHome {
+{
     dconf.settings = {
         "org/gnome/gnome-system-monitor" = {
             current-tab = "resources";

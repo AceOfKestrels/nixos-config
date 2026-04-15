@@ -92,6 +92,7 @@
                 "annika"
                 "lanzaboote"
                 "nvidia"
+                "gnome"
             ];
             inherit inputs;
         };

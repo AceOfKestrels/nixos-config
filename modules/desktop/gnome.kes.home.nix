@@ -1,23 +1,13 @@
-{ kestrel, ... }:
+{ ... }:
+
 {
     imports = [
-        # import Gnome extensions
-        ./kes/gnome/extensions.nix
-
-        # import Gnome Themes
-        ./kes/gnome/theme.nix
-
-        # Import Apps
-        ./kes/gnome/apps.nix
-
-        ./kes/gnome/keybindings.nix
+        ./kes/gnome/apps.home.nix
+        ./kes/gnome/extensions.home.nix
+        ./kes/gnome/keybindings.home.nix
+        ./kes/gnome/theme.home.nix
     ];
 
-    programs.dconf.enable = true;
-
-    services.displayManager.defaultSession = "gnome";
-}
-// kestrel.mkHome {
     dconf.settings = {
         "org/gnome/shell" = {
             last-selected-power-profile = "performance";

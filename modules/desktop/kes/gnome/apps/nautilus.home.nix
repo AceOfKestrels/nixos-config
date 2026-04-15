@@ -1,6 +1,6 @@
-{ kestrel, hm, ... }:
+{ lib, ... }:
 
-kestrel.mkHome {
+{
     dconf.settings = {
         "org/gnome/nautilus/list-view" = {
             default-column-order = [
@@ -30,11 +30,11 @@ kestrel.mkHome {
         };
 
         "org/gnome/nautilus/window-state" = {
-            initial-size = hm.gvariant.mkTuple [
+            initial-size = lib.hm.gvariant.mkTuple [
                 890
                 638
             ];
-            initial-size-file-chooser = hm.gvariant.mkTuple [
+            initial-size-file-chooser = lib.hm.gvariant.mkTuple [
                 890
                 550
             ];

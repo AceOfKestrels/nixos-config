@@ -44,6 +44,7 @@
                 "annika"
                 "notebook"
                 "grub"
+                "cosmic"
             ];
             inherit inputs;
         };

@@ -1,6 +1,6 @@
-{ kestrel, ... }:
+{ ... }:
 
-kestrel.mkHome {
+{
     dconf.settings."org/gnome/calculator" = {
         accuracy = 9;
         angle-units = "degrees";

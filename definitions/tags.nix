@@ -9,8 +9,6 @@ let
         ../standard/tools/tools.nix
         ../standard/tools/vscode.nix
 
-        ../standard/desktop/cosmic.nix
-
         ../standard/terminal/aliases.nix
         ../standard/terminal/kitty.nix
         ../standard/terminal/shell-sources.nix
@@ -78,6 +76,9 @@ in
             secureboot = [ ../modules/bootloader/lanzaboote.nix ];
             amdgpu = [ ../modules/drivers/amdgpu.nix ];
             nvidia = [ ../modules/drivers/nvidia.nix ];
+            gnome = [ ../modules/desktop/gnome.nix ];
+            cosmic = [ ../modules/desktop/cosmic.nix ];
+            plasma = [ ../modules/desktop/plasma6.nix ];
             kes = kes ++ shared;
             annika = annika ++ shared;
             mel = mel;

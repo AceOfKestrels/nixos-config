@@ -1,7 +1,8 @@
-{ kestrel, pkgs, ... }:
+{ pkgs, ... }:
+
 {
     # Gnome Extensions
-    environment.systemPackages = with pkgs.gnomeExtensions; [
+    home.packages = with pkgs.gnomeExtensions; [
         dash-to-dock
         transparent-window-moving
         tray-icons-reloaded
@@ -9,8 +10,7 @@
         sound-output-device-chooser
         tactile
     ];
-}
-// kestrel.mkHome {
+
     dconf.settings = {
         "org/gnome/shell" = {
             disable-user-extensions = false;

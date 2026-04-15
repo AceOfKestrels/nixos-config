@@ -39,6 +39,7 @@
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-denkpad";
             user = "kes";
+            modules = [ ./device.nix ];
             inherit inputs;
         };
     };

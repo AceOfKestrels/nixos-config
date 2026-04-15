@@ -44,6 +44,7 @@
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/lexi-term";
             user = "lexi";
+            modules = [ ./device.nix ];
             inherit inputs;
         };
     };

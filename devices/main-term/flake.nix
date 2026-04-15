@@ -82,6 +82,7 @@
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/main-term";
             user = "annika";
+            modules = [ ./device.nix ];
             inherit inputs;
         };
     };

@@ -34,10 +34,10 @@ let
         ../modules/gaming/minecraft.home.nix
         ../modules/development/dotnet.home.nix
         ../modules/development/webdev.home.nix
-        ../modules/programs/jellyfin.home.nix
         ../modules/programs/tidal.home.nix
         ../modules/programs/discord.home.nix
 
+        ../modules/programs/jellyfin.nix
         ../modules/gaming/steam.nix
         ../modules/programs/tor.nix
         ../modules/programs/veracrypt.nix

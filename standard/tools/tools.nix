@@ -9,5 +9,7 @@
         dig # to have dns tools like nslookup
         pdfsam-basic
         gimp3
+        btop
+        htop
     ];
 }

@@ -12,6 +12,7 @@ let
         ../modules/programs/teamviewer.nix
         ../modules/programs/onlyoffice.home.nix
         ../modules/utility/video.nix
+        ../modules/gaming/ckan.nix
     ];
 
     kes = [

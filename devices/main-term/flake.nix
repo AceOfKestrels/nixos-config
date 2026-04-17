@@ -85,6 +85,7 @@
                 ../../definitions/tags.nix
                 ./drivers/lanzaboote.nix
                 ./drivers/nasdrive.nix
+                ./drivers/audio.nix
             ];
             tags = [
                 "pc"

@@ -11,6 +11,7 @@ let
         ../modules/programs/teamspeak.home.nix
         ../modules/programs/teamviewer.nix
         ../modules/programs/onlyoffice.home.nix
+        ../modules/utility/video.nix
     ];
 
     kes = [

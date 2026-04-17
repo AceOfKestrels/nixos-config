@@ -7,10 +7,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1776190523,
-        "narHash": "sha256-qfZWzaWuXfbF487cXj43uT7HWtqF45A+g7g59fOPYsk=",
+        "lastModified": 1776420287,
+        "narHash": "sha256-0P2QyDM8R1FFww//TNDLTRVnVkQxVdbEVQiVuyD1SqY=",
         "ref": "main",
-        "rev": "2eefec08414e2f90824bf2b508ea38ef6f295dfa",
+        "rev": "bdf0285dc7978ebd78b76054631d7ef05680895e",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/catppuccin/nix.git"
@@ -24,10 +24,10 @@
     },
     "crane": {
       "locked": {
-        "lastModified": 1775839657,
-        "narHash": "sha256-SPm9ck7jh3Un9nwPuMGbRU04UroFmOHjLP56T10MOeM=",
+        "lastModified": 1776396856,
+        "narHash": "sha256-aRJpIJUlZLaf06ekPvqjuU46zvO9K90IxJGpbqodkPs=",
         "ref": "master",
-        "rev": "7cf72d978629469c4bd4206b95c402514c1f6000",
+        "rev": "28462d6d55c33206ffa5a56c7907ca3125ed788f",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/ipetkov/crane"
@@ -86,10 +86,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1776184304,
-        "narHash": "sha256-No6QGBmIv5ChiwKCcbkxjdEQ/RO2ZS1gD7SFy6EZ7rc=",
+        "lastModified": 1776454077,
+        "narHash": "sha256-7zSUFWsU0+jlD7WB3YAxQ84Z/iJurA5hKPm8EfEyGJk=",
         "ref": "master",
-        "rev": "3c7524c68348ef79ce48308e0978611a050089b2",
+        "rev": "565e5349208fe7d0831ef959103c9bafbeac0681",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -120,10 +120,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1776322735,
-        "narHash": "sha256-2Stkf5dpPnHTC51FNRlaKI+vp1tef2q4o7mQIO99wh4=",
+        "lastModified": 1776409176,
+        "narHash": "sha256-XiU3D9l8mTN/TjG8aKGf2rljfmbRcceIC9Yir6p+uNs=",
         "ref": "main",
-        "rev": "5ba90f78ecaa97df0635518b2d426712808288fb",
+        "rev": "6f65edc779feb5870e9851af9362c5216e9a23a4",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -185,10 +185,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1776352984,
-        "narHash": "sha256-7Tf4UkwgwtBXQ5yA1m0+207pErgsLtEdpn2zZa2L62E=",
+        "lastModified": 1776465111,
+        "narHash": "sha256-KvFyYZy0q1cVxvi4NB1rFvDln1SpnTVhtHDoKyaaGl4=",
         "ref": "master",
-        "rev": "3c23ab9a61560dd0c686f7c9276d28b2edf96002",
+        "rev": "26c2a4007eaeb79f51f74f8bc6f6b36db7abd1e2",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -287,10 +287,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1776350315,
-        "narHash": "sha256-ijD4bgb5Iyap9F3MX73vLAZF/SYu+q7Gd7Ux4cbfCWw=",
+        "lastModified": 1776395632,
+        "narHash": "sha256-Mi1uF5f2FsdBIvy+v7MtsqxD3Xjhd0ARJdwoqqqPtJo=",
         "ref": "master",
-        "rev": "62e3b8aedabc240e5b0cc9fae003bc9edfebbc9b",
+        "rev": "8087ff1f47fff983a1fba70fa88b759f2fd8ae97",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay"

@@ -11,5 +11,6 @@
         gimp3
         btop
         htop
+        duf
     ];
 }

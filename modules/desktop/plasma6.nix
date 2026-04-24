@@ -1,5 +1,5 @@
 {
-    kestrel,
+    kestrix,
     inputs,
     pkgs,
     ...
@@ -21,8 +21,8 @@
         plasma-browser-integration
     ];
 
-    imports = kestrel.userModules {
-        kes = ./plasma6.kes.nix;
+    imports = kestrix.tagged {
+        kes = [ ./plasma6.kes.home.nix ];
     };
 
     home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];

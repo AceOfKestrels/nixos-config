@@ -51,7 +51,7 @@
                 "annika"
                 "grub"
                 "amdgpu"
-                "cosmic"
+                "plasma"
             ];
             inherit inputs;
         };

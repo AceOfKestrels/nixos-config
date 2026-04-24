@@ -36,6 +36,7 @@ let
         ../modules/development/webdev.home.nix
         ../modules/programs/tidal.home.nix
         ../modules/programs/discord.home.nix
+        ../modules/programs/termius.home.nix
 
         ../modules/programs/jellyfin.nix
         ../modules/gaming/steam.nix
@@ -47,7 +48,6 @@ let
     ];
 
     annika = [
-        ../modules/programs/termius.home.nix
         ../modules/programs/chrome.home.nix
         ../modules/programs/drawio.home.nix
 

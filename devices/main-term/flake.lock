@@ -7,10 +7,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1777637913,
-        "narHash": "sha256-IV0MJUCncmFUpcRRoHR11gK6VR+hpN/Vtaz91+dsPPE=",
+        "lastModified": 1778237125,
+        "narHash": "sha256-xL2LCN6bdjYnSFnFZ3rmLENbvXh6prT2EN7Qq6pkSr8=",
         "ref": "main",
-        "rev": "a199649e9941490ab712aa891c144e305d165ef8",
+        "rev": "d1443237c8509305559880aca39d1581befec4d9",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/catppuccin/nix.git"
@@ -24,10 +24,10 @@
     },
     "crane": {
       "locked": {
-        "lastModified": 1777335812,
-        "narHash": "sha256-bEg5xoAxAwsyfnGhkEX7RJViTIBIYPd8ISg4O1c0HFc=",
+        "lastModified": 1778106249,
+        "narHash": "sha256-cM/AuKy5tMhwOOQIbha8ZRRMHVfNf7cv2aljIw+qoCg=",
         "ref": "master",
-        "rev": "5e0fb2f64edff2822249f21293b8304dedaaf676",
+        "rev": "6d015ea29630b7ad2402841386da2cb617a470a7",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/ipetkov/crane"
@@ -86,10 +86,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1777659959,
-        "narHash": "sha256-ax3229dUvNuwTQwo2o68kOQ24dvOlJ/BrVYY4miD1bI=",
+        "lastModified": 1778248595,
+        "narHash": "sha256-dhFgEjoeJMYN/7OY6xfxS799YB4IjbbYXTjyGIJyLpc=",
         "ref": "master",
-        "rev": "5c1b74905c7261e8280dcda3623dbe677a1bc158",
+        "rev": "fdb2ccba9d5e1238d32e0c4a3ec1a277efa80c1d",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -120,10 +120,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1777620568,
-        "narHash": "sha256-ZVA1xb1yP4TO56NS/okNjONnFO892+a1VhzPrJvIsfo=",
+        "lastModified": 1778310742,
+        "narHash": "sha256-YD4rSf3k5y4RIgItY+tQ3AWUMebR92i3ha8Hg1BjOX8=",
         "ref": "main",
-        "rev": "25d72fb3fdc4a74bc7ad5e8e614b628aec1c2e41",
+        "rev": "40045e0cf6be9c43d3927d1a659d5351944857dd",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -151,10 +151,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1777299656,
-        "narHash": "sha256-c0r3xXp2+xFJwkryS+nhyQwoACbFzSt4C1TVs3QMh8E=",
+        "lastModified": 1777882242,
+        "narHash": "sha256-9Ynx+ort1aSwReiCfkbgMS3Q6y+MPcekDoUWx9N3a7A=",
         "ref": "master",
-        "rev": "079c608988c2747db3902c9de033572cd50e8656",
+        "rev": "04723d4fd6bde2665fef3b25856aeebbd4013c16",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/lanzaboote.git"
@@ -168,10 +168,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1777268161,
-        "narHash": "sha256-bxrdOn8SCOv8tN4JbTF/TXq7kjo9ag4M+C8yzzIRYbE=",
+        "lastModified": 1777954456,
+        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
         "ref": "nixos-unstable",
-        "rev": "1c3fe55ad329cbcb28471bb30f05c9827f724c76",
+        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -185,10 +185,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1777664919,
-        "narHash": "sha256-bVkUEPMpfWfBV0qXkWbdVtfgM+e9CF/z61IufwvmQXc=",
+        "lastModified": 1778310151,
+        "narHash": "sha256-EUnW5/z7MQw1pBRQsXAZGLtw8BWfGdarKC9gm1XVqHQ=",
         "ref": "master",
-        "rev": "0ce6ccb30fce33e82295f7462d3894f791230dfd",
+        "rev": "bdab9b02da38267dfb98373f83a9989503b895e7",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -219,10 +219,10 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1777268161,
-        "narHash": "sha256-bxrdOn8SCOv8tN4JbTF/TXq7kjo9ag4M+C8yzzIRYbE=",
+        "lastModified": 1777954456,
+        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
         "ref": "nixos-unstable",
-        "rev": "1c3fe55ad329cbcb28471bb30f05c9827f724c76",
+        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -287,10 +287,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1777605393,
-        "narHash": "sha256-Hjp0VOOHgHcTrX23iVvnfAudPcuCmfkfpQNFwv2v/ks=",
+        "lastModified": 1778296574,
+        "narHash": "sha256-DVmg1JCjG0VJTa+FF6tH6tkQChaxzK1EzPL98RiRWU0=",
         "ref": "master",
-        "rev": "ff88db34cfa486fc4964a6991cab1678d82eee8c",
+        "rev": "1d634a90dffb59ec9ba52652de311b15528c1595",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay"

@@ -1,8 +1,9 @@
-{
-    ...
-}:
+{ ... }:
 
 {
-    security.sudo.enable = false; # Deactivate Standart Sudo Implemetaion
-    security.sudo-rs.enable = true; # Aktivate Sudo RS as a memory safe implementaion
+    security.sudo = {
+        enable = false;
+        keepTerminfo = false;
+    };
+    security.sudo-rs.enable = true;
 }

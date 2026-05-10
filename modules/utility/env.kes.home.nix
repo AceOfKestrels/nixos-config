@@ -3,11 +3,7 @@
 {
     home.sessionVariables = {
         GIT_BROWSER = "librewolf";
-        CODE_PROGRAM = "codium";
+        CODE_PROGRAM = "code";
         EDITOR = "nvim";
-    };
-
-    home.shellAliases = {
-        code = "codium";
     };
 }

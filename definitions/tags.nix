@@ -79,6 +79,7 @@ in
             gnome = [ ../modules/desktop/gnome.nix ];
             cosmic = [ ../modules/desktop/cosmic.nix ];
             plasma = [ ../modules/desktop/plasma6.nix ];
+            lxqt = [ ../modules/desktop/lxqt.nix ];
             kes = kes ++ shared;
             annika = annika ++ shared;
             mel = mel;

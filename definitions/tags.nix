@@ -59,6 +59,7 @@ let
         ../modules/utility/env.kes.home.nix
 
         ../modules/programs/librewolf.nix
+        ../modules/programs/chromium.home.nix
 
         ../modules/users/kes.nix
     ];

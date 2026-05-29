@@ -1,27 +1,5 @@
 {
   "nodes": {
-    "catppuccin": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1779910193,
-        "narHash": "sha256-CQD/mtBC1VYQgTpKR6LhD+gPJ9S3neN6rBo/RYFWDgM=",
-        "ref": "main",
-        "rev": "c61cab9677ff7184891930a60bf8224aa81c3a31",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/catppuccin/nix.git"
-      },
-      "original": {
-        "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/catppuccin/nix.git"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -97,10 +75,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1779998048,
-        "narHash": "sha256-AhQP0MOW0jvXUkfECPvBz9nUGTgJ8tnQSYVOgTO/+PQ=",
+        "lastModified": 1780081885,
+        "narHash": "sha256-pgA/AKRB4f5eHD27pQ+KK8InjJJYXzjSP07wSScn7QQ=",
         "ref": "master",
-        "rev": "b8c19b11969bf7c43b91839c34892110343c0ccd",
+        "rev": "82dc9284ef63f0254be46e4903b1d21d90db88ca",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -156,7 +134,6 @@
     },
     "root": {
       "inputs": {
-        "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "kestrix": "kestrix",
         "nixpkgs": "nixpkgs",

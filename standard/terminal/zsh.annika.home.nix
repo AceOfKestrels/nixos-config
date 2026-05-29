@@ -6,7 +6,7 @@ in
 {
     programs.zsh.enable = true;
     programs.zsh.initContent = ''
-        ${p10k-prompt}
+        ${p10k-prompt} 
     '';
 
     programs.zsh.shellAliases = {

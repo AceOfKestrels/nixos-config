@@ -43,7 +43,6 @@ let
         ../modules/programs/tor.nix
         ../modules/programs/veracrypt.nix
         ../modules/utility/locale-en.nix
-        ../modules/utility/catppuccin.nix
         ../modules/programs/solaar.nix
     ];
 

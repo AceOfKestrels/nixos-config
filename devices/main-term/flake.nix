@@ -14,10 +14,6 @@
         nixpkgs-master = {
             url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";
         };
-        catppuccin = {
-            url = "git+https://github.com/catppuccin/nix.git?shallow=1&ref=main";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         home-manager = {
             url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
             inputs.nixpkgs.follows = "nixpkgs";

@@ -13,11 +13,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        catppuccin = {
-            url = "git+https://github.com/catppuccin/nix.git?shallow=1&ref=main";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         shell-sources = {
             url = "git+https://github.com/AceOfKestrels/shell-sources.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";

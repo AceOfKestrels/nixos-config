@@ -30,7 +30,7 @@ in
         ${p10k-prompt}
 
         # rainbow fetch
-        fastfetch --logo-color-1 #f38ba8 --logo-color-2 #fab387 --logo-color-3 #f9e2af --logo-color-4 #a6e3a1 --logo-color-5 #89b4fa --logo-color-6 #cba6f7
+        fastfetch --logo-color-1 "#f38ba8" --logo-color-2 "#fab387" --logo-color-3 "#f9e2af" --logo-color-4 "#a6e3a1" --logo-color-5 "#89b4fa" --logo-color-6 "#cba6f7"
 
         # upgrade reminder
         if [ -z "$(git -C "$FLAKE_PATH" log --since=$(date -d "-1day" +%s) "$FLAKE_PATH/flake.lock" )" ]; then

@@ -1,27 +1,5 @@
 {
   "nodes": {
-    "catppuccin": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1778406663,
-        "narHash": "sha256-jGOtlDJAe0MFoOErIxSFs3TQZ7WaCpUt1qnjJ0HhLfw=",
-        "ref": "main",
-        "rev": "a0fa2f1b901473d8aefb2e3026396e3562c1782c",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/catppuccin/nix.git"
-      },
-      "original": {
-        "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/catppuccin/nix.git"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -131,7 +109,6 @@
     },
     "root": {
       "inputs": {
-        "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "kestrix": "kestrix",
         "nixpkgs": "nixpkgs",
@@ -150,10 +127,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1778588375,
-        "narHash": "sha256-xsRZ7KuCswzBHMnerXMfR33/wJ3j9ryY0s4Plo1Nd7U=",
+        "lastModified": 1778705940,
+        "narHash": "sha256-OKmBMvA/8FckkoB2rnn0J/n02CNIY1kdC3L4/3Qgl3M=",
         "ref": "main",
-        "rev": "3d6615f0ed364802110d14c0faba991b01101e4b",
+        "rev": "6dc8bf7c71984d237c397ad889492211fb6831f2",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/AceOfKestrels/shell-sources.git"

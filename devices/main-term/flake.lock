@@ -1,27 +1,5 @@
 {
   "nodes": {
-    "catppuccin": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1779741226,
-        "narHash": "sha256-2Oz1vwT1lRF16zXFpT8FoxSTF6/V6uKLsKo52Xxa0cs=",
-        "ref": "main",
-        "rev": "823da4d4f1160d7ac395fe459a4e33d9dfe57bb2",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/catppuccin/nix.git"
-      },
-      "original": {
-        "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/catppuccin/nix.git"
-      }
-    },
     "crane": {
       "locked": {
         "lastModified": 1779130139,
@@ -264,7 +242,6 @@
     },
     "root": {
       "inputs": {
-        "catppuccin": "catppuccin",
         "crane": "crane",
         "flake-compat": "flake-compat",
         "gitignore": "gitignore",

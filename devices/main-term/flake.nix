@@ -3,13 +3,13 @@
 
     inputs = {
         nixpkgs = {
-            url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+            url = "github:NixOS/nixpkgs/nixos-unstable";
         };
         nixpkgs-stable = {
             url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
         };
         nixpkgs-unstable = {
-            url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+            url = "github:NixOS/nixpkgs/nixos-unstable";
         };
         nixpkgs-master = {
             url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";
@@ -37,7 +37,7 @@
             };
         };
         crane = {
-            url = "git+https://github.com/ipetkov/crane?shallow=1&ref=master";
+            url = "github:ipetkov/crane/master";
         };
         rust-overlay = {
             url = "git+https://github.com/oxalica/rust-overlay?shallow=1&ref=master";

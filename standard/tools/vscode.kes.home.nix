@@ -79,6 +79,8 @@ in
             "terminal.integrated.enablePersistentSessions" = false;
             "terminal.integrated.persistentSessionReviveProcess" = "never";
 
+            "workbench.colorTheme" = "Catppuccin Mocha";
+            "workbench.iconTheme" = "catppuccin-mocha";
             "workbench.colorCustomizations" = {
                 "terminal.background" = "#11111b";
                 "terminal.foreground" = "#cdd6f4";
@@ -155,6 +157,8 @@ in
         extensions = with pkgs.vscode-extensions; [
             hediet.vscode-drawio
             ms-python.python
+            catppuccin.catppuccin-vsc
+            catppuccin.catppuccin-vsc-icons
         ];
     };
 }

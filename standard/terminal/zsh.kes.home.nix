@@ -30,7 +30,7 @@ in
         ${p10k-prompt}
 
         # upgrade reminder
-        if [ -z "$(git -C "$FLAKE_PATH" log --since=$(date -d "-1day" +%s) "$FLAKE_PATH/flake.lock" )" ]; then
+        if [ -z "$(git -C "$FLAKE_PATH" log --since=$(date -d "-7days" +%s) "$FLAKE_PATH/flake.lock" )" ]; then
             echo
             echo "System was last upgraded $(git -C "$FLAKE_PATH" log --pretty=format:%ad --date=relative -n 1 $FLAKE_PATH/flake.lock)"
             echo "Use 'upgrade' to run the NixOS system upgrade."

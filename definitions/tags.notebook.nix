@@ -10,6 +10,7 @@ let
     ];
 
     kes = [
+        ../modules/gaming/morrowind.home.nix
     ];
 
     mel = [ ];

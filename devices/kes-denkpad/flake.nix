@@ -13,18 +13,13 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        catppuccin = {
-            url = "git+https://github.com/catppuccin/nix.git?shallow=1&ref=main";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         shell-sources = {
             url = "git+https://github.com/AceOfKestrels/shell-sources.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
         kestrix = {
-            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=dev";
+            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.nixpkgs-stable.follows = "nixpkgs-stable";
             inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
@@ -38,8 +33,14 @@
             system = "x86_64-linux";
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-denkpad";
-            user = "kes";
-            modules = [ ./device.nix ];
+            modules = [ ../../definitions/tags.nix ];
+            tags = [
+                "kes"
+                "annika"
+                "notebook"
+                "grub"
+                "cosmic"
+            ];
             inherit inputs;
         };
     };

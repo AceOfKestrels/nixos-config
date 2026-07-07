@@ -13,11 +13,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        catppuccin = {
-            url = "git+https://github.com/catppuccin/nix.git?shallow=1&ref=main";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         shell-sources = {
             url = "git+https://github.com/AceOfKestrels/shell-sources.git?shallow=1&ref=main";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -44,8 +39,15 @@
             system = "x86_64-linux";
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-term";
-            user = "kes";
-            modules = [ ./device.nix ];
+            modules = [ ../../definitions/tags.nix ];
+            tags = [
+                "pc"
+                "kes"
+                "annika"
+                "grub"
+                "amdgpu"
+                "plasma"
+            ];
             inherit inputs;
         };
     };

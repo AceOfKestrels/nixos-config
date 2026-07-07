@@ -1,27 +1,5 @@
 {
   "nodes": {
-    "catppuccin": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1775213373,
-        "narHash": "sha256-wJHsijC2l/E+ovmlpPGha8pXA6RHSwHWmBV97gvkmyI=",
-        "ref": "main",
-        "rev": "ba73719e673e7c2d89ac2f8df0bc0d48983e4907",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/catppuccin/nix.git"
-      },
-      "original": {
-        "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "https://github.com/catppuccin/nix.git"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -29,10 +7,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1775320414,
-        "narHash": "sha256-pIDPHus8udcxO4lT+zUULBfvue2D08E73abzVEJNE+8=",
+        "lastModified": 1779969295,
+        "narHash": "sha256-HwIJ3tOcwSMiV75L7KqJXciXR9UfT+d7rwOZMX7cTnA=",
         "ref": "master",
-        "rev": "5ee3b3ef63e469c84639c2c9e282726352c86069",
+        "rev": "61e2c9659324181e0f0ed911958c536333b1d4f6",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -63,10 +41,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1769545234,
-        "narHash": "sha256-a8Rau2cSj5qEDvTq3Gb5z8qHSahf2AYvbslPCgGgEVk=",
+        "lastModified": 1775929727,
+        "narHash": "sha256-G2S9XMzR7NLoV8Htp0x00gID/jf8ZL5cD8+rUGfV23Y=",
         "ref": "dev",
-        "rev": "d3457aaaa3f02322e9c8a78bcd7553c0f184498d",
+        "rev": "ce90e4f370d9fc3f745f4be849dd607dd8fee467",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -80,10 +58,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1775036866,
-        "narHash": "sha256-ZojAnPuCdy657PbTq5V0Y+AHKhZAIwSIT2cb8UgAz/U=",
+        "lastModified": 1779560665,
+        "narHash": "sha256-tpyBcxPpcQb8ukyNF7DoCwfSY3VPsxHoYwj00Cayv5o=",
         "ref": "nixos-unstable",
-        "rev": "6201e203d09599479a3b3450ed24fa81537ebc4e",
+        "rev": "64c08a7ca051951c8eae34e3e3cb1e202fe36786",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -97,10 +75,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1775338292,
-        "narHash": "sha256-InLTLtioObspislJUuhnlsOjkpDajUjCLQpu6t6kjZc=",
+        "lastModified": 1780081885,
+        "narHash": "sha256-pgA/AKRB4f5eHD27pQ+KK8InjJJYXzjSP07wSScn7QQ=",
         "ref": "master",
-        "rev": "076a8e314a244b679f75b5029958c67152f9bd18",
+        "rev": "82dc9284ef63f0254be46e4903b1d21d90db88ca",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -139,10 +117,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1774915545,
-        "narHash": "sha256-COT4l/+ZddGBvrDVfPf7MEOJxV8EDKame6/aRnNIKcY=",
+        "lastModified": 1775856943,
+        "narHash": "sha256-b7Mp7P+q2Md5AGt4rjHfMcBykzMumFTen10ST++AuTU=",
         "ref": "trunk",
-        "rev": "f3177b3c69fb3f03201098d7fe8ab6422cce7fc1",
+        "rev": "a524a6160e6df89f7673ba293cf7d78b559eb1a5",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/plasma-manager.git"
@@ -156,7 +134,6 @@
     },
     "root": {
       "inputs": {
-        "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "kestrix": "kestrix",
         "nixpkgs": "nixpkgs",
@@ -176,10 +153,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1770334905,
-        "narHash": "sha256-CWXZEF1DhXummYPMNdXwf7+8YetL3QPuDuvJ3JHd6Ck=",
+        "lastModified": 1778705940,
+        "narHash": "sha256-OKmBMvA/8FckkoB2rnn0J/n02CNIY1kdC3L4/3Qgl3M=",
         "ref": "main",
-        "rev": "0437b54c07a67c041a18abd46d5030282fa51118",
+        "rev": "6dc8bf7c71984d237c397ad889492211fb6831f2",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/AceOfKestrels/shell-sources.git"

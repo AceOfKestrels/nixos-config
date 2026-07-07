@@ -1,0 +1,89 @@
+{ kestrix, ... }:
+
+let
+    standard = [
+        ../standard/tools/archive.nix
+        ../standard/tools/docker.nix
+        ../standard/tools/git.nix
+        ../standard/tools/rsync.nix
+        ../standard/tools/tools.nix
+        ../standard/tools/vscode.nix
+
+        ../standard/terminal/aliases.nix
+        ../standard/terminal/kitty.nix
+        ../standard/terminal/shell-sources.nix
+        ../standard/terminal/zsh.nix
+
+        ../standard/security/apparmor.nix
+        ../standard/security/clamav.nix
+        ../standard/security/firewall.nix
+        ../standard/security/sudo.nix
+        ../standard/security/polkit.nix
+
+        ../standard/system/audio.nix
+        ../standard/system/env.nix
+        ../standard/system/kernel.nix
+        ../standard/system/zram.nix
+
+        ../standard/nix/garbage-collect.nix
+        ../standard/nix/lix.nix
+        ../standard/nix/nh.nix
+    ];
+
+    shared = [
+        ../modules/gaming/minecraft.home.nix
+        ../modules/development/dotnet.home.nix
+        ../modules/development/webdev.home.nix
+        ../modules/programs/tidal.home.nix
+        ../modules/programs/discord.home.nix
+        ../modules/programs/termius.home.nix
+
+        ../modules/programs/jellyfin.nix
+        ../modules/gaming/steam.nix
+        ../modules/programs/tor.nix
+        ../modules/programs/veracrypt.nix
+        ../modules/utility/locale-en.nix
+        ../modules/programs/solaar.nix
+    ];
+
+    annika = [
+        ../modules/programs/chrome.home.nix
+        ../modules/programs/drawio.home.nix
+        ../modules/programs/hcloud.home.nix
+
+        ../modules/users/annika.nix
+    ];
+
+    kes = [
+        ../modules/programs/nvim.home.nix
+        ../modules/programs/drawing.home.nix
+        ../modules/utility/env.kes.home.nix
+
+        ../modules/programs/librewolf.nix
+        ../modules/programs/chromium.home.nix
+
+        ../modules/users/kes.nix
+        ../modules/gaming/morrowind.home.nix
+    ];
+
+    mel = [ ];
+in
+{
+    imports =
+        standard
+        ++ kestrix.tagged {
+            notebook = [ ./tags.notebook.nix ];
+            pc = [ ./tags.pc.nix ];
+            grub = [ ../modules/bootloader/grub.nix ];
+            secureboot = [ ../modules/bootloader/lanzaboote.nix ];
+            amdgpu = [ ../modules/drivers/amdgpu.nix ];
+            nvidia = [ ../modules/drivers/nvidia.nix ];
+            gnome = [ ../modules/desktop/gnome.nix ];
+            cosmic = [ ../modules/desktop/cosmic.nix ];
+            plasma = [ ../modules/desktop/plasma6.nix ];
+            lxqt = [ ../modules/desktop/lxqt.nix ];
+            kes = kes ++ shared;
+            annika = annika ++ shared;
+            mel = mel;
+        };
+}

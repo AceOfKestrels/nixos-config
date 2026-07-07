@@ -49,6 +49,7 @@ let
     annika = [
         ../modules/programs/chrome.home.nix
         ../modules/programs/drawio.home.nix
+        ../modules/programs/hcloud.home.nix
 
         ../modules/users/annika.nix
     ];
@@ -62,6 +63,7 @@ let
         ../modules/programs/chromium.home.nix
 
         ../modules/users/kes.nix
+        ../modules/gaming/morrowind.home.nix
     ];
 
     mel = [ ];

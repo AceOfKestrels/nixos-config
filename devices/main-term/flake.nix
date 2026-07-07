@@ -22,17 +22,10 @@
             url = "git+https://github.com/NixOS/flake-compat?shallow=1&ref=master";
             flake = false;
         };
-        gitignore = {
-            url = "git+https://github.com/hercules-ci/gitignore.nix?shallow=1&ref=master";
-            inputs = {
-                nixpkgs.follows = "nixpkgs";
-            };
-        };
         pre-commit = {
             url = "git+https://github.com/cachix/pre-commit-hooks.nix?shallow=1&ref=master";
             inputs = {
                 nixpkgs.follows = "nixpkgs";
-                gitignore.follows = "gitignore";
                 flake-compat.follows = "flake-compat";
             };
         };

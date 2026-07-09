@@ -41,10 +41,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783458499,
-        "narHash": "sha256-a8whUXG4ThsZNjL92cH4wbl+/dt8CbT/F0zJsfhzFbM=",
+        "lastModified": 1783618078,
+        "narHash": "sha256-F43DGcBoIO8xOZFAfodg3jy0VghB9NGdb6xbTYAIx1A=",
         "ref": "master",
-        "rev": "53ebbdc405acc04acd9bb73ccca462b51ddb8c6d",
+        "rev": "144f4e36d0186195037da9fce80a727108978070",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -75,10 +75,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783412898,
-        "narHash": "sha256-HdvYKD+0my0CFyiS3lBJNCgZFevCy404RQrXMy4l5Go=",
+        "lastModified": 1783586000,
+        "narHash": "sha256-O1CKpljje2tCDPeK9BqlVaxakSE1NjaDCtgo9/IEjd4=",
         "ref": "main",
-        "rev": "b04010ccd990236b571cf0441ce9b2761f65a6b5",
+        "rev": "ca497b7757ca6ab05b53d102b8ce236dd925f908",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -106,10 +106,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783456399,
-        "narHash": "sha256-fB2qDgwWldQpS6TGgfKb7yVKSPsiV1NS8RdrdJ3vWUg=",
+        "lastModified": 1783496806,
+        "narHash": "sha256-6B6CQUk1dPc8l/+otaGiYbuX8qeX/0VmSUQ+qSn0/uA=",
         "ref": "master",
-        "rev": "202d6ad36b8bc024bb7ead06aaf1ba018be28c41",
+        "rev": "6183ac79eadb079a1e72fa2c60915601be669100",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/lanzaboote.git"
@@ -139,10 +139,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1783465211,
-        "narHash": "sha256-yfkP/OEMiCMU3596+sh6ii03ZwJgSoMoK4jKNFOWKRM=",
+        "lastModified": 1783636816,
+        "narHash": "sha256-mIupDHQ9Hzp0NZUGWUtSgJq9TO8O88c7WWVBWJ0JQ3Y=",
         "ref": "master",
-        "rev": "e4b2147541d94bdb06b85379872ef741fcfd768f",
+        "rev": "d2727a2b804ee45db0ffe1c0226e181e99fe340b",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -235,10 +235,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783404876,
-        "narHash": "sha256-DAh1CfiRVwr8Szkj5PiHmsqh10NHPb8SKPx7w/B+l9E=",
+        "lastModified": 1783614422,
+        "narHash": "sha256-zSX553aXiIKJHWzUF6nrDKgeNRlfNK/SdyNYSbs2nkM=",
         "ref": "master",
-        "rev": "3c161f20193bd91a73913b417e5b06d41860336d",
+        "rev": "e8e9d70b96113fd49ccde6c3e08fb260b6ef5dd6",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay"

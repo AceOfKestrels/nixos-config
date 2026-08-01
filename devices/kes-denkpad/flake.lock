@@ -41,16 +41,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1785569481,
-        "narHash": "sha256-rvWC1FF0+78bgGgI74Goh6Iym85y2PLJ17sAmnxyRy0=",
-        "ref": "main",
-        "rev": "149dc7b87b42e523917b34673cbfbc38799e182f",
+        "lastModified": 1785605606,
+        "narHash": "sha256-GAUu0LzhjxK74h1rbqjaI8Gz2OhUu47enXocvsQf3pQ=",
+        "ref": "dev",
+        "rev": "c3e02778c8c9f0ebd8ef24ce8de8dddff29dcdba",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
       },
       "original": {
-        "ref": "main",
+        "ref": "dev",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -75,10 +75,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1785583138,
-        "narHash": "sha256-mG2/6o10AU96+/xN2JbTG9Y0MaDBK12OOb5Arv7XZvs=",
+        "lastModified": 1785587513,
+        "narHash": "sha256-xneW8E6BI9BnGi/Sis2BG4UbxTu3cA9R6Bz2kTyMrTg=",
         "ref": "master",
-        "rev": "3f2bcffca4a23ecb5a4422c7476403c141b2b2e9",
+        "rev": "c0584ec4f2ba5b04896204e03aa3108474b7d728",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"

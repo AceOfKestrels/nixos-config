@@ -19,7 +19,7 @@
         };
 
         kestrix = {
-            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=main";
+            url = "git+https://github.com/KestrelsDevelopment/KestrIx.git?shallow=1&ref=dev";
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.nixpkgs-stable.follows = "nixpkgs-stable";
             inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
@@ -33,7 +33,10 @@
             system = "x86_64-linux";
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-denkpad";
-            modules = [ ../../definitions/tags.nix ];
+            modules = [
+                ../../definitions/tags.nix
+                ../../poc/module.nix
+            ];
             tags = [
                 "kes"
                 "annika"

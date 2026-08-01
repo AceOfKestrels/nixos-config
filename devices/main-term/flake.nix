@@ -63,8 +63,6 @@
                 home-manager.follows = "home-manager";
             };
         };
-
-        nix-flatpak.url = "github:gmodena/nix-flatpak/";
     };
 
     outputs = inputs: {

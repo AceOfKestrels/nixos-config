@@ -4,7 +4,6 @@ let
     standard = [
         ../standard/tools/archive.nix
         ../standard/tools/docker.nix
-        ../standard/tools/flatpak.nix
         ../standard/tools/git.nix
         ../standard/tools/rsync.nix
         ../standard/tools/tools.nix

@@ -14,10 +14,11 @@ let
         ../modules/programs/onlyoffice.home.nix
         ../modules/utility/video.nix
         ../modules/gaming/ckan.nix
-        ../modules/programs/snapmaker-orca.home.nix
     ];
 
     kes = [
+        ../modules/programs/flatpak.nix
+
         ../modules/gaming/convergence.home.nix
         ../modules/gaming/convergence.overlay.nix
     ];

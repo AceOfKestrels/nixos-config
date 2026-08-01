@@ -32,6 +32,8 @@
             inputs.nixpkgs-master.follows = "nixpkgs-master";
             inputs.home-manager.follows = "home-manager";
         };
+
+        nix-flatpak.url = "github:gmodena/nix-flatpak/";
     };
 
     outputs = inputs: {

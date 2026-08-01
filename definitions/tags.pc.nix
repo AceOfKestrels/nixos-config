@@ -17,8 +17,6 @@ let
     ];
 
     kes = [
-        ../modules/programs/flatpak.nix
-
         ../modules/gaming/convergence.home.nix
         ../modules/gaming/convergence.overlay.nix
     ];

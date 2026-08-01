@@ -14,6 +14,9 @@ let
         ../modules/programs/onlyoffice.home.nix
         ../modules/utility/video.nix
         ../modules/gaming/ckan.nix
+
+        ../modules/programs/snapmaker-orca.home.nix
+        ../modules/programs/snapmaker-orca.overlay.nix
     ];
 
     kes = [

@@ -7,10 +7,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783099620,
-        "narHash": "sha256-prQSM9PGnrfSaqknJOZ3DCQKbpMiXAWLVC5SHbjLcJ4=",
+        "lastModified": 1785531816,
+        "narHash": "sha256-vkMnV0JIyw+g/NmcfoajlGaAO+9a0ezia+FZohQJrik=",
         "ref": "master",
-        "rev": "b2e4390ff35319c52935d6a700b615da4c0f204d",
+        "rev": "bf9ce9fec78f95f374e8dd3b503863a3ec128ebe",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -41,10 +41,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783066468,
-        "narHash": "sha256-ea3+6JJeSeF8j7ICdw6wGNyknU0XBp0Eb3jr+8lefMo=",
+        "lastModified": 1785569481,
+        "narHash": "sha256-rvWC1FF0+78bgGgI74Goh6Iym85y2PLJ17sAmnxyRy0=",
         "ref": "main",
-        "rev": "4e10b335bb5dc7ea5c2daf5fd58540a26e63111f",
+        "rev": "149dc7b87b42e523917b34673cbfbc38799e182f",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -58,10 +58,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1782723713,
-        "narHash": "sha256-oPXCU/SSUokcGaJREHibG1CBX3+s/W7orDWQOZDsEeQ=",
+        "lastModified": 1785454630,
+        "narHash": "sha256-LQy14TZp77TwbQf40gg1V3jo8FwJG0jGDkAH+zRHqg8=",
         "ref": "nixos-unstable",
-        "rev": "b5aa0fbd538984f6e3d201be0005b4463d8b09f8",
+        "rev": "1559d3daa3ecc813a650b79375ea61b6741b8746",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -75,10 +75,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1783109318,
-        "narHash": "sha256-rygQL9qHa0AVz5KNxX5RT82deh8aFyjH84bsc5/IhSw=",
+        "lastModified": 1785583138,
+        "narHash": "sha256-mG2/6o10AU96+/xN2JbTG9Y0MaDBK12OOb5Arv7XZvs=",
         "ref": "master",
-        "rev": "1d3a746dc800495cef551ba041fcd750385a1010",
+        "rev": "3f2bcffca4a23ecb5a4422c7476403c141b2b2e9",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"

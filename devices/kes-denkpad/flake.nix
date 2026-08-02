@@ -33,7 +33,10 @@
             system = "x86_64-linux";
             flake = ./.;
             src = "/etc/nixos/nixos-config/devices/kes-denkpad";
-            modules = [ ../../definitions/tags.nix ];
+            modules = [
+                ../../definitions/tags.nix
+                ../../poc/test.nix
+            ];
             tags = [
                 "kes"
                 "annika"

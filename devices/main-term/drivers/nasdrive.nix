@@ -87,6 +87,26 @@
             ];
         }
 
+        # DATA NAS share (Synology, NFSv3)
+        {
+            what = "10.100.20.11:/volume1/CorpData";
+            where = "/home/annika/disks/corpdata";
+            type = "nfs";
+            options = builtins.concatStringsSep "," [
+                "vers=3"
+                "rw"
+                "hard"
+                "intr"
+                "proto=tcp"
+                "_netdev"
+                "exec"
+                "nolock"
+                "noatime"
+                "rsize=1048576"
+                "wsize=1048576"
+            ];
+        }
+
     ];
 
     # Automount units to unmount after idle
@@ -105,6 +125,10 @@
         }
         {
             where = "/home/annika/disks/media";
+            wantedBy = [ "multi-user.target" ];
+        }
+        {
+            where = "/home/annika/disks/corpdata";
             wantedBy = [ "multi-user.target" ];
         }
     ];

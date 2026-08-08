@@ -75,10 +75,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1786083108,
-        "narHash": "sha256-jbhCSYQTR3OTw4IZdwyvzhOcIxoeIZu6LuwHPt/Txdo=",
+        "lastModified": 1786218787,
+        "narHash": "sha256-SUHesnTlvHc/MR7sCmIA2+uhYJrYVrH4uoq5jn4LNcA=",
         "ref": "main",
-        "rev": "039be20c130f97a9ac5aff1ed991a60f4b17b4c7",
+        "rev": "6871eac31d8caffedbf5946022abb0be4f30aae1",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"

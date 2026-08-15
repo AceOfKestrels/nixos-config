@@ -12,25 +12,6 @@
 
     # Define NFS mounts
     systemd.mounts = [
-        # Personal NAS share
-        {
-            what = "10.100.20.10:/mnt/bunker.nas.local.wa-ls.net/home-storage";
-            where = "/home/annika/disks/nas-personal";
-            type = "nfs4";
-            options = builtins.concatStringsSep "," [
-                "rw"
-                "hard"
-                "intr"
-                "proto=tcp"
-                "_netdev"
-                "exec"
-                "nolock"
-                "noatime"
-                "rsize=1048576"
-                "wsize=1048576"
-            ];
-        }
-
         # Games NAS share
         {
             what = "10.100.20.10:/mnt/bunker.nas.local.wa-ls.net/games";
@@ -111,10 +92,6 @@
 
     # Automount units to unmount after idle
     systemd.automounts = [
-        {
-            where = "/home/annika/disks/nas-personal";
-            wantedBy = [ "multi-user.target" ];
-        }
         {
             where = "/home/annika/disks/nas-games";
             wantedBy = [ "multi-user.target" ];

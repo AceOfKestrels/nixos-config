@@ -39,7 +39,8 @@
                 "annika"
                 "notebook"
                 "grub"
-                "cosmic"
+                # "cosmic"
+                "gnome"
             ];
             inherit inputs;
         };

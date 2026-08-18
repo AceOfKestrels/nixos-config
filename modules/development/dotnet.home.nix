@@ -2,7 +2,7 @@
 
 {
     home.packages = with pkgs; [
-        jetbrains.rider
+        stable.jetbrains.rider
 
         yaak
     ];

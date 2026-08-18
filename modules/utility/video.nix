@@ -14,7 +14,7 @@
             '';
         })
         parallel-full
-        master.makemkv
+        pkgsMaster.makemkv
         mkvtoolnix
         mediainfo-gui
         mediainfo

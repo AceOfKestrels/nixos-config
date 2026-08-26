@@ -3,6 +3,6 @@
 {
 
     home.packages = with pkgs; [
-        teamspeak6-client
+        pkgsStable.teamspeak6-client
     ];
 }

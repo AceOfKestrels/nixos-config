@@ -2,11 +2,11 @@
     description = "flake for kes-term. use 'sudo nixos-rebuild switch --flake /etc/nixos/nixos-config/devices/kes-term#kes-term' to apply.";
 
     inputs = {
-        nixpkgs-stable.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-25.05";
-        nixpkgs-unstable.follows = "nixpkgs";
-        nixpkgs-master.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=master";
+        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
+        nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
-        nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
+        nixpkgs.follows = "nixpkgs-unstable";
 
         home-manager = {
             url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";

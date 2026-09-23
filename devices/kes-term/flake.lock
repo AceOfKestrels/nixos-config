@@ -56,6 +56,22 @@
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
       }
     },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1790046670,
+        "narHash": "sha256-MYiI+CzL0tuWgRPjGsKCDHqYs2T3OzMlMQWOYWG0qso=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6774f7bc253789b113a4f39285dc0fa100abeacc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-master": {
       "locked": {
         "lastModified": 1790185690,
@@ -84,22 +100,6 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-26.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-unstable": {
-      "locked": {
-        "lastModified": 1790046670,
-        "narHash": "sha256-MYiI+CzL0tuWgRPjGsKCDHqYs2T3OzMlMQWOYWG0qso=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "6774f7bc253789b113a4f39285dc0fa100abeacc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -133,12 +133,12 @@
       "inputs": {
         "home-manager": "home-manager",
         "kestrix": "kestrix",
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ],
+        "nixpkgs": "nixpkgs",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nixpkgs-unstable": "nixpkgs-unstable",
+        "nixpkgs-unstable": [
+          "nixpkgs"
+        ],
         "plasma-manager": "plasma-manager",
         "shell-sources": "shell-sources"
       }

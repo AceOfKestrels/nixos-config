@@ -64,6 +64,8 @@ let
 
         ../modules/users/kes.nix
         ../modules/gaming/morrowind.home.nix
+
+        ../modules/programs/wireguard.nix
     ];
 
     mel = [ ];

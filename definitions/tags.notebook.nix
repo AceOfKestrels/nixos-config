@@ -3,7 +3,6 @@
 let
     shared = [
         ../modules/utility/power-management.nix
-        ../modules/programs/wireguard.nix
     ];
 
     annika = [

@@ -38,6 +38,7 @@ let
         ../modules/programs/discord.home.nix
         ../modules/programs/termius.home.nix
 
+        ../modules/programs/netbird.nix
         ../modules/programs/jellyfin.nix
         ../modules/gaming/steam.nix
         ../modules/programs/tor.nix

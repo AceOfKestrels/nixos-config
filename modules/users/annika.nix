@@ -11,6 +11,8 @@
             "dialout"
             "libvirtd"
             "clamav"
+            "netbird"
+            "netbird-wt0"
         ];
     };
     home-manager.users.annika = { };

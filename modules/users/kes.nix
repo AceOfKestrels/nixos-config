@@ -9,6 +9,8 @@
             "wheel"
             "bluetooth"
             "docker"
+            "netbird"
+            "netbird-wt0"
         ];
     };
     home-manager.users.kes = { };

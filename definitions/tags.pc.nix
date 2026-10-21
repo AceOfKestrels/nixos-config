@@ -17,6 +17,7 @@ let
 
         ../modules/programs/snapmaker-orca.home.nix
         ../modules/programs/snapmaker-orca.overlay.nix
+        ../modules/programs/ausweisapp.nix
     ];
 
     kes = [

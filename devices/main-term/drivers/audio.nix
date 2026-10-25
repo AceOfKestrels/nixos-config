@@ -22,5 +22,6 @@
         scarlett2
         alsa-scarlett-gui
         signal-desktop
+        cisco-packet-tracer_9
     ];
 }

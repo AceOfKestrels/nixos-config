@@ -24,6 +24,7 @@ let
         ../modules/programs/flatpak.nix
 
         # ../modules/gaming/convergence.home.nix
+        ../modules/gaming/amethyst.home.nix
     ];
 
     mel = [ ];

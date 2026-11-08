@@ -15,9 +15,6 @@
     # Point to where sbctl created your keys:
     boot.lanzaboote.pkiBundle = "/var/lib/sbctl";
 
-    # (Optional but common if you want TPM2 unlock later)
-    boot.initrd.systemd.enable = true;
-
     # Menu behavior
     boot.loader.timeout = 5; # seconds
     boot.loader.systemd-boot.editor = false;

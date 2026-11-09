@@ -4,7 +4,7 @@
     home.packages = with pkgs; [
         jetbrains.webstorm
 
-        yaak
+        # yaak
 
         nodejs
         typescript

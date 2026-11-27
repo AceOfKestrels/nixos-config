@@ -41,10 +41,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1795618997,
-        "narHash": "sha256-d9Osol//t6hqeo1xlspsYMbhTJK507h6t0EmPyF5Db0=",
+        "lastModified": 1795748630,
+        "narHash": "sha256-J1iQ1QMnkFwZFXnlPt2t3Qx7TsGjw08/0L3QMqNt+Wg=",
         "ref": "master",
-        "rev": "6a13737c0ed27c7c285f59e3be423ed972aa605f",
+        "rev": "54f903fdaaf5d5720ed36706fe75332af69eb793",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -75,10 +75,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1795620289,
-        "narHash": "sha256-2ekf1U3OjE7VL019yzV0lyOEe9tUaauI42ik+SwrIlQ=",
+        "lastModified": 1795791085,
+        "narHash": "sha256-4O1Jt3n8VJTOefR/8dVT634555LMNA4L1tSZMX7kfmA=",
         "ref": "main",
-        "rev": "443b394ced47ce7b71af72c0e28cddce9b6d421d",
+        "rev": "53a51eb17b32271f30584e058d51e2b765eb8a11",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/KestrelsDevelopment/KestrIx.git"
@@ -139,10 +139,10 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1795638570,
-        "narHash": "sha256-uClqKSjdcyQvGOS4LpO0/rUk4eNQ18OKikpqJbCFIXs=",
+        "lastModified": 1795812492,
+        "narHash": "sha256-XLScq3ErMareYxtXT5bHcR/Vlf4FpOFxxDB4++MCadw=",
         "ref": "master",
-        "rev": "21d70b3acd6b7a21a828b0b54cf7f20ebc2bbe2b",
+        "rev": "327d581fee7ed113d479662e09e447e86867cf6d",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
@@ -197,10 +197,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1795608474,
-        "narHash": "sha256-CwC7f1DripMBQjB7BozobprSYiA8Cn9rz8vsBthWJwk=",
+        "lastModified": 1795742716,
+        "narHash": "sha256-ddfB/7u6gJk6VjxNOZit/MZssPhnFzC8BI5lfp6TuIk=",
         "ref": "master",
-        "rev": "5c6bf7c418b4abf003e6d00d231e87f5e6ad5230",
+        "rev": "26f3f17f0d64137a569aa30ad953a59ab6662be2",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/cachix/pre-commit-hooks.nix"
@@ -235,10 +235,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1795604585,
-        "narHash": "sha256-rsB/BPQf+Q9p7O7WhqtmG64b3F175ly7swafxWS1etM=",
+        "lastModified": 1795689650,
+        "narHash": "sha256-gvke5rg5P9S2TAXdOASCqEPc/OdvPKaHIGoMlbYLJ/E=",
         "ref": "master",
-        "rev": "67021b279bfffe654a0201ede805748a255ae5a7",
+        "rev": "8771c4aba509d6efb8bf376fd8cb657cce52b013",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay"
